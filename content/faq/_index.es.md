@@ -12,6 +12,41 @@ weight: 90
 
 Únete a la [comunidad de Discord en este enlace](https://discord.gg/rPK2nSjxy8).
 
+# Especificaciones de los chips para el TT01, TT02 y TT03
+
+## ¿Cuál es la velocidad máxima de reloj?
+
+Creemos que será alrededor de 12.5 KHz. Tenemos un [divisor de reloj](https://github.com/tinytapeout/tinytapeout-02/blob/tt02/INFO.md#clock-divider) que puede reducir aún más la velocidad, hasta 255 veces más lenta que la velocidad del reloj superior.
+
+Estamos trabajando en una [versión más rápida basada en mux aquí](https://github.com/TinyTapeout/tt-multiplexer).
+
+## ¿Cuántas entradas y salidas obtengo?
+
+8 entradas y 8 salidas.
+
+## ¿Qué PDK es usado para la fabricación?
+
+Estamos utilizando el [PDK](https://www.zerotoasiccourse.com/terminology/pdk/) Skywater de 130 nm de código abierto.
+
+## ¿Qué tan grande puede ser mi diseño?
+
+Recientemente incrementamos el tamaño a 150 x 170 um para el TT02. Esto es suficiente para alrededor de 1000 compuertas lógicas digitales, dependiendo de su tamaño.
+
+Aquí hay una vista en 3D del [GDS](https://zerotoasiccourse.com/terminology/gds) de mi [contador de 7 segmentos](https://wokwi.com/projects/340805072482992722), un pequeño diseño que incrementa un contador cada segundo y muestra el resutlado en una pantalla de 7 segmentos.
+
+Haga clic en la imagen para abrir un visor interactivo.
+
+[![7 segmentos](/images/faq/7segtt02.png)](https://gds-viewer.tinytapeout.com/?model=https://tinytapeout.github.io/tt02-test-7seg/tinytapeout.gds.gltf)
+
+## ¿Cuándo serán fabricados los chips?
+
+La fabricación de los chips lleva entre 6 y 9 meses. Después, tenemos que hacer el PCBA, las pruebas y el pedido. ¡Así que espere alrededor de un año!
+Puede consultar la información sobre el servicio de transporte que utilizamos en el sitio web de Efabless: https://efabless.com/shuttle-status
+
+* TT01 - enviado al servicio de transporte de lotería MPW7 - obleas previstas para julio de 2023. No se espera envíar esta prueba.
+* TT02 - enviado a ChipIgnite 2211Q - obleas previstas para agosto de 2023, la entrega debería producirse un mes después.
+* TT03 - será enviado a ChipIgnate 2304C - obleas en septiembre de 2023, la entrega debería producirse un mes después.
+
 # Preguntas Frecuentes de Wokwi
 
 ## ¿Cómo hago x, y, z con Wokwi?
@@ -54,14 +89,6 @@ Duplique una existente (selecciónela y presione **d**), o:
 
 Seleccione todas las que quiere mover (usando shift y haciendo clic en las partes o shift y arrastrando un cuadro). Luego, arrastre la selección.
 
-## ¿Cuántas entradas y salidas obtengo?
-
-8 entradas y 8 salidas.
-
-## ¿Cuál es la velocidad máxima de reloj?
-
-Creemos que será alrededor de 12.5 KHz. Tenemos un [divisor de reloj](https://github.com/tinytapeout/tinytapeout-02/blob/tt02/INFO.md#clock-divider) que puede reducir aún más la velocidad, hasta 255 veces más lenta que la velocidad del reloj superior.
-
 ## ¿Cómo utilizo el bloque de reloj?
 
 Puede usar la primera entrada como el reloj. Si necesita cambiar la frecuencia de reloj debe hacerlo editando el archivo json de diagrama. Es un truco para la demo.
@@ -98,30 +125,9 @@ Si es un usuario avanzado, puede usar el HDL de su elección. Vea la [página de
 
 Puede encontrarla en la [página de inicio](/es/digital_design/wokwi).
 
-## ¿Cuándo serán fabricados los chips?
-
-Por favor vea los detalles en la página de cada chip.
-
-* [TinyTapeout-01](/es/runs/tt01)
-* [TinyTapeout-02](/es/runs/tt02)
-
-## ¿Cuándo estará disponible el material del curso?
-
-Estamos agregando esto al sitio web a medida que avanzamos. Por favor revise la [sección de diseño digital](/es/digital_design).
-
 ## ¿Cuántos lugares hay?
 
-Para el TT01 fueron 498, para el TT02 lo redujimos a 250 para intentar llenar todas los espacios.
-
-## ¿Qué tan grande puede ser mi diseño?
-
-Recientemente incrementamos el tamaño a 150 x 170 um para el TT02. Esto es suficiente para alrededor de 1000 compuertas lógicas digitales, dependiendo de su tamaño.
-
-Aquí hay una vista en 3D del [GDS](https://zerotoasiccourse.com/terminology/gds) de mi [contador de 7 segmentos](https://wokwi.com/projects/340805072482992722), un pequeño diseño que incrementa un contador cada segundo y muestra el resutlado en una pantalla de 7 segmentos.
-
-Haga clic en la imagen para abrir un visor interactivo.
-
-[![7 segmentos](/images/faq/7segtt02.png)](https://gds-viewer.tinytapeout.com/?model=https://tinytapeout.github.io/tt02-test-7seg/tinytapeout.gds.gltf)
+Para el TT01 fueron 498, para el TT02 lo redujimos a 250 para intentar llenar todas los espacios. Para el TT03 serán los mismos que en el TT02.
 
 ## ¿Cuáles de mis diseños serán enviados a fabricación?
 
@@ -131,6 +137,8 @@ Su último envío que:
 2. Fue enviado antes de la fecha límite
 
 Será enviado para su fabricación.
+
+Puedes seguir actualizado tu diseño hasta la fecha límite del tapeout.
 
 # Preguntas frecuentes de Github
 
@@ -157,7 +165,7 @@ Debido a las limitaciones de Github, necesita hacer un cambio en los ajustes de 
 
 ## Obtuve un error en mi GDS Action de Github.
 
-Esto se espera durante en las primeras fases de TinyTapeout. Espero tener un archivo de configuración que maneje todos los diseños, pero es posible que debamos hacer algunos ajustes. La mejor forma de hacermelo saber es [abrir un issue en el repositorio de la plantilla con un link a su diseño de wokwi](https://github.com/tinytapeout/tt02-submission-template/issues/new?assignees=mattvenn&labels=&template=bug_report.md&title=) y yo responderé.
+La mejor forma de hacermelo saber es [abrir un issue en el repositorio de la plantilla con un link a su diseño de wokwi](https://github.com/tinytapeout/tt02-submission-template/issues/new?assignees=mattvenn&labels=&template=bug_report.md&title=) y yo responderé.
 
 ## Obtuve un error en mi Github Action de documentación.
 
@@ -194,9 +202,10 @@ Es posible que no haya llenado suficientes campos, requerimos que se llenen los 
     * lef - una versión abstracta del GDS con menos información, utilizada para el enrutamiento.
     * verilog - el verilog a nivel de compuertas de tu diseño.
 
-## ¿Dónde esta el repositorio de presentación para el shuttle?
+## ¿Dónde esta el repositorio de presentación para el envío?
 
-* [Consulte la página TT01](/es/runs/tt01)
+* [Página del TT01](/es/runs/tt01/)
+* [Página del TT02](/es/runs/tt02/)
 
 ## ¿Por qué tengo menos / más céldas estándar de lo que esperaba?
 
@@ -211,7 +220,7 @@ Sin embargo, si sólo tiene 8 celdas, su diseño probablemente se ha optimizado 
 Comience creando un nuevo repositorio de Github vacío.
 
 * A través de la línea de comando, puede clonar el repositorio de presentación de tinytapeout, cambiarlo para que apunte a su nuevo repositorio vacío usando `git remote set-url <remote_name> <remote_url>` y luego `git push`
-* A travéz de la inferfaz web de Github, [puede importar un repositorio](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/importing-a-repository-with-github-importer) usando la url del repositorio del TT02: https://github.com/TinyTapeout/tt02-submission-template
+* A travéz de la inferfaz web de Github, [puede importar un repositorio](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/importing-a-repository-with-github-importer) usando la url del repositorio del TT03: https://github.com/TinyTapeout/tt03-submission-template
 
 En cualquier caso, es posible que necesite habilitar las Github Actions.
 
