@@ -1,5 +1,5 @@
 ---
-title: "How do semiconductors work?"
+title: "¿Cómo funcionan los semiconductores?"
 weight: 70
 ---
 
