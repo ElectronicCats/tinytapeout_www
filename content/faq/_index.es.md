@@ -58,6 +58,7 @@ La [documentación de Woki esta aquí](https://docs.wokwi.com/?utm_source=wokwi)
 * Selecciona un componente y presiona **delete** para eliminarlo
 * Selecciona un componente ( o shift para seleccionar más componentes) y luego **d** para duplicarlo.
 * Arrastra y suelta para seleccionar multiples componentes.
+* + y - para hacer y deshacer zoom
 * [Más aquí](https://docs.wokwi.com/guides/diagram-editor#keyboard-shortcuts).
 
 ## ¿Puedo copiar y pegar de un diseño de Wokwi a otro?
