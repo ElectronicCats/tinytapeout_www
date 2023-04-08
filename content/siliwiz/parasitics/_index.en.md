@@ -13,7 +13,7 @@ What do you think will happen to the orange output line when you delete a part o
 
 What happens? Did you expect it? You probably got something like me:
 
-![](../images/image34.png)
+![](/images/siliwiz/image34.png)
 
 The blue input line keeps doing what it was doing, but the orange output has a nice curve now. What’s happening is that even though there is no direct circuit for the electricity to flow through your letter, we have made a small capacitor by having 2 conductive elements separated with a small non conductive gap. A capacitor is a circuit element with 2 ports. The electric field between the 2 elements works to keep the voltage across the plate the same. The capacitor charges up as the input rises, but then it slowly decays back to 0 once the input stops changing.
 

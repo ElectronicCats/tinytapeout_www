@@ -15,7 +15,7 @@ weight: 20
 
 Here’s an overview of the SiliWiz user interface:
 
-![](../images/image54.png)
+![](/images/siliwiz/image54.png)
 
 ### Draw some shapes!
 
@@ -27,7 +27,7 @@ Go to the [SiliWiz page](https://app.siliwiz.com/?preset=blank), select the **po
 *   Choose which layer is active by clicking on the colour or the text
 *   Hover the mouse over the text to get a brief description of the layer’s purpose
 
-![](../images/image59.png)
+![](/images/siliwiz/image59.png)
 
 *   Try the Undo ↶ and Redo ↷ buttons
 *   The Clear button clears everything
@@ -44,13 +44,13 @@ Normally, you’d need to sign a document to say you wouldn't share the informat
 
 Here are the layers that are used to make a chip on Skywater’s 130 nm (nanometer) process. A nanometer is 1 million times smaller than a millimeter. So the period at the end of this sentence could easily be a million nanometers across. Note that figures shown in the picture are in micrometers (μm).
 
-![](../images/image49.png)
+![](/images/siliwiz/image49.png)
 
 ### SiliWiz stackup
 
 This is quite a complicated stackup, so we’re using a simpler, custom made one for SiliWiz. This helps to keep things approachable and fast. Bear in mind that a real, manufacturable PDK has a [lot more layers](https://skywater-pdk.readthedocs.io/en/main/rules/masks.html). The SiliWiz layer stackup looks like this:
 
-![](../images/image31.png)
+![](/images/siliwiz/image31.png)
 
 {{%expand "Feeling adventurous?" %}}
 If you’re feeling adventurous, you can take a look at the [tech](https://app.siliwiz.com/assets/siliwiz.tech) for the techfile and a lot of other things!
@@ -58,10 +58,9 @@ If you’re feeling adventurous, you can take a look at the [tech](https://app.s
 
 After we’ve finished our design we can turn each layer into a mask. A mask allows light to pass through the areas we coloured in on the layers. The masks are used in a process called photolithography.
 
-![](../images/image7.png)
+![](/images/siliwiz/image7.png)
 
 [Photolithography](https://www.zerotoasiccourse.com/terminology/photolithography/) is the key step that allows us to take the patterns we create in a tool like SiliWiz and miniaturise them down to the nanometer scale. It also lets us easily tile the same design over the silicon wafer to make the individual chips. It allows us to use a prepared image of the chip to make millions of copies reliably and rapidly.
-
 
 {{% notice tip %}}
 Some layers are ‘virtual’. For example **polyres** and **polysilicon** are the same physical layer, but we need to have them split onto 2 separate layers so that the simulation knows whether we mean drawing the gate of a [MOSFET](https://www.zerotoasiccourse.com/terminology/mosfet/), or drawing a resistor.
@@ -73,7 +72,7 @@ Now we’ve drawn a shape, we can run a simulation and find out how resistive th
 
 The resistance of polysilicon is proportional to the cross sectional area and the length.
 
-![](../images/image53.png)
+![](/images/siliwiz/image53.png)
 
 In a PDK, we can’t control the height of the layers - the factory has already decided that. Instead we can control the width and the length. So if you draw a long thin shape it will have a higher resistance, and a short fat shape will have lower resistance. Our **polyres** layer has a resistance of 400 ohms per square micrometre (μm). There are 1000 micrometres in a millimetre.
 
@@ -93,11 +92,11 @@ Select the **metal1 via** layer and add two vias to your initial made in **poly
 
 Here’s how the **metal1 via** looks from the top on my letter:
 
-![](../images/image16.png)
+![](/images/siliwiz/image16.png)
 
 And here is how it looks in the Cross Section View. Ensure you have selected the cross section tab.
 
-![](../images/image52.png)
+![](/images/siliwiz/image52.png)
 
 Drag the cross section slider up and down so you can see the layers clearly. If you hover over a shape in the cross section, you’ll get a popup to tell you the name of the layer.
 
@@ -105,13 +104,13 @@ Drag the cross section slider up and down so you can see the layers clearly. If 
 
 Now add 2 **metal1** contacts on top of the **metal1 via**. To simulate our design, we need to tell SiliWiz that we want these contacts to be the ports of our circuit. To do so, click each **metal1** contact, and choose the option ‘Set Label’. or S on the keyboard.
 
-![](../images/image9.png)
+![](/images/siliwiz/image9.png)
 
 Set the labels to be in and out. As soon as you’ve done that you should see the simulation plot update. You’ll need to switch from the cross section to the simulation tab.
 
-![](../images/image57.png)
+![](/images/siliwiz/image57.png)
 
-![](../images/image63.png)
+![](/images/siliwiz/image63.png)
 
 The x axis of the plot is time, in microseconds. There are 1,000,000 microseconds in a second. The y axis is voltage. Voltage is measured in Volts and is the unit we use when talking about electric field strength.
 
@@ -119,7 +118,7 @@ Charge carriers, such as electrons, are moved by electric fields. The stronger t
 
 In this graph there are actually 2 lines, blue for in and orange for out. They are right on top of each other, so it looks like just one line. Try the sliders to see how it affects the plot.
 
-![](../images/image5.png)
+![](/images/siliwiz/image5.png)
 
 What the graph shows is that the output voltage is the same as the input voltage. The input voltage is varying over time, which you can control with the sliders.
 
@@ -129,7 +128,7 @@ Now we’ll look at another part of SiliWiz to determine the resistance of our *
 
 Tick the Show SPICE check box at the bottom of the page and have a look in the text box. Look for a line that says R0 in out and then some numbers. My letter M has a resistance of 5575 ohms! Cool! I drew my own resistor.
 
-![](../images/image4.png)
+![](/images/siliwiz/image4.png)
 
 {{% notice tip %}}
 There’s a lot of stuff going on in the [SPICE](https://www.zerotoasiccourse.com/terminology/spice/) file, but we’ll be mostly ignoring it in these lessons. SPICE is an important part of a chip designer’s toolkit. [ngspice](https://ngspice.sourceforge.io/) is the open source tool that runs the SPICE simulations for SiliWiz. Thanks to [Holger Vogt](https://www.linkedin.com/in/holger-vogt-737ba5a8/) for making us a special small version.
@@ -137,6 +136,6 @@ There’s a lot of stuff going on in the [SPICE](https://www.zerotoasiccourse.co
 
 Try to make your letter a higher or lower resistance. Here’s me making a really high resistance:
 
-![](../images/image3.png)
+![](/images/siliwiz/image3.png)
 
 I got 37,800 Ohms! Can you make an even higher resistance?

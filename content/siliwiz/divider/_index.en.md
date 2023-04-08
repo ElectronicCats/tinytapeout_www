@@ -12,7 +12,7 @@ weight: 35
 
 In the previous lesson you learnt the basics of SiliWiz. Now we’re going to put that knowledge to use and build a tiny calculating machine on a silicon chip. We’re going to build a potential divider. This takes a voltage in, divides it, and gives us the answer.
 
-![](../images/image55.png?width=20pc)
+![](/images/siliwiz/image55.png?width=20pc)
 
 How many connections does this device have? We need one for in and out as before, and we’re going to add a new one called **vss**. vss is also called ground or 0v. It’s used as a reference for the rest of the circuit.
 
@@ -20,7 +20,7 @@ Let’s try to make a potential divider that divides by 2. So if 4v goes in, the
 
 If the input voltage looks like this:
 
-![](../images/image20.png)
+![](/images/siliwiz/image20.png)
 
 What do you think the output voltage should look like? **Make a prediction and see if you’re right after you’ve drawn the divider.**
 
@@ -38,15 +38,15 @@ As mentioned earlier, we have two layers that actually specify the same material
 
 A limitation you might run into when drawing the divider is that Magic can't tell this is two separate resistors. It extracts just a single resistor between the first 2 contacts.
 
-![](../images/image22.png)![](../images/image24.png)
+![](/images/siliwiz/image22.png)![](/images/siliwiz/image24.png)
 
 You have to draw 2 separate rectangles, one for each resistor:
 
-![](../images/image13.png)
+![](/images/siliwiz/image13.png)
 
 Once your divider is finished, you should see a simulation like this:
 
-![](../images/image36.png)
+![](/images/siliwiz/image36.png)
 
 Play with the simulation controls to change the input signal’s min, max and rise time.
 

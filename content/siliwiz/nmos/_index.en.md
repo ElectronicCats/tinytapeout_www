@@ -17,11 +17,11 @@ In this lesson we will learn how to draw a [MOSFET](https://www.zerotoasiccourse
 
 A MOSFET is an active component with 4 ports: gate, drain, source and body.
 
-![](../images/image10.png)
+![](/images/siliwiz/image10.png)
 
 The gate used to be formed by putting metal on top of an insulating oxide layer, that’s the MO in MOSFET.
 
-![](../images/image51.png)
+![](/images/siliwiz/image51.png)
 
 When a voltage is applied across the gate and the body, an electric field is formed in the channel. This field attracts the charge carriers to the channel region where they can then work to conduct electricity. That’s the FE in MOSFET.
 
@@ -35,7 +35,7 @@ So far, we’ve been ignoring the base layer of a silicon chip. In most cases t
 
 Select the **p substrate** layer, and draw a square that fills the whole canvas.
 
-![](../images/image12.png)
+![](/images/siliwiz/image12.png)
 
 The **p substrate** needs to be connected to **vss**. To do that we use a lightly doped p area, called **p tap**.
 
@@ -43,15 +43,15 @@ The **p substrate** needs to be connected to **vss**. To do that we use a light
 
 In the corner draw a small square of **p tap**. Then we connect that up through a **metal1 via** to a **metal1** contact labelled **vss**.
 
-![](../images/image33.png)
+![](/images/siliwiz/image33.png)
 
 Next, select the **n diffusion** layer and draw a square in the middle. This will form both the drain and the source of the MOSFET. Like the **p tap** layer, **n diffusion** is formed inside the **p substrate**, but using atoms of an N type semiconductor like Arsenic.
 
-![](../images/image14.png)
+![](/images/siliwiz/image14.png)
 
 The next step is to draw the gate. MOSFETs used to have their gate drawn with metal, but now the gate is much more commonly made from polysilicon. Use the **polysilicon** layer to draw the gate.
 
-![](../images/image50.png)
+![](/images/siliwiz/image50.png)
 
 Look at the cross section - the **n diffusion** got split! Now we have 2 **n type** sections with a **p type** in between. What happened?
 
@@ -61,7 +61,7 @@ We could have drawn the gate first, and then the diffusion, but drawing the diff
 
 This is essentially all we need for a MOSFET, and if you take a look at the SPICE file you’ll see an “nmos” has been detected and extracted by Magic.
 
-![](../images/image25.png)
+![](/images/siliwiz/image25.png)
 
 However, to see how well our MOSFET works we need to connect up the gate, drain and source. The body is the **p substrate**, and we’ve already connected that to vss.
 
@@ -69,7 +69,7 @@ However, to see how well our MOSFET works we need to connect up the gate, drain 
 
 We need to draw the layers to connect the MOSFET’s gate, drain and source to contacts on **metal1**. For this, we’ll use 3 **metal1 via**s.
 
-![](../images/image48.png)
+![](/images/siliwiz/image48.png)
 
 The red **polysilicon** forms the gate, but which way round is the source and the drain - the cross section shows the MOSFET is symmetrical!
 
@@ -77,7 +77,7 @@ For an N MOSFET to work, the body needs to be kept at the same or lower voltage 
 
 Label the gate **in**, the source **vss** and the drain **vdd**. We’ve already connected the body to vss. If you get stuck, check [my solution here](http://app.siliwiz.com/?preset=nmosfet).
 
-![](../images/image28.png?width=20pc)
+![](/images/siliwiz/image28.png?width=20pc)
 
 ### VGS curves
 
@@ -87,13 +87,13 @@ This is one of the most important experiments we can do with a MOSFET, and it’
 
 In the simulation tab, look for the plot signals:
 
-![](../images/image29.png)
+![](/images/siliwiz/image29.png)
 
 Click the out’s x to remove it, then click the + button to add a new trace. Type **i(vdd)\*-1000**
 
 The i(vdd) means to plot the current instead of the voltage. The \*-1000 means to magnify the signal by -1000 times. This makes the signal look much bigger and flips it upside down. This is just to make it look how it does in all the textbooks.
 
-![](../images/image23.png)
+![](/images/siliwiz/image23.png)
 
 What does the graph show us? To start with, when the gate is less than around one volt, there is no current flowing. The MOSFET is off. Once we get past a threshold, the MOSFET starts to conduct and lets more and more current flow. This value is called the gate-source threshold.
 

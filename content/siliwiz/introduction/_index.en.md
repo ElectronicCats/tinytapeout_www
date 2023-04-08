@@ -5,7 +5,7 @@ weight: 10
 ---
 
 
-![](../images/image60.png?width=30pc)
+![](/images/siliwiz/image60.png?width=30pc)
 
 SiliWiz will help you get a basic understanding of how semiconductors work and are manufactured at a fundamental level. Semiconductors are the most important technology of the 21st century but only a tiny fraction of us know how they work or are designed and made.
 
