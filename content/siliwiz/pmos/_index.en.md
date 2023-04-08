@@ -16,7 +16,7 @@ If we change the diffusion type of the gate and source from N type to P type, an
 
 Like the N MOSFET, we need the **p substrate** with the connection to vss.
 
-![](../images/image33.png)
+![](/images/siliwiz/image33.png)
 
 ### N well
 
@@ -26,7 +26,7 @@ For a P type MOSFET we need to create a deep area of N type diffusion on the sub
 
 Next, draw the P type diffusion on top of that using the **p diffusion** layer.
 
-![](../images/image19.png)
+![](/images/siliwiz/image19.png)
 
 The N well insulates the P diffusion from the P type substrate. It’s called a well because it’s deep, deeper than the diffusion layers used to build the gate and source of the MOSFET.
 
@@ -36,17 +36,17 @@ One question you might have is why not just use an N diffusion layer rather than
 
 Just as the p substrate needs to be connected to vss, we need to connect the **n well** to vdd. Use n tap, **metal1 via** and **metal1** to do it.
 
-![](../images/image42.png)
+![](/images/siliwiz/image42.png)
 
 ### Connect it up
 
 Connect up the gate, source and drain as you did for the N type MOSFET. This time the source is connected to vdd and the drain to vss.
 
-![](../images/image46.png)
+![](/images/siliwiz/image46.png)
 
 As before, remove the **out** trace, and add **i(vdd)\*-1000**.
 
-![](../images/image58.png)
+![](/images/siliwiz/image58.png)
 
 You can see [my solution here](https://app.siliwiz.com/?preset=pmosfet).
 
@@ -54,7 +54,7 @@ You can see [my solution here](https://app.siliwiz.com/?preset=pmosfet).
 
 What do you notice between the N and P type MOSFETs? The first is plot is for N and on the second is for P.
 
-![](../images/image41.png)![](../images/image47.png)
+![](/images/siliwiz/image41.png)![](/images/siliwiz/image47.png)
 
 *   Which MOSFET conducts the best?
 *   If you change the P MOSFET’s **p diffusion** layer size, can you improve its performance?
