@@ -13,15 +13,15 @@ weight: 80
 
 As we’ve seen, an NMOS inverter is inefficient because it’s wasting energy through the resistor. CMOS logic replaces the pull up resistor with a P type mosfet. As the P type is the complementary version of the N type, we call this type of logic Complementary Metal Oxide Semiconductor or CMOS for short.
 
-![](../images/image35.png?width=20pc)
+![](/images/siliwiz/image35.png?width=20pc)
 
 There are many ways to draw this, but it’s fairly usual to use the same piece of polysilicon as the gate for both the P type and N type. If you get stuck you can check [my solution here](https://app.siliwiz.com/?preset=inverter).
 
-![](../images/image56.png)
+![](/images/siliwiz/image56.png)
 
 And the simulation shows the CMOS inverter is working nicely:
 
-![](../images/image40.png)
+![](/images/siliwiz/image40.png)
 
 I also added the current in the simulation traces. You can see we get a little spike as the inverter operates, but in either high or low states, the current is very low. This efficiency is the reason why CMOS is still the most commonly used type of logic gates used in computer chips.
 
@@ -31,23 +31,23 @@ We’ve seen how to draw and make a logic inverter, but there are many other typ
 
 A typical PDK will include hundreds of standard cells. Here’s the Skywater 130nm inverter standard cell:
 
-![](../images/image62.png)
+![](/images/siliwiz/image62.png)
 
 Can you identify the P and N type MOSFETs? Can you see the input and output ports? [Here’s a 3D view](https://gds-viewer.tinytapeout.com/?model=https://tinytapeout.github.io/sky130B-cells-gltf/cells/sky130_fd_sc_hd__inv_1.gds.gltf) of the same cell:
 
-![](../images/image18.png)
+![](/images/siliwiz/image18.png)
 
 One thing that makes standard cells standard is that they all have the same height and the top and bottom always includes the power supply vdd and vss. This lets us put lots of cells all together on a grid.
 
 Here’s a 3D view of some standard cells all together, powered by the blue vss and vdd lines.
 
-![](../images/image11.png)
+![](/images/siliwiz/image11.png)
 
 Can you spot an inverter?
 
 And here we see how the wires connect up the cells into a more complex digital machine:
 
-![](../images/image43.png)
+![](/images/siliwiz/image43.png)
 
 If you want to explore this design yourself:
 
