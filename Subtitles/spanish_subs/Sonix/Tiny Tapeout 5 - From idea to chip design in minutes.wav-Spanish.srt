@@ -1,0 +1,299 @@
+1
+00:00:00,110 --> 00:00:03,130
+(Transcribed by Sonix.ai - Remove this message by upgrading your Sonix account) Normalmente, fabricar un chip
+a medida cuesta decenas de
+
+2
+00:00:03,130 --> 00:00:05,770
+miles de dólares. Y no
+olvides  otros 100.000 dólares
+
+3
+00:00:05,770 --> 00:00:08,350
+por el alquiler del software 
+de diseño. Ah, y tendrás que
+
+4
+00:00:08,350 --> 00:00:10,370
+firmar un acuerdo de 
+confidencialidad para empezar.
+
+5
+00:00:10,370 --> 00:00:12,280
+Y por cierto, ese acuerdo de
+confidencialidad significa que
+
+6
+00:00:12,280 --> 00:00:14,700
+no puedes compartir tu diseño
+con nadie. Tiny Tapeout hace
+
+7
+00:00:14,700 --> 00:00:18,040
+que sea más fácil, rápido y
+barato que nunca llevar tus
+
+8
+00:00:18,040 --> 00:00:20,800
+diseños a un chip real. Las
+herramientas de código
+
+9
+00:00:20,800 --> 00:00:23,360
+abierto, la excelente
+documentación y una comunidad
+
+10
+00:00:23,360 --> 00:00:26,110
+dinámica facilitan mucho los
+primeros pasos y evitan los
+
+11
+00:00:26,110 --> 00:00:29,250
+errores más comunes. Tiny
+Tapeout es para estudiantes,
+
+12
+00:00:29,250 --> 00:00:32,600
+makers, hackers, universidades
+y cualquiera que esté
+
+13
+00:00:32,600 --> 00:00:36,190
+interesado en aprender más o
+en convertir sus diseños en un
+
+14
+00:00:36,190 --> 00:00:39,170
+chip. Todos nuestros recursos
+y herramientas de aprendizaje
+
+15
+00:00:39,170 --> 00:00:41,930
+son de uso gratuito, y están
+en línea para evitar problemas
+
+16
+00:00:41,930 --> 00:00:44,250
+de descarga e instalación. Si
+es usted totalmente
+
+17
+00:00:44,250 --> 00:00:46,940
+principiante, puede probar
+walkway, nuestra herramienta
+
+18
+00:00:46,940 --> 00:00:49,690
+digital de diseño y simulador.
+O, si sabes lo que haces,
+
+19
+00:00:49,690 --> 00:00:52,890
+puedes utilizar un lenguaje
+de  descripción de hardware
+
+20
+00:00:52,890 --> 00:00:55,730
+como Verilog, VHDL o amaranth.
+A continuación, utiliza
+
+21
+00:00:55,730 --> 00:00:58,240
+nuestro sistema basado en
+acciones de GitHub para crear
+
+22
+00:00:58,240 --> 00:01:00,710
+los archivos que necesitas
+para el ASIC. También te
+
+23
+00:01:00,710 --> 00:01:04,470
+permite explorar tu diseño con
+este fantástico visor 3D. Una
+
+24
+00:01:04,470 --> 00:01:07,820
+vez terminado su diseño, puede
+hacer un pedido.
+
+25
+00:01:07,820 --> 00:01:11,190
+El tamaño mínimo es de 160 por 
+100 micras, y sólo cuesta 100
+
+26
+00:01:11,190 --> 00:01:14,780
+dólares, incluida la placa de 
+circuito impreso. Si necesitas
+
+27
+00:01:14,780 --> 00:01:17,720
+más espacio, puedes comprar 
+baldosas adicionales por 50 $
+
+28
+00:01:17,720 --> 00:01:20,180
+cada una. También tenemos 
+ofertas especiales para
+
+29
+00:01:20,180 --> 00:01:22,430
+talleres de grupos y 
+universidades. Quizá se
+
+30
+00:01:22,430 --> 00:01:25,660
+pregunte cómo es posible que 
+el precio sea tan bajo. El
+
+31
+00:01:25,660 --> 00:01:28,250
+truco consiste en combinar 
+todos los pequeños proyectos
+
+32
+00:01:28,250 --> 00:01:31,550
+en un gran diseño. Utilizar 
+nuestro multiplexor rápido 160
+
+33
+00:01:31,550 --> 00:01:34,670
+por 100 micras no parece 
+mucho, pero en nuestras tres
+
+34
+00:01:34,670 --> 00:01:37,810
+tiradas anteriores hemos visto 
+un montón de diseños
+
+35
+00:01:37,810 --> 00:01:41,290
+interesantes realizados, 
+incluyendo CPUs Risc-v, FPGAs
+
+36
+00:01:41,290 --> 00:01:44,630
+y mucho más. Una de las cosas 
+que más me gustan de este
+
+37
+00:01:44,630 --> 00:01:47,990
+proyecto es que no solo vas a 
+tener tu diseño, sino también
+
+38
+00:01:47,990 --> 00:01:50,990
+el de los demás. Podrás 
+consultar la hoja de datos del
+
+39
+00:01:50,990 --> 00:01:53,710
+chip y probar el diseño de 
+otro. Nuestras tres pruebas
+
+40
+00:01:53,710 --> 00:01:56,160
+anteriores utilizaban una 
+cadena de escaneado más lenta,
+
+41
+00:01:56,160 --> 00:01:58,770
+por lo que se trata de una 
+gran mejora. Ahora esperamos
+
+42
+00:01:58,770 --> 00:02:02,280
+unos 50 MHz de ancho de banda 
+en el I o. Otra mejora es que
+
+43
+00:02:02,280 --> 00:02:06,050
+ahora tenemos más I o. Tenemos 
+reset de reloj, ocho entradas,
+
+44
+00:02:06,050 --> 00:02:09,200
+ocho salidas y ocho pines 
+bidireccionales. Una vez que
+
+45
+00:02:09,200 --> 00:02:12,290
+el diseño está listo, lo 
+enviamos a fabulous y ellos lo
+
+46
+00:02:12,290 --> 00:02:15,320
+fabrican en el proceso de 
+código abierto Skywater de
+
+47
+00:02:15,320 --> 00:02:18,420
+130  nanómetros. Quiero dar
+las gracias a fabulous por
+
+48
+00:02:18,420 --> 00:02:21,400
+patrocinar este proyecto y 
+hacerlo posible. Una vez
+
+49
+00:02:21,400 --> 00:02:23,750
+recuperada la silicona, le 
+ahorramos el trabajo de
+
+50
+00:02:23,750 --> 00:02:26,270
+soldarla montándola en una 
+placa de circuito impreso.
+
+51
+00:02:26,300 --> 00:02:28,840
+Seleccionas qué diseño quieres 
+que esté activo con estos
+
+52
+00:02:28,840 --> 00:02:31,010
+conmutadores y, a 
+continuación, el multiplexor
+
+53
+00:02:31,010 --> 00:02:33,420
+conecta el diseño a las 
+entradas y a las salidas. Para
+
+54
+00:02:33,420 --> 00:02:36,940
+empezar, sigue los tutoriales 
+en vídeo. Dependiendo de la
+
+55
+00:02:36,940 --> 00:02:39,840
+complejidad de su diseño, 
+puede tardar entre unas horas
+
+56
+00:02:39,840 --> 00:02:42,340
+y unas semanas. Si te quedas 
+atascado, únete a nuestro
+
+57
+00:02:42,340 --> 00:02:44,740
+servidor de chat discord. 
+Asegúrese de inscribirse en la
+
+58
+00:02:44,740 --> 00:02:46,570
+lista de correo para saber 
+cuándo se abren las
+
+59
+00:02:46,570 --> 00:02:49,700
+inscripciones. Así que 
+diviértete, participa y estoy
+
+60
+00:02:49,700 --> 00:02:52,510
+deseando ver lo que haces en 
+tu primer ASIC.  (Transcribed by Sonix.ai - Remove this message by upgrading your Sonix account)

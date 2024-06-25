@@ -1,0 +1,227 @@
+1
+00:00:00,110 --> 00:00:04,430
+(Transcribed by Sonix.ai - Remove this message by upgrading your Sonix account) Normally, making a custom chip costs
+tens of thousands of dollars. And
+
+2
+00:00:04,430 --> 00:00:08,240
+don't forget another $100,000 for
+renting the design software. Oh, and
+
+3
+00:00:08,240 --> 00:00:11,600
+you'll have to sign an NDA to get
+started. And by the way, that NDA
+
+4
+00:00:11,600 --> 00:00:15,410
+means you can't share your design
+with anyone. Tiny Tapeout makes it
+
+5
+00:00:15,410 --> 00:00:18,740
+easier, quicker, and cheaper than
+ever before to get your designs onto
+
+6
+00:00:18,740 --> 00:00:22,610
+a real chip. Open source tools,
+excellent documentation, and a
+
+7
+00:00:22,610 --> 00:00:26,090
+vibrant community helps to make it
+much easier to get started and avoid
+
+8
+00:00:26,090 --> 00:00:31,070
+common mistakes. Tiny Tapeout is for
+students, for makers, hackers,
+
+9
+00:00:31,070 --> 00:00:34,670
+universities, and anyone who's
+interested in learning more or
+
+10
+00:00:34,670 --> 00:00:38,600
+getting their designs made into a
+chip. All our learning resources and
+
+11
+00:00:38,600 --> 00:00:41,960
+tools are free to use, and they're
+online to avoid download and
+
+12
+00:00:41,960 --> 00:00:46,160
+installation problems. If you're a
+total beginner, you can try walkway,
+
+13
+00:00:46,190 --> 00:00:49,850
+our digital design and simulator
+tool. Or, if you know what you're
+
+14
+00:00:49,850 --> 00:00:52,910
+doing, you can use a hardware
+description language like Verilog,
+
+15
+00:00:52,910 --> 00:00:54,620
+VHDL, or amaranth.
+
+16
+00:00:55,460 --> 00:00:59,120
+Then use our GitHub action based
+system to build the files you need
+
+17
+00:00:59,120 --> 00:01:02,990
+for the ASIC. This also lets you
+explore your design with this really
+
+18
+00:01:02,990 --> 00:01:08,270
+cool 3D viewer. Once your design is
+finished, you can make an order. The
+
+19
+00:01:08,270 --> 00:01:13,370
+minimum size is 160 by 100 microns,
+and that's just $100, including a
+
+20
+00:01:13,370 --> 00:01:18,830
+PCB. If you need more space, you can
+buy extra tiles for $50 each. We
+
+21
+00:01:18,830 --> 00:01:22,430
+also have special deals for group
+workshops and universities. You
+
+22
+00:01:22,430 --> 00:01:26,180
+might be asking, how is it possible
+to get the price so low? The trick
+
+23
+00:01:26,180 --> 00:01:29,450
+is that we combine all the little
+projects into one big design. Using
+
+24
+00:01:29,450 --> 00:01:34,550
+our fast multiplexer 160 by 100
+microns doesn't sound like a lot,
+
+25
+00:01:34,550 --> 00:01:37,940
+but in our three previous runs we've
+seen a load of interesting designs
+
+26
+00:01:37,940 --> 00:01:43,340
+made, including Risc-v CPUs, FPGAs,
+and lots more. One of my favorite
+
+27
+00:01:43,340 --> 00:01:45,920
+things about this project is that
+not only are you going to get your
+
+28
+00:01:45,920 --> 00:01:48,860
+design, but you're going to get
+everybody else's design as well.
+
+29
+00:01:48,890 --> 00:01:51,440
+You'll be able to look through the
+chip's data sheet and try out
+
+30
+00:01:51,440 --> 00:01:55,520
+someone else's design. Our previous
+three runs all used a slower scan
+
+31
+00:01:55,520 --> 00:01:59,030
+chain, so this is a really big
+upgrade. We're now expecting around
+
+32
+00:01:59,030 --> 00:02:03,620
+50MHz bandwidth on the I o. Another
+upgrade is that we've now got more I
+
+33
+00:02:03,620 --> 00:02:07,310
+o. We have clock reset, eight
+inputs, eight outputs and eight
+
+34
+00:02:07,310 --> 00:02:11,930
+bidirectional pins. Once the design
+is ready, we send it to fabulous and
+
+35
+00:02:11,930 --> 00:02:15,470
+they'll manufacture it on the open
+source Skywater 130 nanometer
+
+36
+00:02:15,470 --> 00:02:19,250
+process. I want to say a really big
+thanks to fabulous for sponsoring
+
+37
+00:02:19,250 --> 00:02:23,150
+this project and making it possible.
+Once we get the silicon back, we
+
+38
+00:02:23,150 --> 00:02:27,140
+save you the trouble of soldering by
+mounting it onto a PCB. You select
+
+39
+00:02:27,140 --> 00:02:29,990
+which design you want to be active
+with these switches, and then the
+
+40
+00:02:29,990 --> 00:02:33,890
+multiplexer connects the design to
+the inputs and the outputs. To get
+
+41
+00:02:33,890 --> 00:02:37,670
+started, follow the video tutorials.
+Expect it to take between a few
+
+42
+00:02:37,670 --> 00:02:41,180
+hours and a few weeks, depending on
+how complex your design is. If you
+
+43
+00:02:41,180 --> 00:02:44,990
+get stuck, join our discord chat
+server. Make sure you sign up to the
+
+44
+00:02:44,990 --> 00:02:49,070
+mailing list so that you know when
+submissions open. So have fun, get
+
+45
+00:02:49,070 --> 00:02:51,500
+involved and I'm really looking
+forward to seeing what you make on
+
+46
+00:02:51,500 --> 00:02:52,520
+your first ASIC.  (Transcribed by Sonix.ai - Remove this message by upgrading your Sonix account)
