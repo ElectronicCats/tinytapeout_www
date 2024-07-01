@@ -142,7 +142,7 @@ the clock speed,
 25
 00:02:08,880 --> 00:02:13,840
 set the inputs, and monitor the outputs.
-One of my favourite things about this
+One of my favorite things about this
 project is that
 
 26
