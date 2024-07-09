@@ -1,4 +1,4 @@
-1
+﻿1
 00:00:00,000 --> 00:00:05,520
 Normally, making a custom chip costs
 tens of thousands of dollars, and don't
@@ -34,7 +34,7 @@ community helps to make it
 7
 00:00:26,240 --> 00:00:32,640
 much easier to get started and avoid
-common mistakes. Tiny tape out is for
+common mistakes. Tiny tapeout is for
 students,
 
 8
@@ -57,14 +57,14 @@ beginner, you can try
 
 11
 00:00:49,600 --> 00:00:54,800
-Watquey, our digital design and
+Wokwi, our digital design and
 simulator tool. Or if you know what
 you're doing, you can use a
 
 12
 00:00:54,800 --> 00:01:02,080
 hardware description language like
-Verilog, DHDL, or Amaranth. Then, use our
+Verilog, VHDL, or Amaranth. Then, use our
 GitHub action-based
 
 13
@@ -87,7 +87,7 @@ access to clock,
 
 16
 00:01:21,360 --> 00:01:28,080
-reset, and 24 IOs, with about 50
+reset, and 24 I/Os, with about 50
 megahertz bandwidth. Tiny tape out isn't
 just for digital designs.
 
@@ -101,7 +101,7 @@ support for designs
 00:01:33,200 --> 00:01:38,320
 made with proprietary tools like
 cadence. Once the design is ready, we
-send it to E-Fabless,
+send it to Efabless,
 
 19
 00:01:38,320 --> 00:01:44,240
