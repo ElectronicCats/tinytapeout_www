@@ -1,0 +1,387 @@
+﻿1
+00:00:00,000 --> 00:00:03,832
+En este video, aprenderemos cómo
+usar la plantilla Tiny Tapeout GitHub para
+
+2
+00:00:03,856 --> 00:00:08,000
+convertir su diseño en los archivos
+ASIC que necesitamos para fabricar el chip.
+
+3
+00:00:08,000 --> 00:00:12,000
+Si aún no tiene una cuenta
+de GitHub, deberá crear una.
+
+4
+00:00:12,000 --> 00:00:19,000
+Luego navegue hasta uno de los repositorios de plantillas.
+Disponemos de uno para diseños Wokwi y otro para Verilog u otros HDL.
+
+5
+00:00:19,000 --> 00:00:22,000
+Usaré la plantilla Wokwi por ahora.
+
+6
+00:00:22,000 --> 00:00:28,000
+Haga clic en el botón "Usar esta plantilla".
+Esto crea su propia copia del repositorio.
+
+7
+00:00:28,000 --> 00:00:34,000
+Para proyectos de código abierto, GitHub paga por el cálculo
+en la nube que utilizamos para crear los archivos ASIC.
+
+8
+00:00:34,000 --> 00:00:39,000
+Está activado de forma predeterminada, pero aún debemos
+permitir que las acciones creen la página de resultados.
+
+9
+00:00:39,000 --> 00:00:43,000
+Tenemos las instrucciones aquí
+pero te mostraré cómo hacerlo ahora.
+
+10
+00:00:43,000 --> 00:00:50,000
+Vaya a la página de configuración de su repositorio, "Páginas", luego
+configure la fuente de compilación e implementación en "Acciones de GitHub".
+
+11
+00:00:50,000 --> 00:00:56,000
+Ahora estamos listos para adaptar la plantilla a
+nuestros propios proyectos editando el archivo info.yaml.
+
+12
+00:00:56,000 --> 00:01:02,000
+Para proyectos de Wokwi es necesario cambiar el nombre del proyecto.
+ID de Wokwi para que coincida con el número de su proyecto Wokwi.
+
+13
+00:01:02,000 --> 00:01:07,000
+Para proyectos HDL como Verilog o Amaranth
+usamos la sección de archivos fuente aquí.
+
+14
+00:01:07,000 --> 00:01:11,000
+Esto se trata en un video separado
+llamado "Working with an HDL".
+
+15
+00:01:11,000 --> 00:01:15,000
+Bien, configuremos el ID de Wokwi
+para que coincida con nuestro proyecto.
+
+16
+00:01:15,000 --> 00:01:20,000
+Copiaré la última parte de los
+proyectos. URL y reemplace el 0 con él.
+
+17
+00:01:20,000 --> 00:01:23,000
+La mayoría de los diseños
+simples caben en un solo mosaico.
+
+18
+00:01:23,000 --> 00:01:28,000
+Si necesita más espacio, puede cambiar la
+configuración del mosaico para obtener más espacio.
+
+19
+00:01:28,000 --> 00:01:30,000
+Los diseños más grandes cuestan más.
+
+20
+00:01:30,000 --> 00:01:33,000
+Si no está seguro, comience
+con uno y vea qué sucede.
+
+21
+00:01:33,000 --> 00:01:37,000
+También necesitamos
+completar el título, autor, etc.
+
+22
+00:01:37,000 --> 00:01:41,000
+Si usas Discord, ingresa
+tu nombre de Discord aquí y
+
+23
+00:01:41,000 --> 00:01:43,000
+cuando envíes un diseño te
+agregaremos al rol Tapeout.
+
+24
+00:01:43,000 --> 00:01:47,000
+Más abajo en el archivo hay una sección
+que describe lo que hacen los pines.
+
+25
+00:01:47,000 --> 00:01:51,000
+Y esto es realmente útil para probar los
+diseños de otras personas, así que complételo.
+
+26
+00:01:51,000 --> 00:01:54,000
+Luego presione el botón
+confirmar para guardar los cambios.
+
+27
+00:01:54,000 --> 00:02:00,000
+Hay un archivo más que debes editar. El
+info.md ​​dentro del directorio de documentos.
+
+28
+00:02:00,000 --> 00:02:02,000
+Esto es importante por varias razones.
+
+29
+00:02:02,000 --> 00:02:06,000
+La primera es que todos los que soliciten
+un chip también recibirán su diseño.
+
+30
+00:02:06,000 --> 00:02:09,000
+Es bueno si pueden entender
+cómo experimentar con ello.
+
+31
+00:02:09,000 --> 00:02:14,000
+La segunda razón es que cuando los
+chips vuelvan a funcionar probablemente
+
+32
+00:02:14,000 --> 00:02:17,000
+habrás olvidado cómo funciona y te alegrarás
+de haber escrito algunas instrucciones.
+
+33
+00:02:17,000 --> 00:02:22,000
+Puede mejorar la documentación agregando
+imágenes y enlaces a documentación adicional.
+
+34
+00:02:22,000 --> 00:02:25,000
+Después de completar todos los
+detalles, presione el botón confirmar.
+
+35
+00:02:25,000 --> 00:02:28,000
+Esto inicia la ejecución
+de las acciones de GitHub.
+
+36
+00:02:28,000 --> 00:02:32,000
+Puede acceder a los resultados utilizando la
+pestaña de acciones en la parte superior aquí.
+
+37
+00:02:32,000 --> 00:02:34,000
+Tenemos tres acciones.
+
+38
+00:02:34,000 --> 00:02:37,000
+Uno para la documentación
+que muestra cómo se verá su
+
+39
+00:02:37,000 --> 00:02:39,513
+documentación cuando se
+imprima y otro se usará para pruebas
+
+40
+00:02:39,537 --> 00:02:42,000
+automáticas de diseños de wokwi si
+ha usado la opción de tabla de verdad.
+
+41
+00:02:42,000 --> 00:02:48,000
+Y finalmente tenemos la acción GDS que se utiliza
+para crear los archivos ASIC para fabricación.
+
+42
+00:02:48,000 --> 00:02:52,000
+Si desea obtener más información al respecto,
+tenemos un video separado que muestra cómo funciona.
+
+43
+00:02:52,000 --> 00:02:56,000
+Se llama "How the GitHub action
+creates the ASIC files"
+
+44
+00:02:56,000 --> 00:02:58,000
+Echemos un vistazo rápido a
+la acción de los documentos.
+
+45
+00:02:58,000 --> 00:03:03,000
+Esto es útil para ver cómo se formateará su
+documentación para la hoja de datos impresa y en línea.
+
+46
+00:03:03,000 --> 00:03:09,000
+Obtenemos un archivo PDF que podemos descargar
+y verificar si el formato y la imagen funcionan.
+
+47
+00:03:09,000 --> 00:03:12,000
+Echemos un vistazo a los
+resultados de la acción GDS.
+
+48
+00:03:12,000 --> 00:03:18,000
+Tenemos esta bonita página con algunas advertencias,
+estadísticas de utilización y uso de celda estándar.
+
+49
+00:03:18,000 --> 00:03:24,000
+Si no comprende una advertencia, únase a nosotros en el servidor
+de chat de Discord y publíquela en el canal de acciones de GitHub.
+
+50
+00:03:24,000 --> 00:03:28,000
+Puede echar un vistazo a las celdas
+en uso haciendo clic en estos enlaces.
+
+51
+00:03:28,000 --> 00:03:30,000
+Por ejemplo esta puerta X-NOR2.
+
+52
+00:03:30,000 --> 00:03:33,000
+Echemos un vistazo
+más de cerca al visor 3D.
+
+53
+00:03:33,000 --> 00:03:39,000
+Haga clic derecho para desplazarse, haga clic izquierdo para cambiar
+la perspectiva, rueda de desplazamiento para acercar y alejar.
+
+54
+00:03:39,000 --> 00:03:45,000
+A la derecha podemos ver qué celdas se utilizan y cuántas,
+arriba tenemos el control de visibilidad de capas.
+
+55
+00:03:45,000 --> 00:03:48,000
+También tenemos algunas teclas de acceso directo a la derecha.
+
+56
+00:03:48,000 --> 00:03:51,488
+Al presionar "1" se ocultan
+todas las celdas de relleno, "2" se
+
+57
+00:03:51,512 --> 00:03:55,000
+oculta el cableado y "3" aísla la
+celda actualmente seleccionada.
+
+58
+00:03:55,000 --> 00:04:00,000
+Realmente apreciaría si tomaras un captura de pantalla
+de tu diseño y lo publiqué en las redes sociales
+
+59
+00:04:00,000 --> 00:04:04,000
+con una descripción de lo que hace
+junto con un hashtag de Tiny Tapeout.
+
+60
+00:04:04,000 --> 00:04:12,000
+De vuelta en la página principal del repositorio, verá que ahora tenemos
+estas tres luces verdes para que todos los documentos, pruebas y GDS pasen.
+
+61
+00:04:12,000 --> 00:04:15,000
+El estado del GDS debe ser
+verde para enviar su diseño.
+
+62
+00:04:15,000 --> 00:04:18,000
+A veces la acción GDS fallará.
+
+63
+00:04:18,000 --> 00:04:20,000
+Un diseño Wokwi casi
+siempre debería funcionar.
+
+64
+00:04:20,000 --> 00:04:26,000
+Si no, probablemente sea nuestro problema y deberías
+informarnos en el canal Wokwi del servidor de chat de Discord.
+
+65
+00:04:26,000 --> 00:04:32,000
+Si está utilizando un HDL, generalmente se debe a un
+error en su diseño o porque el diseño es demasiado grande.
+
+66
+00:04:32,000 --> 00:04:35,785
+Para obtener más detalles, puede consultar
+los registros aquí en los resultados de la
+
+67
+00:04:35,809 --> 00:04:40,000
+acción o descargar los registros GDS comprimidos
+ y echar un vistazo al interior.
+
+68
+00:04:40,000 --> 00:04:49,000
+Primero verifique el archivo de registro de síntesis en runs >
+wokwi > logs > synthesis>synthesis.errors por errores de diseño.
+
+69
+00:04:49,000 --> 00:04:55,000
+Si su diseño es demasiado grande, entonces la falla normalmente
+tendrá que ver con la ubicación o la parte de ruta del flujo.
+
+70
+00:04:55,000 --> 00:05:02,000
+Puede intentar reducir el tamaño de su diseño o actualizar a un diseño más
+grande aumentando la cantidad de celdas en su configuración de info.yaml.
+
+71
+00:05:02,000 --> 00:05:08,000
+Cuando esté listo para enviar, vaya a tinytapeout.com y
+luego desplácese hacia abajo hasta la sección de envío.
+
+72
+00:05:08,000 --> 00:05:11,000
+Haga clic en el botón para ir
+a nuestra aplicación de envío.
+
+73
+00:05:11,000 --> 00:05:18,000
+Inicie sesión con su cuenta de GitHub, luego copie y pegue la URL
+de su repositorio de GitHub en el formulario y presione enviar.
+
+74
+00:05:18,000 --> 00:05:23,000
+Si tienes un cupón, puedes aplicarlo aquí; de
+lo contrario, tendrás que pagar para continuar.
+
+75
+00:05:23,000 --> 00:05:30,000
+En este punto, ha creado su proyecto pero aún no forma
+parte de Tiny Tapeout. Primero debes enviar una revisión.
+
+76
+00:05:30,000 --> 00:05:34,000
+Una vez que esto haya sucedido, esa versión
+de su diseño se enviará al shuttle.
+
+77
+00:05:34,000 --> 00:05:38,000
+Si desea realizar algún cambio, debe
+volver aquí y enviar una nueva revisión.
+
+78
+00:05:38,000 --> 00:05:42,000
+Eso es todo. Disfruta programando y
+espero ver lo que haces con tu ASIC.
+
+79
+00:05:43,000 --> 00:05:48,000
+[Música]
+

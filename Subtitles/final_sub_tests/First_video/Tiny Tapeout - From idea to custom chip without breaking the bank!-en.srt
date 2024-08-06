@@ -1,0 +1,297 @@
+﻿1
+00:00:00,000 --> 00:00:02,748
+Normally, making a
+custom chip costs tens of
+
+2
+00:00:02,772 --> 00:00:05,520
+thousands of dollars,
+and don't forget another
+
+3
+00:00:05,520 --> 00:00:08,000
+hundred thousand dollars for renting the
+design software.
+
+4
+00:00:08,000 --> 00:00:11,200
+Oh, and you'll have to sign an NDA to
+get started.
+
+5
+00:00:11,200 --> 00:00:13,760
+And that NDA means you can't share your
+design with anyone.
+
+6
+00:00:13,760 --> 00:00:16,450
+Tiny Tapeout makes
+it easier, quicker and
+
+7
+00:00:16,474 --> 00:00:19,840
+cheaper than ever before
+to get your designs onto
+
+8
+00:00:19,840 --> 00:00:22,467
+a real chip. Open
+source tools, excellent
+
+9
+00:00:22,491 --> 00:00:26,240
+documentation, and a vibrant
+community helps to make it
+
+10
+00:00:26,240 --> 00:00:32,640
+much easier to get started and avoid common
+mistakes. Tiny Tapeout is for students,
+
+11
+00:00:32,640 --> 00:00:35,037
+makers, hackers, universities, and anyone
+
+12
+00:00:35,061 --> 00:00:38,240
+interested in learning
+more or getting their designs
+
+13
+00:00:38,240 --> 00:00:40,877
+made into silicon. All
+our learning resources
+
+14
+00:00:40,901 --> 00:00:43,840
+and tools are free to
+use, and they're online to
+
+15
+00:00:43,840 --> 00:00:46,458
+avoid download,
+installation, and licensing
+
+16
+00:00:46,482 --> 00:00:49,600
+problems. If you're a
+total beginner, you can try
+
+17
+00:00:49,600 --> 00:00:52,188
+Wokwi, our digital
+design and simulator tool.
+
+18
+00:00:52,212 --> 00:00:54,800
+Or if you know what
+you're doing, you can use a
+
+19
+00:00:54,800 --> 00:00:58,466
+hardware description
+language like Verilog, VHDL,
+
+20
+00:00:58,490 --> 00:01:02,080
+or Amaranth. Then, use
+our GitHub action-based
+
+21
+00:01:02,080 --> 00:01:04,534
+system to build the files
+you need for the ASIC.
+
+22
+00:01:04,558 --> 00:01:06,960
+Once the files are
+ready, you can explore the
+
+23
+00:01:06,960 --> 00:01:10,522
+layout with this really
+cool 3D viewer. The
+
+24
+00:01:10,546 --> 00:01:14,960
+minimum size is 160 x 100
+microns, about a thousand
+
+25
+00:01:14,960 --> 00:01:18,148
+logic cells. And if you
+need more space, you can
+
+26
+00:01:18,172 --> 00:01:21,360
+buy extra tiles. Each
+design gets access to clock,
+
+27
+00:01:21,360 --> 00:01:24,946
+reset, and 24 I/Os, with
+about 50 megahertz bandwidth.
+
+28
+00:01:24,970 --> 00:01:28,080
+Tiny tape out isn't
+just for digital designs.
+
+29
+00:01:28,080 --> 00:01:30,628
+For Tiny Tapeout 6, we've
+added analog and mixed
+
+30
+00:01:30,652 --> 00:01:33,200
+signal support, as well
+as support for designs
+
+31
+00:01:33,200 --> 00:01:35,748
+made with proprietary
+tools like Cadence. Once
+
+32
+00:01:35,772 --> 00:01:38,320
+the design is ready,
+we send it to Efabless,
+
+33
+00:01:38,320 --> 00:01:41,268
+and they'll manufacture
+it on the open source
+
+34
+00:01:41,292 --> 00:01:44,240
+Skywater 130 nanometer
+process. The first 100
+
+35
+00:01:44,240 --> 00:01:46,748
+submissions from
+individuals will get an early
+
+36
+00:01:46,772 --> 00:01:49,280
+bird discount thanks
+to Efabless sponsorship.
+
+37
+00:01:49,280 --> 00:01:51,508
+And I want to say a really
+big thanks to Efabless
+
+38
+00:01:51,532 --> 00:01:53,760
+for sponsoring this project
+and making it possible.
+
+39
+00:01:53,760 --> 00:01:58,800
+Once we get the silicon back, we save you
+time and trouble by mounting the chip onto a
+
+40
+00:01:58,800 --> 00:02:01,253
+demonstration board.
+After plugging the board into
+
+41
+00:02:01,277 --> 00:02:03,680
+your computer, you select
+which design you want
+
+42
+00:02:03,680 --> 00:02:06,268
+to be active with our
+MicroPython interface.
+
+43
+00:02:06,292 --> 00:02:08,880
+And that also lets you
+adjust the clock speed,
+
+44
+00:02:08,880 --> 00:02:11,348
+set the inputs, and
+monitor the outputs. One of
+
+45
+00:02:11,372 --> 00:02:13,840
+my favorite things
+about this project is that
+
+46
+00:02:13,840 --> 00:02:16,088
+you're not only going
+to get your design, but
+
+47
+00:02:16,112 --> 00:02:18,720
+everybody else's design
+as well. You'll be able to
+
+48
+00:02:18,720 --> 00:02:20,948
+look through the chip
+status sheet and try out
+
+49
+00:02:20,972 --> 00:02:23,200
+someone else's design.
+In our previous runs,
+
+50
+00:02:23,200 --> 00:02:26,142
+we've seen some
+really interesting designs,
+
+51
+00:02:26,166 --> 00:02:29,600
+including RISC-V CPUs,
+FPGA's, ring oscillators,
+
+52
+00:02:29,600 --> 00:02:36,240
+synthesizers, USB devices, and lots more.
+To get started, follow the video tutorials,
+
+53
+00:02:36,240 --> 00:02:38,508
+expect it to take between
+a few hours and a few
+
+54
+00:02:38,532 --> 00:02:40,800
+weeks depending on how
+complex your design is.
+
+55
+00:02:40,800 --> 00:02:43,423
+If you get stuck, join
+our Discord community
+
+56
+00:02:43,447 --> 00:02:46,560
+chat. Make sure you
+sign up to the mailing list to
+
+57
+00:02:46,560 --> 00:02:49,108
+keep up to date with our
+progress. So have fun, get
+
+58
+00:02:49,132 --> 00:02:51,680
+involved, and I'm really
+looking forward to seeing
+
+59
+00:02:51,680 --> 00:02:55,280
+what you make on your first ASIC.
+
+60
+00:02:55,280 --> 00:02:57,860
+(bright music)
+
