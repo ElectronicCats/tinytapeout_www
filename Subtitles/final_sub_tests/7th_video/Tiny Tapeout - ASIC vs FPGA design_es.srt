@@ -1,0 +1,403 @@
+﻿1
+00:00:02,990 --> 00:00:05,090
+[Matt] Y una última
+cosa que me vino a
+
+2
+00:00:05,090 --> 00:00:08,000
+la mente es que
+tenemos muchas personas
+
+3
+00:00:08,000 --> 00:00:10,230
+que están planeando
+unirse a nosotros en
+
+4
+00:00:10,255 --> 00:00:16,143
+Tapeout en Tiny
+Tapeout 2 y el 60% de
+
+5
+00:00:16,168 --> 00:00:17,583
+las personas dijeron que estaban
+
+6
+00:00:17,608 --> 00:00:19,290
+interesadas en usar un HDL.
+
+7
+00:00:19,315 --> 00:00:22,216
+Entonces, presumiblemente
+la gente viene de hacer
+
+8
+00:00:22,241 --> 00:00:23,736
+simulaciones o
+probablemente lo hace
+
+9
+00:00:23,761 --> 00:00:25,563
+usando un poco de trabajo FPGA.
+
+10
+00:00:25,649 --> 00:00:27,629
+Entonces, ¿hay
+algún consejo que le
+
+11
+00:00:27,660 --> 00:00:30,323
+darías a alguien que quisiera convertir
+
+12
+00:00:30,348 --> 00:00:33,198
+un diseño FPGA
+en un Diseño ASIC.
+
+13
+00:00:33,223 --> 00:00:38,283
+Creo que para mí
+el más crucial es con
+
+14
+00:00:38,308 --> 00:00:39,716
+los FPGA, casi
+siempre se puede
+
+15
+00:00:39,741 --> 00:00:41,230
+garantizar que los registros se
+
+16
+00:00:41,255 --> 00:00:43,156
+inicializarán a
+cero. Y puedes tener
+
+17
+00:00:43,181 --> 00:00:46,110
+estos bloques de inicio
+iniciales. [Invitado: Sí. Entonces.]
+
+18
+00:00:46,135 --> 00:00:48,443
+Por eso hay que hacer
+un buen reset que ponga todo a cero.
+
+19
+00:00:48,816 --> 00:00:53,333
+[Invitado] Sí, sí,
+sí. Quiero decir,
+
+20
+00:00:54,150 --> 00:00:56,456
+creo que es así,
+la presencia de un
+
+21
+00:00:56,481 --> 00:00:58,390
+reinicio explícito
+en el flip-flop que
+
+22
+00:00:58,415 --> 00:00:59,776
+realmente se
+necesitaba para que el
+
+23
+00:00:59,801 --> 00:01:03,743
+diseño funcionara es algo que recomiendo
+
+24
+00:01:03,768 --> 00:01:05,469
+hacer en
+ FPGA también, porque incluso
+
+25
+00:01:05,494 --> 00:01:10,234
+en FPGA, aunque
+los registros puedan
+
+26
+00:01:12,750 --> 00:01:14,640
+ser etiquetas iniciales, se
+
+27
+00:01:14,640 --> 00:01:17,940
+inicializarán a algún estado
+definido después de la configuración.
+
+28
+00:01:18,540 --> 00:01:20,250
+Ya sabes, si usas un PLL o cosas
+
+29
+00:01:20,250 --> 00:01:22,890
+así, tu reloj no es estable al
+
+30
+00:01:22,890 --> 00:01:24,150
+principio, lo que significa que
+
+31
+00:01:24,150 --> 00:01:26,040
+técnicamente no
+puedes comenzar a
+
+32
+00:01:26,040 --> 00:01:28,470
+cronometrar tu
+lógica sin fallar.
+
+33
+00:01:28,470 --> 00:01:29,970
+sin violación de tiempo.
+
+34
+00:01:29,970 --> 00:01:32,731
+Lo que significa que
+siempre es una buena
+
+35
+00:01:32,756 --> 00:01:35,040
+idea mantener todos los flip-flops
+
+36
+00:01:35,040 --> 00:01:36,390
+críticos en reinicio
+hasta que el
+
+37
+00:01:36,390 --> 00:01:39,810
+PLL está bloqueado,
+lo que requiere
+
+38
+00:01:39,810 --> 00:01:42,360
+que su diseño tenga un reinicio
+
+39
+00:01:42,360 --> 00:01:46,020
+explícito de todos modos.
+
+40
+00:01:46,020 --> 00:01:48,840
+Algo más que no me sorprende, pero es
+muy diferente entre el diseño FPGA y ASIC.
+
+41
+00:01:49,710 --> 00:01:52,780
+¿Eso está en FPGA? Ya sabes, te
+
+42
+00:01:52,780 --> 00:01:54,280
+tienes a ti, quiero
+decir, normalmente
+
+43
+00:01:54,280 --> 00:01:55,720
+tienes tus Luts y un
+registro justo después.
+
+44
+00:01:55,720 --> 00:01:59,680
+Es como la arquitectura
+
+45
+00:01:59,680 --> 00:02:01,150
+típica, lo que significa que los
+
+46
+00:02:01,150 --> 00:02:03,580
+registros prácticamente se
+obtienen de forma gratuita.
+
+47
+00:02:03,580 --> 00:02:05,920
+Por ejemplo, puedes
+
+48
+00:02:05,920 --> 00:02:07,270
+canalizar en gran
+medida tu diseño y
+
+49
+00:02:07,270 --> 00:02:10,720
+no te cuesta tanto
+porque el registro
+
+50
+00:02:10,720 --> 00:02:13,150
+está ahí de todos
+modos. Básicamente,
+
+51
+00:02:13,150 --> 00:02:14,470
+ese no es el caso. Si observa la
+
+52
+00:02:14,470 --> 00:02:17,050
+celda lógica que implementa un
+
+53
+00:02:17,050 --> 00:02:18,430
+registro versus el,
+las celdas lógicas
+
+54
+00:02:18,460 --> 00:02:21,790
+que implementan
+como un final o como
+
+55
+00:02:21,790 --> 00:02:23,830
+una función lógica.
+Sí, los registros
+
+56
+00:02:23,830 --> 00:02:24,910
+son muchas veces más grandes,
+lo que significa que si usas mucho
+
+57
+00:02:24,910 --> 00:02:26,170
+tubería, su diseño va a
+
+58
+00:02:26,170 --> 00:02:29,110
+explotar en tamaño.
+Y ya sabes, el
+
+59
+00:02:30,190 --> 00:02:32,080
+El retraso lógico no
+es tanto, ¿verdad?
+
+60
+00:02:32,080 --> 00:02:33,670
+puede salirse con la
+suya con mucha más lógica
+
+61
+00:02:33,670 --> 00:02:37,870
+entre tus chanclas que en
+
+62
+00:02:37,870 --> 00:02:39,640
+su FPGA.
+Básicamente.  Eso es
+
+63
+00:02:40,600 --> 00:02:41,950
+esa es una de las cosas
+
+64
+00:02:41,950 --> 00:02:44,170
+cuando, cuando yo, ya
+sabes, rediseño cosas
+
+65
+00:02:44,170 --> 00:02:46,450
+para ASIC que cambio mucho es
+
+66
+00:02:46,450 --> 00:02:48,250
+porque.  Sí, en
+FPGA soy más
+
+67
+00:02:48,250 --> 00:02:50,230
+limitado a veces por la
+
+68
+00:02:50,230 --> 00:02:52,060
+velocidad, especialmente
+porque trabajo mucho
+
+69
+00:02:52,060 --> 00:02:53,710
+con ice40 y cosas así, que son
+
+70
+00:02:53,710 --> 00:02:56,620
+FPGA realmente lentos.
+
+71
+00:02:57,970 --> 00:03:00,490
+Así que tiendo a
+canalizar mucho. Y
+
+72
+00:03:00,490 --> 00:03:03,010
+en un diseño ASIC así, el diseño
+
+73
+00:03:03,010 --> 00:03:05,740
+el tamaño explotaría.
+Entonces sí.  Y entonces si
+
+74
+00:03:05,740 --> 00:03:07,240
+te apetece, puedes
+empezar a jugar con
+
+75
+00:03:07,265 --> 00:03:09,635
+pestillos en lugar de
+flip-flop, pero luego
+
+76
+00:03:09,910 --> 00:03:11,843
+realmente tienes que saber lo
+que estás haciendo. Entonces,
+
+77
+00:03:13,760 --> 00:03:16,040
+[Matt] Quizás no sea bueno para
+Cinta pequeña.  ya veremos
+
+78
+00:03:16,040 --> 00:03:18,020
+lo que sucede.  [Invitado: Sí]
+Bueno, nosotros sí vimos
+
+79
+00:03:18,020 --> 00:03:20,390
+algunas presentaciones
+interesantes para Tiny
+
+80
+00:03:20,390 --> 00:03:22,250
+Grabación 1.
+
+81
+00:03:22,610 --> 00:03:24,890
+Sí, definitivamente.
+Como desde atrás.
+
+82
+00:03:24,890 --> 00:03:26,420
+Sí. Sí, sí.
+
+83
+00:03:27,140 --> 00:03:29,060
+[Matt] Está bien. Bueno,
+muchas gracias por tu tiempo.
+
+84
+00:03:29,060 --> 00:03:31,580
+Realmente lo aprecio.
+
+85
+00:03:31,580 --> 00:03:33,920
+Y [Invitado: gracias de
+verdad] Nos vemos. Nos vemos.
+
+86
+00:03:33,920 --> 00:03:34,970
+Con un poco de suerte.
+Nos vemos pronto.
+
+87
+00:03:34,970 --> 00:03:35,960
+[Invitado] Sí. Nos vemos pronto.
+

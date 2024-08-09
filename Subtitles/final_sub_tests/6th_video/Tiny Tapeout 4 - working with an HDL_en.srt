@@ -1,0 +1,237 @@
+﻿1
+00:00:00,150 --> 00:00:04,080
+This short video explains how to submit a
+Verilog, or another HDL project,
+
+2
+00:00:04,200 --> 00:00:05,200
+a Tiny Tapeout.
+
+3
+00:00:06,250 --> 00:00:09,860
+The website has some resources collected
+here under the Working with HDL page.
+
+4
+00:00:11,470 --> 00:00:13,391
+Let's take a look at the Verilog demo
+repository.
+
+5
+00:00:14,380 --> 00:00:15,380
+The link is below.
+
+6
+00:00:16,213 --> 00:00:18,650
+The repo is forked from the submission
+template.
+
+7
+00:00:19,260 --> 00:00:23,280
+If we take a look at the info.yaml,
+the important thing is that the Wokwi ID
+
+8
+00:00:23,281 --> 00:00:27,156
+is set to 0, which tells the system we're
+doing an HDL design.
+
+9
+00:00:28,015 --> 00:00:29,983
+Then you list all the source files
+separately.
+
+10
+00:00:30,680 --> 00:00:33,150
+You must list all the
+required files, or our build
+
+11
+00:00:33,151 --> 00:00:35,521
+process will fail when we
+try to include your project.
+
+12
+00:00:36,800 --> 00:00:39,089
+We also need to give the name of the top
+module.
+
+13
+00:00:39,560 --> 00:00:44,581
+Your top module name should be unique,
+and start with TT underscore UM underscore.
+
+14
+00:00:45,370 --> 00:00:48,660
+I suggest you include your GitHub username
+to make sure it's unique.
+
+15
+00:00:49,820 --> 00:00:52,683
+You can see we've got all the three green
+lights here passing.
+
+16
+00:00:53,210 --> 00:00:55,102
+The GDS and the
+docs are required to do a
+
+17
+00:00:55,103 --> 00:00:58,201
+submission, and the
+test is strongly advised.
+
+18
+00:00:59,050 --> 00:01:00,811
+If we go to the source,
+then we can see we've
+
+19
+00:01:00,812 --> 00:01:03,261
+got the counter and
+the decoder Verilog files.
+
+20
+00:01:04,010 --> 00:01:06,323
+Inside the counter, we've got the top
+module.
+
+21
+00:01:06,920 --> 00:01:10,023
+The top module must have exactly these
+input and output ports.
+
+22
+00:01:10,540 --> 00:01:13,220
+This is the interface between your code
+and Tiny Tapeout.
+
+23
+00:01:14,090 --> 00:01:16,380
+You can't change their names or add or
+remove anything.
+
+24
+00:01:17,770 --> 00:01:20,396
+Now let's talk a little bit about how you
+can test your design.
+
+25
+00:01:21,320 --> 00:01:23,720
+I'm a fan of COCO DB, so I have this make
+file.
+
+26
+00:01:24,540 --> 00:01:27,983
+I set my Verilog source here and include a
+top-level test bench.
+
+27
+00:01:28,990 --> 00:01:34,101
+The test bench just instantiates the design
+and wires up the input and output ports.
+
+28
+00:01:34,540 --> 00:01:37,369
+You should be able to reuse this with very
+little changes.
+
+29
+00:01:38,480 --> 00:01:40,780
+All the testing actually happens in this
+Python file.
+
+30
+00:01:41,680 --> 00:01:46,861
+I start the clock, do a reset, and then
+I count to 10, waiting for 1000 clocks.
+
+31
+00:01:47,260 --> 00:01:50,910
+That's how long it takes to count up to
+the next number on the 7 segment display.
+
+32
+00:01:51,855 --> 00:01:54,446
+Then I assert that the
+segments that I'm getting out are
+
+33
+00:01:54,447 --> 00:01:57,583
+matching the expected segments
+to be shown on the display.
+
+34
+00:01:58,660 --> 00:02:00,320
+I can show that here on the command line.
+
+35
+00:02:05,390 --> 00:02:09,480
+It created me a VCD file which I can load
+and inspect with GTK wave.
+
+36
+00:02:10,710 --> 00:02:13,382
+I can see there's the
+clock, the reset, and then
+
+37
+00:02:13,383 --> 00:02:15,740
+the segments counting
+up in the order that I expect.
+
+38
+00:02:15,741 --> 00:02:19,681
+We have a test GitHub
+action you can use, and this
+
+39
+00:02:19,682 --> 00:02:22,941
+just installs the OSS CAD
+Suite and runs the test.
+
+40
+00:02:23,975 --> 00:02:26,020
+You can copy it from the Verilog demo
+repository.
+
+41
+00:02:27,131 --> 00:02:30,836
+It's optional to have a test, but I do
+recommend it giving the long weights that
+
+42
+00:02:30,861 --> 00:02:32,827
+we'll have to receive
+our designs and the
+
+43
+00:02:32,828 --> 00:02:35,641
+fact that we can't
+change things afterwards.
+
+44
+00:02:36,220 --> 00:02:40,020
+It's also a good idea to do gate-level
+verification, which is where we take the
+
+45
+00:02:40,021 --> 00:02:42,820
+post -synthesis netlist and check that
+with the same testbench.
+
+46
+00:02:43,760 --> 00:02:45,680
+Ask on the Discord if you want help adding
+it.
+
+47
+00:02:46,960 --> 00:02:48,780
+So good luck and let me know how you get
+on.
+
+48
+00:02:49,430 --> 00:02:52,983
+I'll see you in the Verilog and HDL
+channel of the Discord chat server.
+

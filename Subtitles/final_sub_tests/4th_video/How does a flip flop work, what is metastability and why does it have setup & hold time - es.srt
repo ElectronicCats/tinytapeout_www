@@ -1,0 +1,1951 @@
+﻿1
+00:00:00,000 --> 00:00:03,500
+[Música]
+
+2
+00:00:03,500 --> 00:00:07,400
+Así que finalmente terminé mi video de flip-flop,
+tomó mucho más tiempo de lo que pensaba,
+
+3
+00:00:07,400 --> 00:00:11,900
+y eso es porque cada vez que intento grabar
+el video, llego a este punto y me doy cuenta
+
+4
+00:00:11,900 --> 00:00:16,100
+de que todavía no puedo explicar esta
+parte, y tengo que profundizar un poco más,
+
+5
+00:00:16,100 --> 00:00:20,400
+y finalmente obtener la
+respuesta. Y así lleva ya unos cuantos días.
+
+6
+00:00:20,400 --> 00:00:23,700
+También quiero agradecer a todos en
+el curso, porque es su apoyo el que me
+
+7
+00:00:23,700 --> 00:00:27,900
+permite hacer este tipo de videos
+profundos para satisfacer mi curiosidad.
+
+8
+00:00:27,900 --> 00:00:31,600
+Entonces, comencemos viendo
+lo que se cubrirá en este video.
+
+9
+00:00:31,600 --> 00:00:34,588
+Entonces, el texto pequeño significa
+que no vamos a dedicar demasiado
+
+10
+00:00:34,612 --> 00:00:37,600
+tiempo, y el texto grande es en lo que
+se dedicará la mayor parte del video.
+
+11
+00:00:37,600 --> 00:00:42,319
+Para darle una breve descripción contextual,
+veremos circuitos combinatorios versus
+
+12
+00:00:42,800 --> 00:00:47,100
+circuitos secuenciales, pasaremos a cerrojos
+y flip flops, y luego la mayor parte del
+
+13
+00:00:47,100 --> 00:00:50,800
+tiempo veremos cómo un flip flop realmente
+funciona, ¿por qué se configura todo el tiempo?
+
+14
+00:00:50,800 --> 00:00:54,000
+¿Qué significa una violación de
+configuración y retención y metaestabilidad?
+
+15
+00:00:54,000 --> 00:00:59,900
+Entonces, tal vez la primera pregunta sea: ¿por qué necesitamos
+flip flops ? ¿Por qué necesitamos circuitos secuenciales?
+
+16
+00:00:59,900 --> 00:01:04,400
+Entonces, cuando diseñamos lógica digital,
+ya sea para una FPGA o un ASIC, la parte del
+
+17
+00:01:04,400 --> 00:01:08,300
+circuito que hace el trabajo, como un sumador
+o un multiplicador, todo está construido a
+
+18
+00:01:08,300 --> 00:01:15,400
+partir de lógica combinatoria, cosas como, compuertas AND, compuertas OR, XOR, NOT, este tipo de cosas.
+
+19
+00:01:15,400 --> 00:01:18,500
+Y tenemos este gran montón de lógica, ingresamos
+los números y luego, poco tiempo después, a
+
+20
+00:01:18,500 --> 00:01:26,000
+medida que los datos se propagan a través de esa
+colección de celdas, obtenemos la respuesta al final.
+
+21
+00:01:26,000 --> 00:01:29,200
+Ahora imagina que estamos implementando
+un filtro y queremos tomar esa salida y
+
+22
+00:01:29,200 --> 00:01:32,700
+luego volver a ejecutarla a través del
+multiplicador una cierta cantidad de veces.
+
+23
+00:01:32,700 --> 00:01:35,600
+Si simplemente tomamos la salida y
+la enrutamos de regreso a la entrada,
+
+24
+00:01:35,600 --> 00:01:39,600
+obtendremos una condición extraña,
+una condición de carrera, donde los datos
+
+25
+00:01:39,600 --> 00:01:42,200
+fluyen dando vueltas y vueltas, y perdemos
+el control de lo que está sucediendo.
+
+26
+00:01:42,200 --> 00:01:45,700
+Entonces, lo que tenemos que
+hacer es capturar esos datos a
+
+27
+00:01:45,700 --> 00:01:49,400
+medida que salen, esperar y
+volver a ingresarlos al principio en
+
+28
+00:01:49,400 --> 00:01:51,900
+el momento correcto y, por lo
+general, eso se coordina con un reloj.
+
+29
+00:01:51,900 --> 00:01:56,900
+Entonces, los tipos de circuitos que pueden
+capturar los datos y retenerlos hasta que llegue
+
+30
+00:01:56,900 --> 00:02:01,400
+un reloj se llaman cerrojos o flip-flops y
+se usan para secuenciar el flujo de datos.
+
+31
+00:02:01,400 --> 00:02:04,500
+Entonces, una cosa a tener en
+cuenta es que este es un tema enorme.
+
+32
+00:02:04,500 --> 00:02:09,000
+En mi libro de referencia, el libro de Weste Harris, es una gran
+
+33
+00:02:09,000 --> 00:02:11,200
+parte del libro, el Capítulo 7, todo sobre secuenciación, y esto
+
+34
+00:02:11,200 --> 00:02:16,400
+realmente se centra en un solo tipo
+de flip-flop y observa cómo funciona.
+
+35
+00:02:16,400 --> 00:02:19,000
+Entonces, antes de que podamos hacer un
+flip-flop, necesitamos hacer un pestillo.
+
+36
+00:02:19,000 --> 00:02:20,500
+Entonces, ¿qué es un pestillo?
+
+37
+00:02:20,500 --> 00:02:22,273
+Bueno, el tipo de
+pestillo  más simple es
+
+38
+00:02:22,298 --> 00:02:25,306
+simplemente un MOSFET con los datos D entrando y
+
+39
+00:02:25,344 --> 00:02:29,333
+los datos Q saliendo, y
+esto permite que los datos
+
+40
+00:02:29,358 --> 00:02:33,400
+fluyan cuando el reloj está alto, porque es un MOSFET de canal N.
+
+41
+00:02:33,400 --> 00:02:38,300
+Pero tiene muchos problemas.
+No es inmune al ruido en la entrada.
+
+42
+00:02:38,300 --> 00:02:44,500
+Es un circuito dinámico, por lo que la salida solo
+está ahí debido a la capacitancia de los cables.
+
+43
+00:02:44,500 --> 00:02:50,100
+Entonces, a medida que pasa el
+tiempo, este valor se degradará hasta cero.
+
+44
+00:02:50,100 --> 00:02:54,100
+Podemos mejorar la inmunidad
+al tener una puerta de transmisión,
+
+45
+00:02:54,100 --> 00:02:58,234
+que es de tipo P y tipo N en
+paralelo, por lo que permite el paso
+
+46
+00:02:58,259 --> 00:03:01,700
+de un 0 o un 1 siempre que el
+reloj esté configurado correctamente.
+
+47
+00:03:01,700 --> 00:03:05,400
+Y luego podemos poner un
+amortiguador al final, para que
+
+48
+00:03:05,400 --> 00:03:09,000
+pueda conducir un poco más
+fuerte, tenga un poco más de
+
+49
+00:03:09,000 --> 00:03:11,800
+capacitancia y almacene ese
+valor dinámico por más tiempo.
+
+50
+00:03:11,800 --> 00:03:14,215
+Y luego podemos construir un
+pestillo como este que tiene un
+
+51
+00:03:14,240 --> 00:03:18,648
+circuito de retroalimentación
+donde la salida de un inversor impulsa
+
+52
+00:03:18,673 --> 00:03:23,189
+la entrada de un inversor de tres
+estados y que vuelve y refuerza el
+
+53
+00:03:23,214 --> 00:03:28,000
+circuito, y podemos desconectar la
+entrada con esta compuerta de transmisión.
+
+54
+00:03:28,000 --> 00:03:30,800
+Entonces, si echamos un
+vistazo rápido a esto, tenemos esta
+
+55
+00:03:30,800 --> 00:03:34,400
+habilitación aquí con el reloj
+y el bloqueo de golpe, y eso
+
+56
+00:03:34,400 --> 00:03:40,800
+básicamente enciende o apaga la salida
+de este inversor que está en el exterior.
+
+57
+00:03:40,800 --> 00:03:44,200
+Entonces, si tenemos un 1
+aquí, esto estará apagado.
+
+58
+00:03:44,200 --> 00:03:46,600
+Esto va a estar
+encendido, esto lo bajará,
+
+59
+00:03:46,600 --> 00:03:48,700
+por lo que el 1 se
+convertirá en un 0.
+
+60
+00:03:48,700 --> 00:03:52,100
+Pero sólo si estos dos también
+están configurados correctamente.
+
+61
+00:03:52,100 --> 00:03:56,300
+Entonces, al activarlos o desactivarlos,
+Podemos activar o desactivar esto.
+
+62
+00:03:56,300 --> 00:03:58,700
+Eso es lo que es un
+inversor de tres estados.
+
+63
+00:03:58,725 --> 00:04:01,080
+Y verás a medida que
+avancemos en el video que
+
+64
+00:04:01,105 --> 00:04:05,400
+usaremos un par de cerrojos
+para construir un flip-flop.
+
+65
+00:04:05,400 --> 00:04:08,300
+Ahora pasemos a lo que
+realmente son los flip-flops.
+
+66
+00:04:08,300 --> 00:04:11,113
+Son una forma de muestrear un
+poco de datos a medida que llega el
+
+67
+00:04:11,138 --> 00:04:14,838
+reloj y luego mantenerlo estable,
+sin importar lo que la entrada D
+
+68
+00:04:14,863 --> 00:04:18,400
+esté haciendo, y esperar hasta el
+siguiente flanco ascendente del reloj.
+
+69
+00:04:18,400 --> 00:04:20,100
+Y hay una gran variedad de flip-flops.
+
+70
+00:04:20,100 --> 00:04:23,300
+Aquí hay un artículo interesante
+recomendado por un amigo, y
+
+71
+00:04:23,300 --> 00:04:27,100
+tenemos diferentes tipos,
+como invertir salidas con reinicio,
+
+72
+00:04:27,100 --> 00:04:29,500
+remuestreo en el flanco
+ascendente o descendente, diferentes
+
+73
+00:04:29,500 --> 00:04:31,732
+tiempos de configuración y
+retención, lo que resulta en
+
+74
+00:04:31,757 --> 00:04:36,400
+diferentes tamaños de apertura, consumo
+de energía y diferentes cosas como esta.
+
+75
+00:04:36,400 --> 00:04:42,100
+Así que este artículo hace un buen trabajo al comparar
+un tipo completamente diferente de flip-flops entre sí.
+
+76
+00:04:42,100 --> 00:04:44,863
+y luego elegir el más
+recomendado para obtener la
+
+77
+00:04:44,888 --> 00:04:48,025
+mejor inmunidad, la mejor
+inmunidad para generar
+
+78
+00:04:48,050 --> 00:04:51,400
+condiciones que consuman
+menos energía, este tipo de cosas.
+
+79
+00:04:51,400 --> 00:04:54,000
+Entonces, ¿cómo sería un flip-flop ideal?
+
+80
+00:04:54,000 --> 00:04:57,300
+Recuerde que los usaremos
+para secuenciar datos.
+
+81
+00:04:57,300 --> 00:05:00,397
+Entonces, cuanto más
+tiempo dedicamos a capturar y
+
+82
+00:05:00,422 --> 00:05:04,300
+conservar esos datos, menos
+tiempo tenemos para trabajar.
+
+83
+00:05:04,300 --> 00:05:07,500
+Por lo tanto, un flip-flop ideal
+debería probarse inmediatamente.
+
+84
+00:05:07,500 --> 00:05:10,200
+La salida debería fluir
+inmediatamente a la salida
+
+85
+00:05:10,200 --> 00:05:13,500
+y apenas debería llevar
+tiempo realizar el muestreo.
+
+86
+00:05:13,500 --> 00:05:15,400
+No debe haber
+ambigüedad en el resultado.
+
+87
+00:05:15,400 --> 00:05:17,500
+Siempre debería ser 0
+o 1, y siempre debería
+
+88
+00:05:17,500 --> 00:05:19,595
+muestrearse exactamente
+en el borde del
+
+89
+00:05:19,620 --> 00:05:21,369
+reloj, o tal vez
+podamos moverlo hacia
+
+90
+00:05:21,394 --> 00:05:24,100
+adelante y hacia atrás, pero
+es un tiempo muy predecible.
+
+91
+00:05:24,100 --> 00:05:27,100
+Así que tengo experiencia en
+ingeniería y divulgación científica y mi
+
+92
+00:05:27,100 --> 00:05:31,500
+experiencia en ingeniería es una de las cosas
+que hace que me gusten los ejemplos prácticos.
+
+93
+00:05:31,500 --> 00:05:35,268
+Y esa es una de las razones por las que creo
+que esto El PDK de código abierto Sky130 es
+
+94
+00:05:35,293 --> 00:05:40,100
+muy bueno porque me permite compartir este tipo
+de información con ejemplos del mundo real.
+
+95
+00:05:40,100 --> 00:05:43,300
+sin tener que firmar un acuerdo
+de confidencialidad o pedir permiso.
+
+96
+00:05:43,300 --> 00:05:45,577
+Entonces voy a usar Verilog para
+
+97
+00:05:45,602 --> 00:05:48,131
+describir algo de hardware, porque eso es lo que
+
+98
+00:05:48,156 --> 00:05:50,938
+Verilog es, lenguaje de
+descripción de hardware, y
+
+99
+00:05:50,963 --> 00:05:53,405
+voy a decir en el borde positivo del reloj que
+
+100
+00:05:53,430 --> 00:05:56,900
+muestree la D y la puse en la Q, y Q debería ser un registro.
+
+101
+00:05:56,900 --> 00:05:58,900
+Deberías recordar qué es.
+
+102
+00:05:58,900 --> 00:06:03,700
+Y cuando lo reviso OpenLane,
+tengo un flip-flop tipo D.
+
+103
+00:06:03,700 --> 00:06:07,400
+Y cuando tomo mi GDS y lo
+cargo en el diseño de K, obtengo
+
+104
+00:06:07,400 --> 00:06:10,700
+esto, que es una celda
+estándar bastante complicada.
+
+105
+00:06:10,700 --> 00:06:12,700
+Es bastante grande.
+
+106
+00:06:12,700 --> 00:06:17,900
+Cada vez que el polisilicio se
+superpone a algo del tipo P o N,
+
+107
+00:06:17,900 --> 00:06:21,600
+ese es el tipo de cian o gris
+que hay, obtenemos un MOSFET.
+
+108
+00:06:21,600 --> 00:06:24,000
+Aquí tenemos 26
+MOSFET diferentes.
+
+109
+00:06:24,000 --> 00:06:25,900
+Un rango en un patrón bastante
+
+110
+00:06:25,900 --> 00:06:28,500
+complicado, y que se acumula en el medio flop.
+
+111
+00:06:28,500 --> 00:06:31,000
+Entonces, cuando realmente
+quiero entender algo, especialmente
+
+112
+00:06:31,000 --> 00:06:34,800
+una celda estándar, me gusta
+intentar hacer una extracción manual
+
+113
+00:06:34,800 --> 00:06:38,400
+del circuito para sacar todas esas
+conexiones en una hoja de papel.
+
+114
+00:06:38,400 --> 00:06:40,000
+Y esto me llevó bastante tiempo,
+
+115
+00:06:40,000 --> 00:06:41,600
+mucho más que el ejemplo de MUX,
+
+116
+00:06:41,600 --> 00:06:43,800
+pero hice algunos videos atrás.
+
+117
+00:06:43,800 --> 00:06:45,600
+Y pueden ver, en realidad
+aquí, pensé que había hecho
+
+118
+00:06:45,600 --> 00:06:49,600
+donde tenía un inversor seguido
+de compuertas de transmisión.
+
+119
+00:06:49,600 --> 00:06:52,100
+Pero en realidad es un
+inversor de tres estados,
+
+120
+00:06:52,100 --> 00:06:55,000
+que tiene una estructura
+ligeramente diferente.
+
+121
+00:06:55,000 --> 00:06:57,000
+Esta es la extracción final, que
+
+122
+00:06:57,000 --> 00:06:59,500
+estoy bastante seguro de que es correcta.
+
+123
+00:06:59,500 --> 00:07:02,700
+Y luego recibí ayuda de
+Proppy en el curso para hacer
+
+124
+00:07:02,700 --> 00:07:05,315
+un esquema bonito y
+ordenado usando la biblioteca
+
+125
+00:07:05,340 --> 00:07:11,300
+Schemdraw de python y Maximo
+hicieron este genial render.
+
+126
+00:07:11,300 --> 00:07:13,847
+Entonces tenemos el
+suministro positivo, el
+
+127
+00:07:13,872 --> 00:07:20,100
+suministro negativo y aquí
+tenemos el inversor de entrada D.
+
+128
+00:07:20,100 --> 00:07:22,400
+Y luego, para nuestro reloj,
+tomamos un reloj y luego
+
+129
+00:07:22,400 --> 00:07:27,500
+generamos un reloj invertido
+y otro invertido-invertido.
+
+130
+00:07:27,500 --> 00:07:28,723
+Eso está sucediendo aquí y se
+
+131
+00:07:28,748 --> 00:07:34,600
+distribuye a las compuertas
+de transmisión aquí.
+
+132
+00:07:34,600 --> 00:07:37,483
+Y de este lado,
+estamos viendo la
+
+133
+00:07:37,508 --> 00:07:41,400
+salida, que es un
+inversor de doble conexión.
+
+134
+00:07:41,400 --> 00:07:43,300
+Así que tenemos una
+fuerza de dos bandas.
+
+135
+00:07:43,300 --> 00:07:45,100
+Entonces, ¿cómo funciona un flip-flop?
+
+136
+00:07:45,100 --> 00:07:47,800
+Bueno, echemos un vistazo al
+circuito con un poco más de detalle.
+
+137
+00:07:47,800 --> 00:07:51,600
+Tomé este circuito
+superior y luego
+
+138
+00:07:51,600 --> 00:07:53,500
+descubrí qué sucede con
+las puertas de transmisión.
+
+139
+00:07:53,500 --> 00:07:55,311
+cuando el reloj está
+alto o bajo y luego
+
+140
+00:07:55,336 --> 00:07:58,100
+se extraen estos dos circuitos separados.
+
+141
+00:07:58,100 --> 00:08:00,300
+Entonces comenzamos
+cuando el reloj está bajo.
+
+142
+00:08:00,300 --> 00:08:02,300
+La salida es constante y está aislada
+
+143
+00:08:02,300 --> 00:08:04,758
+porque tienes este
+bit de datos, un 0
+
+144
+00:08:04,783 --> 00:08:06,518
+o un 1, que se
+refuerza a sí mismo.
+
+145
+00:08:06,543 --> 00:08:10,100
+esta memoria estática siendo
+una salida conducida a Q.
+
+146
+00:08:10,100 --> 00:08:12,600
+Y la entrada es una especie
+de muestreo todo el tiempo.
+
+147
+00:08:12,600 --> 00:08:16,500
+Lo que está en D se
+invierte y luego se carga en A.
+
+148
+00:08:16,500 --> 00:08:18,700
+Y en el momento en
+que el reloj sube, esta
+
+149
+00:08:18,700 --> 00:08:21,100
+puerta de transmisión se abre y la que
+
+150
+00:08:21,100 --> 00:08:25,300
+crea el primer inversor
+de pestillo se cierra.
+
+151
+00:08:25,300 --> 00:08:27,030
+Y entonces, todo lo
+que estaba en A ahora
+
+152
+00:08:27,055 --> 00:08:29,570
+se reforzará en
+este bucle, la entrada
+
+153
+00:08:29,595 --> 00:08:33,200
+será ignorada y la salida
+irá directamente a Q.
+
+154
+00:08:33,200 --> 00:08:35,200
+Entonces tenemos esta condición de
+
+155
+00:08:35,200 --> 00:08:37,700
+carrera entre los datos
+que ingresan y el reloj.
+
+156
+00:08:37,700 --> 00:08:39,956
+Si los datos están cambiando
+en el momento en que
+
+157
+00:08:39,981 --> 00:08:42,316
+tomamos la muestra,
+podríamos tener algo que no sea
+
+158
+00:08:42,341 --> 00:08:46,500
+exactamente un 0 o un 1 aquí
+y eso puede causar problemas.
+
+159
+00:08:46,500 --> 00:08:48,022
+Entonces esto es lo
+que nos lleva a una
+
+160
+00:08:48,047 --> 00:08:50,009
+metaestabilidad. Entonces
+tenemos nuestro estado
+
+161
+00:08:50,034 --> 00:08:53,000
+cero, cero voltios y nuestro
+estado único, 1,8 voltios.
+
+162
+00:08:53,000 --> 00:08:54,400
+Y ambos son estables.
+
+163
+00:08:54,400 --> 00:08:57,100
+Se necesita trabajo para
+cambiar esos valores y
+
+164
+00:08:57,100 --> 00:09:00,300
+lograr que superen la
+colina y cambien al otro.
+
+165
+00:09:00,300 --> 00:09:04,400
+Pero digamos que la entrada
+D estaba cambiando y era
+
+166
+00:09:04,400 --> 00:09:08,300
+exactamente 0,9 voltios en el
+momento en que el reloj subió.
+
+167
+00:09:08,300 --> 00:09:10,900
+Luego comenzamos
+justo en esta posición
+
+168
+00:09:10,900 --> 00:09:12,900
+superior, que es un lugar metaestable.
+
+169
+00:09:12,900 --> 00:09:14,400
+Realmente no quiere quedarse allí.
+
+170
+00:09:14,400 --> 00:09:16,300
+Puede moverse de un lado a otro.
+
+171
+00:09:16,300 --> 00:09:19,300
+Pero permanecerá allí mucho
+más tiempo de lo normal.
+
+172
+00:09:19,300 --> 00:09:20,547
+Luego, cambia alguna fluctuación en
+
+173
+00:09:20,572 --> 00:09:22,600
+el suministro de energía o algo así y
+
+174
+00:09:22,600 --> 00:09:26,000
+pasamos a uno de
+estos otros estados.
+
+175
+00:09:26,000 --> 00:09:28,900
+Y otra forma de visualizar
+esto es con una simulación.
+
+176
+00:09:28,900 --> 00:09:30,500
+Entonces, un amigo mío hizo
+la simulación en la que colocó
+
+177
+00:09:30,500 --> 00:09:33,800
+estos dos inversores en un
+circuito de retroalimentación.
+
+178
+00:09:33,800 --> 00:09:36,000
+Y luego esta es la corriente
+
+179
+00:09:36,000 --> 00:09:39,500
+necesaria para forzarlo de
+un estado de cero a uno.
+
+180
+00:09:39,500 --> 00:09:43,400
+Entonces, si elevamos eso al
+cuadrado, obtenemos el poder.
+
+181
+00:09:43,400 --> 00:09:45,600
+Y puedes ver que tenemos
+que hacer este trabajo.
+
+182
+00:09:45,600 --> 00:09:48,100
+Tenemos que esforzarnos
+para subir la cresta.
+
+183
+00:09:48,100 --> 00:09:50,200
+Y luego, cuando
+estamos en equilibrio en la
+
+184
+00:09:50,200 --> 00:09:51,700
+cima de la cresta,
+simplemente nos quedamos allí.
+
+185
+00:09:51,700 --> 00:09:55,100
+Y luego la pelota puede permanecer
+allí por un largo período de tiempo,
+
+186
+00:09:55,100 --> 00:09:56,500
+una cantidad de tiempo bastante
+
+187
+00:09:56,500 --> 00:09:58,400
+larga hasta que algo nos derriba.
+
+188
+00:09:58,400 --> 00:10:01,000
+Y luego planeamos
+regresar al otro estado.
+
+189
+00:10:01,000 --> 00:10:02,061
+Entonces, dependiendo de dónde
+
+190
+00:10:02,086 --> 00:10:04,510
+empecemos aquí,
+si comenzamos aquí,
+
+191
+00:10:04,535 --> 00:10:07,500
+caeremos bastante rápidamente a un estado.
+
+192
+00:10:07,500 --> 00:10:10,400
+Si empezamos aquí,
+caeremos al otro estado.
+
+193
+00:10:10,400 --> 00:10:13,900
+Pero si empezamos aquí,
+tardaremos más en caer.
+
+194
+00:10:13,900 --> 00:10:14,762
+Y si empezamos justo en el
+
+195
+00:10:14,787 --> 00:10:17,700
+medio, puede llevar mucho tiempo.
+
+196
+00:10:17,700 --> 00:10:21,300
+Y cuando digo mucho tiempo,
+me refiero a picosegundos.
+
+197
+00:10:21,300 --> 00:10:24,136
+Ahora, para tener
+una idea de cuáles son
+
+198
+00:10:24,161 --> 00:10:25,956
+estas duraciones de tiempo y cómo
+
+199
+00:10:25,981 --> 00:10:28,536
+las formas de onda se ven y tener un poco de juego
+
+200
+00:10:28,561 --> 00:10:30,876
+interactivo, desarrollé
+esta herramienta
+
+201
+00:10:30,901 --> 00:10:33,700
+que me permite recorrer un montón de simulaciones.
+
+202
+00:10:33,700 --> 00:10:36,800
+Así que estoy usando Ngspice para ejecutar un bucle a
+
+203
+00:10:36,800 --> 00:10:41,700
+medida que el pulso D se
+acerca cada vez más al reloj
+
+204
+00:10:41,700 --> 00:10:43,900
+y luego a través del reloj
+y luego fuera del reloj.
+
+205
+00:10:43,900 --> 00:10:46,400
+Y luego podemos
+activar y desactivar todas
+
+206
+00:10:46,400 --> 00:10:49,000
+las señales y observar
+cómo interactúan entre sí.
+
+207
+00:10:49,000 --> 00:10:52,200
+Entonces, si quieres seguir el
+proceso, puedes clonar el repositorio,
+
+208
+00:10:52,200 --> 00:10:56,100
+Descomprima el
+conjunto de datos de
+
+209
+00:10:56,100 --> 00:10:57,500
+demostración que he
+incluido y luego ejecute la GUI.
+
+210
+00:10:57,500 --> 00:10:59,400
+Si tiene el PDK instalado localmente,
+
+211
+00:10:59,400 --> 00:11:00,600
+puede simplemente ejecutar la simulación
+
+212
+00:11:00,600 --> 00:11:02,400
+y luego también puede modificar la
+
+213
+00:11:02,400 --> 00:11:04,200
+plataforma SPICE y
+obtener resultados diferentes.
+
+214
+00:11:04,200 --> 00:11:06,900
+Entonces, cuando inicies
+el programa, se verá así.
+
+215
+00:11:06,900 --> 00:11:11,400
+Podemos mover el pulso
+de datos a la ventana de
+
+216
+00:11:11,400 --> 00:11:14,500
+muestreo y ver cómo la
+salida cambia de bajo a alto.
+
+217
+00:11:14,500 --> 00:11:15,800
+Y luego, a medida que
+seguimos moviéndonos, el
+
+218
+00:11:15,800 --> 00:11:19,000
+muestreo vuelve a
+ser bajo. la salida baja.
+
+219
+00:11:19,000 --> 00:11:22,300
+Y tenemos el esquema aquí abajo y
+
+220
+00:11:22,300 --> 00:11:23,598
+podemos activar
+y desactivar estas
+
+221
+00:11:23,623 --> 00:11:26,800
+diferentes ondas para
+lograr una mejor comprensión.
+
+222
+00:11:26,800 --> 00:11:31,100
+Entonces, por ejemplo,
+podríamos ver cómo el reloj se
+
+223
+00:11:31,100 --> 00:11:34,700
+invierte y se invierte dos
+veces y podemos movernos
+
+224
+00:11:34,700 --> 00:11:39,400
+aquí y podemos usar estas
+barras para medir el tiempo.
+
+225
+00:11:39,400 --> 00:11:40,900
+Así que hagámoslo rápidamente.
+
+226
+00:11:42,925 --> 00:11:44,769
+Vamos a medir desde el
+
+227
+00:11:44,794 --> 00:11:47,900
+punto 50% hasta el punto 50%.
+
+228
+00:11:47,900 --> 00:11:51,500
+Son dos inversores y
+aproximadamente 70 piezas por segundo.
+
+229
+00:11:51,500 --> 00:11:57,000
+Por lo tanto, se necesitan unos 35
+picosegundos para pasar por cada inversor.
+
+230
+00:11:57,000 --> 00:12:00,900
+Y ese es el tiempo
+entre el reloj no invertido
+
+231
+00:12:00,900 --> 00:12:04,400
+y luego se vuelve a invertir y
+luego se desinvierte nuevamente.
+
+232
+00:12:04,400 --> 00:12:06,400
+Ahora acerquémonos a esa región donde
+
+233
+00:12:06,400 --> 00:12:08,500
+la señal tiene que permanecer quieta y
+
+234
+00:12:08,500 --> 00:12:10,300
+veamos qué sucede
+si no se queda quieta.
+
+235
+00:12:10,300 --> 00:12:11,900
+Vea lo que sucede con la salida.
+
+236
+00:12:11,900 --> 00:12:15,300
+A medida que esa señal
+comienza a cambiar dentro de la
+
+237
+00:12:15,300 --> 00:12:17,874
+ventana de configuración
+y retención, la apertura del
+
+238
+00:12:17,899 --> 00:12:22,200
+flip-flop, la salida tarda cada
+vez más en estabilizarse.
+
+239
+00:12:22,200 --> 00:12:24,795
+Entonces, lo que podríamos
+hacer es activar un par
+
+240
+00:12:24,820 --> 00:12:29,700
+de estas otras formas
+de onda y echar un vistazo
+
+241
+00:12:29,700 --> 00:12:31,500
+más de cerca al interior y
+apagar ese reloj invertido.
+
+242
+00:12:31,500 --> 00:12:38,600
+Y puede ver cómo se necesita
+mucho más tiempo para
+
+243
+00:12:38,600 --> 00:12:41,600
+estabilizarse que cuando estamos
+fuera de una ventana de muestreo.
+
+244
+00:12:43,507 --> 00:12:45,400
+Y ahora tal vez sea un
+buen momento para decir
+
+245
+00:12:45,400 --> 00:12:48,900
+que esta es una simulación
+de la típica esquina,
+
+246
+00:12:48,900 --> 00:12:51,600
+lo que significa que
+tal vez esté en el medio
+
+247
+00:12:51,600 --> 00:12:53,900
+donde todo funciona
+bastante correctamente.
+
+248
+00:12:53,900 --> 00:12:55,500
+Pero obtienes estos
+diferentes rincones, estos
+
+249
+00:12:55,500 --> 00:12:56,900
+diferentes tipos de
+simulaciones para voltaje más
+
+250
+00:12:56,900 --> 00:13:01,200
+bajo, voltaje más alto, MOSFET
+más rápidos, MOSFET más lentos.
+
+251
+00:13:01,200 --> 00:13:03,700
+Entonces, si quieres saber
+cuál es el peor caso de
+
+252
+00:13:03,700 --> 00:13:05,600
+algo, debes asegurarte de
+estar usando la esquina correcta.
+
+253
+00:13:05,600 --> 00:13:06,600
+para simular.
+
+254
+00:13:06,600 --> 00:13:08,245
+Y todos esos datos
+se vierten en un
+
+255
+00:13:08,270 --> 00:13:10,698
+archivo de Liberty y ese archivo
+es lo que realmente se
+
+256
+00:13:10,723 --> 00:13:13,100
+usa para hacer el
+análisis de tiempo estático
+
+257
+00:13:13,100 --> 00:13:15,000
+que usarías para
+verificar que tu diseño
+
+258
+00:13:15,000 --> 00:13:17,300
+realmente iba a funcionar
+y cumplir con el tiempo.
+
+259
+00:13:17,300 --> 00:13:19,700
+Quizás estés familiarizado
+con este diagrama de tiempos,
+
+260
+00:13:19,700 --> 00:13:24,100
+típico de un flip-flop donde
+tenemos el reloj con muestreo.
+
+261
+00:13:24,100 --> 00:13:27,800
+Tenemos que mantener los
+datos estables en los tiempos
+
+262
+00:13:27,800 --> 00:13:30,300
+de configuración y retención
+y luego tenemos algo de
+
+263
+00:13:30,300 --> 00:13:32,300
+tiempo para que la salida se
+establezca en el nuevo valor.
+
+264
+00:13:32,300 --> 00:13:36,300
+Entonces, midamos cuáles son
+estos valores usando la herramienta.
+
+265
+00:13:36,300 --> 00:13:38,105
+Y comenzaremos con Tcq, el
+
+266
+00:13:38,130 --> 00:13:40,000
+tiempo entre el reloj y la Q.
+
+267
+00:13:40,000 --> 00:13:43,600
+Déjame apagar estas señales.
+
+268
+00:13:43,600 --> 00:13:48,100
+Así que aquí tenemos el reloj.
+
+269
+00:13:48,100 --> 00:13:49,000
+Aquí tenemos la Q.
+
+270
+00:13:49,000 --> 00:13:52,900
+Así que asegurémonos de
+que sea agradable y estable.
+
+271
+00:13:52,900 --> 00:13:53,400
+Pon eso ahí.
+
+272
+00:13:53,400 --> 00:13:59,000
+Y lo que estoy haciendo es mover
+los marcadores a su punto del 50%.
+
+273
+00:13:59,000 --> 00:14:01,100
+Eso es 0,9 voltios.
+
+274
+00:14:01,100 --> 00:14:04,300
+Y estamos midiendo 170 picosegundos.
+
+275
+00:14:04,300 --> 00:14:05,600
+Lo puse al revés.
+
+276
+00:14:13,450 --> 00:14:15,375
+Entonces ese es TCQ.
+
+277
+00:14:15,400 --> 00:14:17,800
+Ahora, ¿cómo medimos
+este tiempo de preparación?
+
+278
+00:14:17,800 --> 00:14:21,000
+Entonces hacemos esto
+diciendo que tomamos TCQ
+
+279
+00:14:21,000 --> 00:14:23,900
+y decimos que un 5% más
+de ese tiempo es aceptable.
+
+280
+00:14:23,900 --> 00:14:26,100
+Aproximadamente 180
+picosegundos.
+
+281
+00:14:26,100 --> 00:14:31,300
+Y luego encontramos el punto
+donde D es hacer que el TCQ
+
+282
+00:14:31,300 --> 00:14:34,100
+se extienda mucho más y lo
+llamamos tiempo de preparación.
+
+283
+00:14:34,100 --> 00:14:35,300
+Así que midámoslo.
+
+284
+00:14:35,300 --> 00:14:40,600
+Así que primero moveré esto
+a 180 picosegundos aquí abajo.
+
+285
+00:14:40,600 --> 00:14:46,600
+Y luego moveré D
+hasta llegar a ese punto.
+
+286
+00:14:46,600 --> 00:14:50,900
+Quizás acerque un poco.
+
+287
+00:14:50,900 --> 00:14:54,000
+Por ahí.
+
+288
+00:14:54,000 --> 00:14:57,500
+Y entonces lo que haré es medir
+
+289
+00:14:57,500 --> 00:14:59,400
+esta distancia entre estos dos aquí.
+
+290
+00:14:59,400 --> 00:15:02,900
+Así que moveré este aquí.
+
+291
+00:15:02,900 --> 00:15:05,700
+Y este de ahí.
+
+292
+00:15:05,700 --> 00:15:07,100
+50% punto.
+
+293
+00:15:07,100 --> 00:15:09,800
+Y tengo unos 67 picosegundos.
+
+294
+00:15:09,800 --> 00:15:11,100
+Entonces esa es
+nuestra configuración.
+
+295
+00:15:11,100 --> 00:15:12,600
+Unos 70 picosegundos.
+
+296
+00:15:12,600 --> 00:15:14,700
+Ahora midamos la sujeción.
+
+297
+00:15:14,700 --> 00:15:20,000
+Y lo que puedo hacer es que
+necesitamos que este borde cambie.
+
+298
+00:15:20,000 --> 00:15:22,445
+Entonces puedo retroceder
+por el otro lado de la
+
+299
+00:15:22,470 --> 00:15:28,500
+forma de onda para que la salida comience a bajar.
+
+300
+00:15:28,500 --> 00:15:29,300
+Hacer la misma cosa.
+
+301
+00:15:29,300 --> 00:15:31,811
+Mueve esto.
+
+302
+00:15:31,836 --> 00:15:34,800
+Hasta que llegue a 170.
+
+303
+00:15:34,800 --> 00:15:39,900
+Y luego muévalo a
+180 picosegundos.
+
+304
+00:15:39,900 --> 00:15:45,700
+Y luego encuentre la hora de
+los datos donde estoy en eso.
+
+305
+00:15:45,700 --> 00:15:47,500
+Marca del 50% nuevamente.
+
+306
+00:15:51,467 --> 00:15:54,867
+Por ahí.
+
+307
+00:15:56,700 --> 00:16:01,421
+Y de nuevo voy a mover
+esto al punto del 50%.
+
+308
+00:16:09,511 --> 00:16:13,300
+Y estamos midiendo
+unos 20 picosegundos.
+
+309
+00:16:13,300 --> 00:16:15,844
+Pero, ¿qué notan
+de diferente en esta
+
+310
+00:16:15,869 --> 00:16:17,991
+forma de onda que
+estamos viendo aquí
+
+311
+00:16:18,016 --> 00:16:22,000
+en comparación con la que les mostré antes?
+
+312
+00:16:22,000 --> 00:16:25,600
+Aquí la sujeción es positiva
+y se extiende de esta manera.
+
+313
+00:16:25,600 --> 00:16:27,584
+Pero debido a que la ventana
+de retención ahora está
+
+314
+00:16:27,609 --> 00:16:33,300
+antes del reloj, a esto lo llamamos retención negativa.
+
+315
+00:16:33,300 --> 00:16:38,400
+Y realmente sería mejor
+si yo los tuviera al revés.
+
+316
+00:16:38,400 --> 00:16:40,282
+Entonces, si fuera después, si
+
+317
+00:16:40,307 --> 00:16:42,500
+estuviera aquí, tendría un número positivo.
+
+318
+00:16:42,500 --> 00:16:44,632
+Pero debido a que
+está atrás frente
+
+319
+00:16:44,657 --> 00:16:48,500
+al reloj, tengo menos 20 picosegundos.
+
+320
+00:16:48,500 --> 00:16:50,126
+Entonces, lo que está
+configurado es el tiempo en el
+
+321
+00:16:50,151 --> 00:16:53,900
+que la señal debe ser estable frente a la señal del reloj.
+
+322
+00:16:53,900 --> 00:16:57,600
+Y mantener es el tiempo que la señal tiene que
+permanecer estable después de la señal del reloj.
+
+323
+00:16:57,600 --> 00:17:00,100
+Y como acabas de ver
+con el flip-flop sky 130, el
+
+324
+00:17:00,100 --> 00:17:02,065
+tiempo de espera puede
+ser negativo y eso significa
+
+325
+00:17:02,090 --> 00:17:05,100
+que toda la apertura se desplaza delante del reloj.
+
+326
+00:17:05,100 --> 00:17:06,696
+Entonces podemos
+mover esa apertura hacia
+
+327
+00:17:06,721 --> 00:17:10,000
+atrás retrasando el reloj con respecto a los datos.
+
+328
+00:17:10,000 --> 00:17:13,183
+Y podemos hacerlo
+ajustando los tamaños de los
+
+329
+00:17:13,208 --> 00:17:17,000
+MOSFET en uso mientras construimos el flip-flop.
+
+330
+00:17:17,000 --> 00:17:20,400
+Pero en esta ventana la apertura
+mantiene un ancho constante.
+
+331
+00:17:20,400 --> 00:17:25,200
+Entonces, al moverlo hacia atrás tenemos el
+efecto de aumentar el tiempo de preparación.
+
+332
+00:17:25,200 --> 00:17:29,700
+Así que tenemos menos tiempo
+para hacer el trabajo de la lógica digital.
+
+333
+00:17:29,700 --> 00:17:33,800
+Ahora veamos cómo la configuración y la
+retención nos afectan como diseñadores digitales.
+
+334
+00:17:33,800 --> 00:17:35,900
+Una de las preguntas
+importantes que queremos saber es
+
+335
+00:17:35,900 --> 00:17:39,000
+cuánto tiempo podemos
+dedicar a realizar cálculos útiles
+
+336
+00:17:39,000 --> 00:17:41,525
+y cuánto tiempo perdemos al
+tener que mantener los datos
+
+337
+00:17:41,550 --> 00:17:44,700
+estables durante el período de configuración y retención.
+
+338
+00:17:44,700 --> 00:17:46,443
+Entonces, para la
+configuración, podemos decir que
+
+339
+00:17:46,468 --> 00:17:49,354
+tenemos la peor condición
+en la que tenemos datos que
+
+340
+00:17:49,379 --> 00:17:50,614
+salen de un flip-flop a
+través de alguna lógica
+
+341
+00:17:50,639 --> 00:17:54,300
+combinatoria que lleva algo de tiempo y en un segundo flip-flop.
+
+342
+00:17:54,300 --> 00:17:56,300
+Y aquí tenemos una
+ventaja de reloj ascendente.
+
+343
+00:17:56,300 --> 00:18:00,400
+Tenemos Tcq el tiempo que
+tardan los datos en salir del flip-flop.
+
+344
+00:18:00,400 --> 00:18:03,000
+La cantidad de tiempo que le
+toma a la lógica hacer su trabajo.
+
+345
+00:18:03,000 --> 00:18:07,200
+Y luego esos datos deben ser estables
+y no mover la ventana de configuración.
+
+346
+00:18:07,200 --> 00:18:08,900
+Y esta cantidad de
+tiempo aquí es de holgura.
+
+347
+00:18:08,900 --> 00:18:12,500
+El tiempo que nos sobra
+para hacer trabajo extra.
+
+348
+00:18:12,500 --> 00:18:14,800
+Entonces podemos escribir
+eso como una ecuación.
+
+349
+00:18:14,800 --> 00:18:17,800
+El período del reloj siempre
+debía ser mayor que Tcq más
+
+350
+00:18:17,800 --> 00:18:21,100
+el retraso lógico más el tiempo de configuración.
+
+351
+00:18:21,100 --> 00:18:22,717
+Y algo interesante a
+tener en cuenta acerca de
+
+352
+00:18:22,742 --> 00:18:25,675
+esta ecuación es que involucra el período del reloj.
+
+353
+00:18:25,700 --> 00:18:30,100
+Entonces se dice que tuvimos un problema con el
+cambio de datos en el tiempo de configuración.
+
+354
+00:18:30,100 --> 00:18:32,800
+Podríamos solucionarlo
+simplemente aumentando el
+
+355
+00:18:32,800 --> 00:18:34,300
+período del reloj disminuyendo la frecuencia y
+
+356
+00:18:34,300 --> 00:18:36,627
+eso sacaría los datos
+cambiantes del tiempo de
+
+357
+00:18:36,652 --> 00:18:38,900
+configuración y luego nuestro problema desaparecería.
+
+358
+00:18:38,900 --> 00:18:41,200
+Ya no obtendríamos
+metaestabilidad.
+
+359
+00:18:41,200 --> 00:18:44,200
+Otra pregunta importante es qué tan
+rápido pueden comenzar a cambiar los datos
+
+360
+00:18:44,200 --> 00:18:47,800
+después de que obtenemos el reloj y eso
+está relacionado con el tiempo completo.
+
+361
+00:18:47,800 --> 00:18:49,900
+Entonces, si tomamos el peor de los casos, esta vez
+
+362
+00:18:49,900 --> 00:18:52,100
+tenemos los datos
+ingresando a un flip-flop y luego
+
+363
+00:18:52,100 --> 00:18:54,500
+inmediatamente saliendo
+al siguiente flip-flop, tal
+
+364
+00:18:54,500 --> 00:18:57,700
+vez, por ejemplo, en un registro de desplazamiento.
+
+365
+00:18:57,700 --> 00:18:59,500
+Y queremos saber si vamos
+a tener un problema con los
+
+366
+00:18:59,500 --> 00:19:03,600
+datos cambiando durante todo
+el tiempo del segundo flip-flop.
+
+367
+00:19:03,600 --> 00:19:05,800
+Hemos visto este Tcq y si esto sucede
+
+368
+00:19:05,800 --> 00:19:09,100
+dentro de toda la
+ventana, entonces
+
+369
+00:19:09,100 --> 00:19:11,800
+tendremos un problema
+de metaestabilidad.
+
+370
+00:19:11,800 --> 00:19:13,600
+Entonces la ecuación
+aquí es bastante simple.
+
+371
+00:19:13,600 --> 00:19:16,700
+Tcq siempre tiene que
+ser mayor que Hold.
+
+372
+00:19:16,700 --> 00:19:20,300
+Y es interesante notar aquí que el período
+del reloj no es parte de esta ecuación.
+
+373
+00:19:20,300 --> 00:19:23,600
+Tcq y el tiempo de
+espera son parámetros de
+
+374
+00:19:23,600 --> 00:19:25,400
+un flip-flop y no se pueden cambiar más adelante.
+
+375
+00:19:25,400 --> 00:19:28,800
+Por eso las infracciones del
+tiempo de espera dan tanto miedo
+
+376
+00:19:28,800 --> 00:19:31,700
+porque no podemos solucionarlas
+después de una comida para llevar.
+
+377
+00:19:31,700 --> 00:19:33,869
+Y esa es una de las razones
+por las que los flip-flops tienen
+
+378
+00:19:33,894 --> 00:19:38,000
+esta retención negativa porque
+significa que esa ecuación
+
+379
+00:19:38,000 --> 00:19:39,900
+nunca puede ser cierta y nunca tendremos violaciones de retención.
+
+380
+00:19:39,900 --> 00:19:41,900
+Entonces es cierto que perdemos tiempo porque
+
+381
+00:19:41,900 --> 00:19:44,762
+recordamos que la apertura
+se mantiene del mismo
+
+382
+00:19:44,787 --> 00:19:46,500
+tamaño y simplemente la estamos moviendo hacia adelante.
+
+383
+00:19:46,500 --> 00:19:49,400
+Entonces perdemos tiempo
+que podemos usar para el cálculo.
+
+384
+00:19:49,400 --> 00:19:51,500
+Es como si tuviéramos
+más tiempo de preparación.
+
+385
+00:19:51,500 --> 00:19:55,000
+Pero como realmente queremos
+evitar la posibilidad de violaciones
+
+386
+00:19:55,000 --> 00:19:58,800
+de retención, estamos
+dispuestos a sacrificar ese tiempo extra.
+
+387
+00:19:58,800 --> 00:20:03,200
+Entonces, dado que el flop Sky130
+D-Type tiene un tiempo de espera negativo,
+
+388
+00:20:03,200 --> 00:20:07,400
+ ¿cómo es posible que MPW1
+haya fallado con violaciones de espera?
+
+389
+00:20:07,400 --> 00:20:10,300
+Entonces, para darles tiempo para
+pensar, voy a reproducir este increíble
+
+390
+00:20:10,300 --> 00:20:13,800
+render de un flip-flop haciendo su trabajo realizado por Maximo Balestrini
+
+391
+00:20:34,400 --> 00:20:39,400
+Bueno, probablemente viste mi video de falla de MPW1,
+así que ya sabes la respuesta a esta pregunta, pero la
+
+392
+00:20:39,400 --> 00:20:42,200
+respuesta es que tiene que
+ver con el desfase del reloj.
+
+393
+00:20:42,200 --> 00:20:46,600
+Entonces, antes asumíamos que ambos flip-flops
+tenían exactamente el mismo reloj, pero si
+
+394
+00:20:46,600 --> 00:20:51,600
+tenemos dos relojes diferentes, entonces
+básicamente todos nuestros planes se van por la
+
+395
+00:20:51,600 --> 00:20:55,800
+ventana y podemos terminar con datos cambiando ya
+sea dentro del tiempo de configuración o de espera.
+
+396
+00:20:55,800 --> 00:21:00,700
+Y el problema con MPW1 fue que el
+árbol del reloj estaba mal sintetizado y
+
+397
+00:21:00,700 --> 00:21:05,400
+teníamos tanta desviación en el chip que
+terminamos con violaciones de retención.
+
+398
+00:21:05,400 --> 00:21:10,200
+Entonces, para resumir, el fracaso
+del Sky130 es un flip-flop de puerta de
+
+399
+00:21:10,200 --> 00:21:13,375
+transmisión que, según el artículo de
+Berkeley, es un buen compromiso entre
+
+400
+00:21:13,400 --> 00:21:18,700
+potencia e inmunidad racial y tiene algunos
+gráficos agradables en el resto del artículo.
+
+401
+00:21:18,700 --> 00:21:21,800
+Puedes echarle un vistazo si quieres
+comprenderlo aún más profundamente.
+
+402
+00:21:21,800 --> 00:21:24,188
+Así que me gustaría agradecer nuevamente a la
+ Comunidad
+
+403
+00:21:24,213 --> 00:21:27,871
+del curso Zero-To-ASIC al anónimo
+ingeniero de ASIC que ayudó
+
+404
+00:21:27,896 --> 00:21:31,100
+a revisar las diapositivas y a
+tener la idea en primer lugar.
+
+405
+00:21:31,100 --> 00:21:34,600
+Stefan Schippers por sus
+aportaciones sobre el modelado de Spice.
+
+406
+00:21:34,600 --> 00:21:40,300
+Y para recursos,  La demostración
+de metasibilidad en FPGA de Colin O'Flynn es bastante buena.
+
+407
+00:21:40,300 --> 00:21:46,100
+Shawn Hymel acaba de lanzar una serie FPGA
+DigiKey y el último habla sobre Metaestabilidad.
+
+408
+00:21:46,100 --> 00:21:48,431
+Y, por supuesto, puede
+obtener mucha más información y
+
+409
+00:21:48,456 --> 00:21:52,300
+aprender a diseñar chips usted mismo en el curso Zero-To-ASIC.
+
+410
+00:21:52,300 --> 00:21:55,300
+Así que gracias por ver el
+vídeo y estad atentos al próximo.
+
+411
+00:21:55,500 --> 00:22:06,500
+[Música]
+
+412
+00:22:06,500 --> 00:22:12,460
+[BLANK_AUDIO]
+

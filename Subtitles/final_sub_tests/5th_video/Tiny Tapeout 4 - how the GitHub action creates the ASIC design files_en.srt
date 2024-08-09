@@ -1,0 +1,194 @@
+﻿1
+00:00:00,350 --> 00:00:02,713
+In this video, we're going
+to take a look at the GitHub
+
+2
+00:00:02,738 --> 00:00:05,820
+actions that produce the GDS
+files we need for the Tapeout.
+
+3
+00:00:06,810 --> 00:00:09,900
+To show you this action, I'm going to be
+using the Verilog demo.
+
+4
+00:00:10,980 --> 00:00:14,940
+The way that GitHub actions work is that
+inside this special .github directory,
+
+5
+00:00:15,340 --> 00:00:16,340
+we have workflows.
+
+6
+00:00:17,420 --> 00:00:18,420
+They're written in YAML.
+
+7
+00:00:18,940 --> 00:00:22,260
+We have these three different files here,
+and the most important one is the GDS.
+
+8
+00:00:23,340 --> 00:00:26,111
+This one creates a PDF, so you
+can see what your page and the
+
+9
+00:00:26,112 --> 00:00:29,520
+datasheet will look like, and
+this one runs an automatic test.
+
+10
+00:00:30,430 --> 00:00:31,980
+Let's take a look at the GDS action.
+
+11
+00:00:32,740 --> 00:00:36,380
+It starts with the name of the action,
+and then specifies how it's to be run.
+
+12
+00:00:37,190 --> 00:00:40,128
+Either we can start it when
+we push to the repository,
+
+13
+00:00:40,129 --> 00:00:42,923
+or workflow dispatch means
+we can also start it manually.
+
+14
+00:00:44,075 --> 00:00:46,280
+Then the work is done down here in the
+jobs section.
+
+15
+00:00:47,380 --> 00:00:51,440
+It specifies to use Ubuntu as an operating
+system, and then we have two tasks,
+
+16
+00:00:51,900 --> 00:00:52,900
+GDS and viewer.
+
+17
+00:00:53,760 --> 00:00:56,240
+Each of those uses an
+additional composite action
+
+18
+00:00:56,241 --> 00:00:58,981
+file that lives in the
+Tiny Tapeout repository.
+
+19
+00:00:59,770 --> 00:01:02,000
+Let's take a look at the composite GDS
+action.
+
+20
+00:01:03,065 --> 00:01:06,680
+We've got a bunch of environment variables
+here that say what version of OpenLane
+
+21
+00:01:06,681 --> 00:01:09,438
+should be used, and where it
+should be installed, along with
+
+22
+00:01:09,439 --> 00:01:12,000
+the variant of the PDK and
+where that should be installed.
+
+23
+00:01:13,220 --> 00:01:15,680
+I'll briefly talk about OpenLane at the
+end of this video.
+
+24
+00:01:17,440 --> 00:01:20,760
+Prerequisites are installed along with the
+Tiny Tapeout support tools.
+
+25
+00:01:21,765 --> 00:01:24,068
+The user configuration
+gets generated, which will
+
+26
+00:01:24,069 --> 00:01:27,583
+either fetch the Wokwi
+net list or use the HDL files.
+
+27
+00:01:28,580 --> 00:01:31,186
+Then OpenLane is cloned
+at a specific commit, and
+
+28
+00:01:31,286 --> 00:01:33,780
+the make command
+installs it along with the PDK.
+
+29
+00:01:35,290 --> 00:01:37,460
+Then the TT tool is used to run OpenLane.
+
+30
+00:01:38,080 --> 00:01:41,603
+Let's take a look at that over here in the
+TT support tools repository.
+
+31
+00:01:42,510 --> 00:01:44,856
+This starts the OpenLane
+docker and gives it the right
+
+32
+00:01:44,857 --> 00:01:47,500
+commands and environment
+settings to start the build.
+
+33
+00:01:48,730 --> 00:01:52,320
+Then we show you new warnings,
+the routing and cell usage summary here.
+
+34
+00:01:55,560 --> 00:01:59,743
+These lines save the GDS and some
+important logs to a downloadable artifact.
+
+35
+00:02:00,720 --> 00:02:03,863
+These lines create the PNG render of the
+final GDS.
+
+36
+00:02:04,530 --> 00:02:06,623
+You can find out more about OpenLane here.
+
+37
+00:02:07,250 --> 00:02:10,150
+OpenLane is an open source RTL to GDS
+flow.
+
+38
+00:02:11,050 --> 00:02:14,610
+It converts your design into the ASIC
+files we need for manufacturing.
+
+39
+00:02:15,420 --> 00:02:19,150
+If you want to learn more, then consider
+taking my amazing Zero-to-ASIC course,
+
+40
+00:02:19,570 --> 00:02:21,830
+which also covers digital design in
+Verilog.
+

@@ -1,0 +1,154 @@
+﻿1
+00:00:00,000 --> 00:00:02,253
+En este vídeo aprenderás
+a utilizar Wokwi para
+
+2
+00:00:02,278 --> 00:00:05,760
+dibujar y simular
+diseños digitales simples.
+
+3
+00:00:07,766 --> 00:00:11,280
+Después de abrir la plantilla,
+puede minimizar esta área aquí.
+
+4
+00:00:11,280 --> 00:00:14,080
+Haga clic izquierdo y
+arrastre para moverse.
+
+5
+00:00:14,080 --> 00:00:18,960
+Rueda de desplazamiento para acercar y
+alejar. También me gusta activar la cuadrícula.
+
+6
+00:00:18,960 --> 00:00:25,680
+Disponemos de dos modos en Wokwi, dibujo y
+simulación. Empezaremos mirando el dibujo.
+
+7
+00:00:26,240 --> 00:00:32,560
+Para agregar más puertas lógicas, puede usar el botón "+", luego
+comience a escribir lógica y verá todas las puertas disponibles.
+
+8
+00:00:32,560 --> 00:00:37,200
+Puede seleccionar un componente y arrastrarlo.
+Los cables permanecerán conectados.
+
+9
+00:00:37,200 --> 00:00:41,360
+Puede ajustar los cables haciendo
+clic en ellos y usando las manijas.
+
+10
+00:00:41,360 --> 00:00:49,040
+También puedes cambiar los colores. Para un cableado ordenado,
+puede hacer clic en los puntos de referencia mientras dibuja.
+
+11
+00:00:49,040 --> 00:00:56,080
+Para copiar un componente, selecciónelo y presione D. Para copiar
+un grupo de componentes, incluidos sus cables, selecciónelos con
+
+12
+00:00:56,080 --> 00:01:04,400
+Mayús, haga clic izquierdo y arrastre. Luego presione D. Utilice la
+tecla Eliminar para eliminar componentes o grupos de componentes.
+
+13
+00:01:04,400 --> 00:01:08,240
+Controla Z y controla Y
+para deshacer y rehacer.
+
+14
+00:01:08,240 --> 00:01:16,800
+Para obtener más consejos sobre Wokwi,
+consulte las preguntas frecuentes aquí.
+
+15
+00:01:16,800 --> 00:01:25,520
+Es posible crear un circuito defectuoso. Por ejemplo
+conectando dos salidas entre sí o haciendo un
+
+16
+00:01:25,520 --> 00:01:32,000
+cortocircuito. Si eso sucede, obtendrás un cuadro
+ERC aquí y tendrás que resolverlo antes de poder
+
+17
+00:01:32,000 --> 00:01:37,280
+realizar tu diseño. Ahora simularemos el diseño
+haciendo clic en el botón verde de reproducción.
+
+18
+00:01:37,280 --> 00:01:43,040
+Puede hacer clic en interruptores individuales, pero si
+selecciona el interruptor completo, también puede usar el teclado
+
+19
+00:01:43,040 --> 00:01:49,440
+de su computadora para alternar los interruptores. Puedes
+ver cómo cambia la salida a medida que cambio la entrada.
+
+20
+00:01:50,720 --> 00:01:56,640
+Para diseños de relojes puede utilizar nuestro generador
+de relojes automático. Con el interruptor de esta manera
+
+21
+00:01:56,640 --> 00:02:02,000
+el reloj funcionará libremente. De esta manera podemos
+hacer clic en el botón para crear un solo paso de reloj.
+
+22
+00:02:02,000 --> 00:02:08,560
+Para más información sobre el reloj consulte el PREGUNTAS MÁS FRECUENTES. Un pequeño consejo de depuración que me gusta
+
+23
+00:02:08,560 --> 00:02:14,160
+es agregar un LED a partes importantes del circuito. Eso puede
+ayudarle a comprender lo que sucede dentro de un circuito.
+
+24
+00:02:14,160 --> 00:02:20,560
+Una característica interesante para las pruebas es la
+creación de una tabla de verdad. Si crea un nuevo archivo
+
+25
+00:02:20,560 --> 00:02:26,560
+a la izquierda llamado Truthtable.md, puede crear una
+tabla de verdad que luego se usará para probar su diseño.
+
+26
+00:02:26,560 --> 00:02:32,080
+Para obtener documentación sobre cómo funciona, lea la
+documentación aquí. Sólo se utilizan puertas lógicas que
+
+27
+00:02:32,080 --> 00:02:37,920
+están conectadas entre las placas de entrada y salida.
+Puede dejar cualquier LED de depuración adicional o
+
+28
+00:02:37,920 --> 00:02:42,720
+elementos de circuito adicionales fuera de las placas de
+entrada y salida. Serán ignorados por las herramientas ASIC.
+
+29
+00:02:42,720 --> 00:02:45,520
+Asegúrese de guardar
+una copia de su diseño.
+
+30
+00:02:48,240 --> 00:02:53,680
+Obtendrá un nuevo número en la URL aquí y ese es
+el número que debe enviar para que se fabrique
+
+31
+00:02:53,680 --> 00:03:10,480
+su diseño. Para aprender más sobre diseño
+digital puedes seguir nuestras lecciones aquí.
+

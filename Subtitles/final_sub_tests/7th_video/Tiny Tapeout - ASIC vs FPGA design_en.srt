@@ -1,0 +1,429 @@
+﻿1
+00:00:02,990 --> 00:00:05,090
+[Matt] And one last
+thing that just came to
+
+2
+00:00:05,090 --> 00:00:08,000
+mind is we've got a
+lot of people that
+
+3
+00:00:08,000 --> 00:00:11,030
+are planning to join
+us to Tapeout on
+
+4
+00:00:11,030 --> 00:00:16,580
+Tiny Tapeout 2 and
+the 60% of people
+
+5
+00:00:16,580 --> 00:00:18,470
+said that they were
+interested in using
+
+6
+00:00:18,470 --> 00:00:20,300
+an HDL. So
+presumably people
+
+7
+00:00:20,300 --> 00:00:23,390
+have come from doing
+simulations or do it
+
+8
+00:00:23,390 --> 00:00:26,510
+probably using a bit
+of FPGA work. So is
+
+9
+00:00:26,510 --> 00:00:27,890
+there any advice you
+would give to
+
+10
+00:00:27,890 --> 00:00:30,110
+somebody who was
+like converting an
+
+11
+00:00:30,110 --> 00:00:33,690
+FPGA design to an
+ASIC design. I think
+
+12
+00:00:33,690 --> 00:00:36,540
+for me that like
+the, the, the most
+
+13
+00:00:36,540 --> 00:00:38,850
+crucial one is with
+FPGAs, you can
+
+14
+00:00:38,850 --> 00:00:40,440
+almost always
+guarantee that the
+
+15
+00:00:40,440 --> 00:00:41,880
+registers are going
+to get initialized
+
+16
+00:00:41,880 --> 00:00:43,500
+to zero. And you can
+have these initial
+
+17
+00:00:43,530 --> 00:00:46,110
+begin blocks. [Guest: Yeah. So...]
+So you have to have
+
+18
+00:00:46,135 --> 00:00:48,443
+a good reset that
+sets everything to zero.
+
+19
+00:00:48,823 --> 00:00:53,340
+[Guest] Yeah yeah yeah. I mean I
+think that's so the,
+
+20
+00:00:54,150 --> 00:00:57,630
+the presence of an
+explicit reset on
+
+21
+00:00:57,630 --> 00:00:59,340
+the flip-flop that
+actually needed for
+
+22
+00:00:59,340 --> 00:01:03,270
+the design to work
+is something that I
+
+23
+00:01:03,270 --> 00:01:04,920
+recommend doing in
+FPGA as well,
+
+24
+00:01:04,950 --> 00:01:07,590
+because even in
+FPGA, even though
+
+25
+00:01:08,010 --> 00:01:12,750
+through, the registers
+might be initial
+
+26
+00:01:12,750 --> 00:01:14,640
+labels will be
+initialized to some
+
+27
+00:01:14,640 --> 00:01:17,940
+defined state after
+configuration.
+
+28
+00:01:18,540 --> 00:01:20,250
+You know, if you use
+a PLL or stuff like
+
+29
+00:01:20,250 --> 00:01:22,890
+that, your clock is
+not stable at the
+
+30
+00:01:22,890 --> 00:01:24,150
+beginning, which
+means technically
+
+31
+00:01:24,150 --> 00:01:26,040
+you can't start
+clocking your logic
+
+32
+00:01:26,040 --> 00:01:28,470
+without failing,
+without timing
+
+33
+00:01:28,470 --> 00:01:29,970
+violation. Which
+means it's always a
+
+34
+00:01:29,970 --> 00:01:32,731
+good idea to hold
+every critical flip-flop
+
+35
+00:01:32,756 --> 00:01:35,040
+in reset until the
+PLL is locked,
+
+36
+00:01:35,040 --> 00:01:36,390
+which requires your
+design to have an
+
+37
+00:01:36,390 --> 00:01:39,810
+explicit reset
+anyway. Something
+
+38
+00:01:39,810 --> 00:01:42,360
+else that not shocks
+me, but like it's
+
+39
+00:01:42,360 --> 00:01:46,020
+very different
+between FPGA and and
+
+40
+00:01:46,020 --> 00:01:48,840
+in and ASIC design.
+
+41
+00:01:49,710 --> 00:01:52,780
+Is that in FPGA? You
+know, you have you I
+
+42
+00:01:52,780 --> 00:01:54,280
+mean, typically you
+have your Luts and a
+
+43
+00:01:54,280 --> 00:01:55,720
+register right
+after. That's like
+
+44
+00:01:55,720 --> 00:01:59,680
+the typical
+architecture which
+
+45
+00:01:59,680 --> 00:02:01,150
+means that you
+pretty much get
+
+46
+00:02:01,150 --> 00:02:03,580
+registers for free.
+Like, you can
+
+47
+00:02:03,580 --> 00:02:05,920
+heavily pipeline
+your design, and it
+
+48
+00:02:05,920 --> 00:02:07,270
+doesn't cost you
+that much because
+
+49
+00:02:07,270 --> 00:02:10,720
+the register is
+there anyway. In
+
+50
+00:02:10,720 --> 00:02:13,150
+basic that's not the
+case like this. If
+
+51
+00:02:13,150 --> 00:02:14,470
+you look at the
+logic cell that
+
+52
+00:02:14,470 --> 00:02:17,050
+implement a register
+versus the the, the
+
+53
+00:02:17,050 --> 00:02:18,430
+logic cells that
+implement like an
+
+54
+00:02:18,460 --> 00:02:21,790
+end or like a logic
+function. Yeah, the
+
+55
+00:02:21,790 --> 00:02:23,830
+registers is like
+many times bigger,
+
+56
+00:02:23,830 --> 00:02:24,910
+which means that if
+you heavily
+
+57
+00:02:24,910 --> 00:02:26,170
+pipeline, your
+design is going to
+
+58
+00:02:26,170 --> 00:02:29,110
+explode in size.
+And, you know, the
+
+59
+00:02:30,190 --> 00:02:32,080
+the logic delay
+isn't that much, you
+
+60
+00:02:32,080 --> 00:02:33,670
+can get away with
+much more logic
+
+61
+00:02:33,670 --> 00:02:37,870
+between your flip-flops than in
+
+62
+00:02:37,870 --> 00:02:39,640
+your FPGA.
+Basically. That's
+
+63
+00:02:40,600 --> 00:02:41,950
+that's one that's
+one of the things
+
+64
+00:02:41,950 --> 00:02:44,170
+when, when I, you
+know, redesign stuff
+
+65
+00:02:44,170 --> 00:02:46,450
+for ASIC that I
+change a lot is
+
+66
+00:02:46,450 --> 00:02:48,250
+because. Yeah, in in
+FPGA I'm more
+
+67
+00:02:48,250 --> 00:02:50,230
+constrained
+sometimes by the
+
+68
+00:02:50,230 --> 00:02:52,060
+speed, especially
+since I work a lot
+
+69
+00:02:52,060 --> 00:02:53,710
+with ice40 and stuff
+like that, which are
+
+70
+00:02:53,710 --> 00:02:56,620
+really slow FPGAs.
+
+71
+00:02:57,970 --> 00:03:00,490
+So I tend to
+pipeline a lot. And
+
+72
+00:03:00,490 --> 00:03:03,010
+in ASIC design like
+that, the design
+
+73
+00:03:03,010 --> 00:03:05,740
+size would explode.
+So yeah. And then if
+
+74
+00:03:05,740 --> 00:03:07,240
+you fancy, you can
+start playing with
+
+75
+00:03:07,265 --> 00:03:09,635
+latches instead of
+flip-flop, but then
+
+76
+00:03:09,910 --> 00:03:11,843
+you really have to know
+what you're doing. So,
+
+77
+00:03:13,760 --> 00:03:16,040
+[Matt] Maybe not good for
+Tiny Tapeout. We'll see
+
+78
+00:03:16,040 --> 00:03:18,020
+what happens. [Guest: Yeah] 
+Well, we we did see
+
+79
+00:03:18,020 --> 00:03:20,390
+some interesting
+submissions for Tiny
+
+80
+00:03:20,390 --> 00:03:22,250
+Tapeout 1.
+
+81
+00:03:22,610 --> 00:03:24,890
+Yeah, definitely.
+Like from the back.
+
+82
+00:03:24,890 --> 00:03:26,420
+Yeah. Yeah, yeah.
+
+83
+00:03:27,140 --> 00:03:29,060
+[Matt] Okay. Well, thanks
+very much for your
+
+84
+00:03:29,060 --> 00:03:31,580
+time. Really
+appreciate it. And
+
+85
+00:03:31,580 --> 00:03:33,920
+[Guest: thank you for real] 
+See you. See you.
+
+86
+00:03:33,920 --> 00:03:34,970
+Hopefully. See you
+soon.
+
+87
+00:03:34,970 --> 00:03:35,960
+[Guest] Yeah. See you soon.
+

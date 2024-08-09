@@ -1,0 +1,152 @@
+﻿1
+00:00:00,000 --> 00:00:02,253
+In this video you're
+going to learn how to use
+
+2
+00:00:02,278 --> 00:00:05,760
+Wokwi to draw and simulate
+simple digital designs.
+
+3
+00:00:07,766 --> 00:00:11,280
+After you open the template you
+can minimize this area over here.
+
+4
+00:00:11,280 --> 00:00:14,080
+Left click and drag to move around.
+
+5
+00:00:14,080 --> 00:00:18,960
+Scroll wheel to zoom in and
+out. I also like to turn the grid on.
+
+6
+00:00:18,960 --> 00:00:25,680
+We have two modes in Wokwi, drawing and
+simulation. We'll start off by looking at drawing.
+
+7
+00:00:26,240 --> 00:00:32,560
+To add more logic gates you can use the plus button, then
+start typing logic and you'll see all the available gates.
+
+8
+00:00:32,560 --> 00:00:37,200
+You can select a component and drag it.
+The wires will stay connected.
+
+9
+00:00:37,200 --> 00:00:41,360
+You can adjust the wires by clicking
+them and using the handles.
+
+10
+00:00:41,360 --> 00:00:49,040
+You can also change the colors. For neat
+wiring you can click waypoints as you draw.
+
+11
+00:00:49,040 --> 00:00:56,080
+To copy a component select it and press D. To
+copy a group of components including their wires
+
+12
+00:00:56,080 --> 00:01:04,400
+select them with shift, left click and drag. Then press D. Use
+the delete key to delete components or groups of components.
+
+13
+00:01:04,400 --> 00:01:08,240
+Control Z and control
+Y for undo and redo.
+
+14
+00:01:08,240 --> 00:01:16,800
+For more Wokwi tips check the FAQ here.
+
+15
+00:01:16,800 --> 00:01:25,520
+It's possible to create a bad circuit. For
+example by connecting two outputs together
+
+16
+00:01:25,520 --> 00:01:32,000
+or making a short circuit. If that happens you'll get
+an ERC box up here and you'll have to solve it before
+
+17
+00:01:32,000 --> 00:01:37,280
+your design can be made. Now we'll simulate
+the design by clicking the green play button.
+
+18
+00:01:37,280 --> 00:01:43,040
+You can click individual switches but if you select
+the whole switch you can also use your computer
+
+19
+00:01:43,040 --> 00:01:49,440
+keyboard to toggle the switches. You can see
+how the output changes as I change the input.
+
+20
+00:01:50,720 --> 00:01:56,640
+For clock designs you can use our automatic clock
+generator. With the switch this way the clock
+
+21
+00:01:56,640 --> 00:02:02,000
+will be running freely. Like this we can click
+the button to create a single clock step.
+
+22
+00:02:02,000 --> 00:02:08,560
+For more information about the clock check the
+FAQ. A little debug tip I like is to add an LED
+
+23
+00:02:08,560 --> 00:02:14,160
+to important parts of the circuit. That can help
+you understand what's going on inside a circuit.
+
+24
+00:02:14,160 --> 00:02:20,560
+A nice feature for testing is creating a truth
+table. If you create a new file on the left
+
+25
+00:02:20,560 --> 00:02:26,560
+called truthtable.md you can create a truth
+table that will then be used to test your design.
+
+26
+00:02:26,560 --> 00:02:32,080
+For documentation on how it works read the
+documentation here. Only logic gates that are connected
+
+27
+00:02:32,080 --> 00:02:37,920
+between the input and output boards are used. You
+can leave any extra debugging LEDs or extra circuit
+
+28
+00:02:37,920 --> 00:02:42,720
+elements outside of the input and output
+boards. They'll be ignored by the ASIC tools.
+
+29
+00:02:42,720 --> 00:02:45,520
+Make sure you save a copy of your design.
+
+30
+00:02:48,240 --> 00:02:53,680
+You'll get a new number in the URL here and that's
+the number you need to submit to get your design
+
+31
+00:02:53,680 --> 00:03:10,480
+manufactured. To learn more about digital
+design you can follow our lessons here.
+
