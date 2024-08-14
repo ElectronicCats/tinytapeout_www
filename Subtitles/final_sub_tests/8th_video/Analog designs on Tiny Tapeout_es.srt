@@ -1,0 +1,510 @@
+﻿1
+00:00:00,150 --> 00:00:04,380
+Una de las cosas interesantes de Tiny
+Tapeout 6 es que hemos agregado soporte para
+
+2
+00:00:04,381 --> 00:00:08,180
+diseño de señales analógicas y mixtas, así como
+diseños realizados con herramientas patentadas.
+
+3
+00:00:09,000 --> 00:00:13,560
+Esto se debe a que ahora todos los diseños
+están controlados por energía, por lo que
+
+4
+00:00:13,585 --> 00:00:16,184
+incluso si se presentara un cortocircuito
+completo, no se desactivaría todo el chip.
+
+5
+00:00:17,540 --> 00:00:21,220
+Lo que les voy a mostrar en este video
+es cómo pueden comenzar con un diseño
+
+6
+00:00:21,221 --> 00:00:25,160
+de señal mixta o un diseño analógico.
+y voy a usar la herramienta Magic
+
+7
+00:00:25,161 --> 00:00:29,280
+VLSI que usted podría usar KLayout o
+cualquier herramienta propietaria que desee.
+
+8
+00:00:30,180 --> 00:00:34,380
+Y los guiaré a través de los
+pasos para hacer un diseño muy
+
+9
+00:00:34,730 --> 00:00:38,260
+simple, en este caso, un
+convertidor digital a analógico R2R.
+
+10
+00:00:38,935 --> 00:00:42,710
+No voy a perder tiempo
+en el dibujo esquemático,
+
+11
+00:00:42,735 --> 00:00:46,720
+la simulación, la extracción
+de parásitos, el LVS.
+
+12
+00:00:46,900 --> 00:00:49,715
+Solo les mostraré
+el flujo que deben
+
+13
+00:00:49,716 --> 00:00:52,481
+seguir para tener un
+diseño listo para enviar.
+
+14
+00:00:53,000 --> 00:00:55,620
+Así que comencemos
+echando un vistazo al sitio web.
+
+15
+00:00:56,530 --> 00:01:00,020
+Por el momento todo esta en esto. Página de
+pines analógicos de especificaciones técnicas.
+
+16
+00:01:01,400 --> 00:01:03,950
+Y aquí hay un poco de
+información sobre cuántos
+
+17
+00:01:03,975 --> 00:01:07,903
+pines puede tener, las
+especificaciones y limitaciones.
+
+18
+00:01:08,460 --> 00:01:13,060
+Los más grandes están limitados a
+1,8 voltios y no puedes usar Metal 5.
+
+19
+00:01:14,480 --> 00:01:17,560
+Le proporcionamos algunas
+plantillas con las que puede comenzar.
+
+20
+00:01:18,810 --> 00:01:22,180
+Todos los pines digitales normales están en la parte
+superior y los pines analógicos en la parte inferior.
+
+21
+00:01:23,380 --> 00:01:27,620
+Debes tener dos puertos de alimentación y
+deben tener el nombre correcto en el Metal 4.
+
+22
+00:01:28,460 --> 00:01:31,340
+Ambos deben tener el mismo
+ancho, pero hay alguna variación.
+
+23
+00:01:31,980 --> 00:01:35,706
+Se le permite entrar
+en el precio porque solo
+
+24
+00:01:35,707 --> 00:01:38,520
+permitimos analógico en la
+parte superior e inferior del chip.
+
+25
+00:01:38,660 --> 00:01:40,320
+Y sólo tenemos ocho pines.
+
+26
+00:01:40,870 --> 00:01:42,660
+Estamos cobrando $40 por pin.
+
+27
+00:01:44,200 --> 00:01:49,500
+Bien, pasemos a crear y
+enviar un diseño analógico.
+
+28
+00:01:50,640 --> 00:01:52,860
+Entonces vamos a ir al
+repositorio de plantillas.
+
+29
+00:01:54,175 --> 00:01:58,080
+Al igual que para los diseños
+digitales y usas este botón de plantilla.
+
+30
+00:02:00,030 --> 00:02:05,800
+Y llámelo algo sensato
+o ridículo, según usted.
+
+31
+00:02:08,570 --> 00:02:12,430
+Y luego simplemente descargamos
+esto, clonarlo en su estación de trabajo.
+
+32
+00:02:13,050 --> 00:02:17,070
+A diferencia del flujo digital, prácticamente
+todo esto debe hacerse localmente.
+
+33
+00:02:20,620 --> 00:02:27,240
+Y voy a empezar haciendo una revista
+para Magic, GDS y directorios izquierdos.
+
+34
+00:02:31,490 --> 00:02:32,851
+Ahora tienes que
+elegir una plantilla.
+
+35
+00:02:33,900 --> 00:02:37,519
+El tamaño mínimo es de uno
+por dos, pero también tenemos
+
+36
+00:02:37,520 --> 00:02:41,410
+más grandes si quieres más
+grandes, los más grandes cuestan más.
+
+37
+00:02:44,150 --> 00:02:46,070
+Y simplemente vamos
+a obtener esta plantilla.
+
+38
+00:02:46,071 --> 00:02:51,390
+Lo descargo con
+wget, lo pego ahí.
+
+39
+00:02:53,450 --> 00:02:54,670
+Ahora tengo mi archivo def.
+
+40
+00:02:57,490 --> 00:03:00,730
+Y el siguiente paso es
+editar el archivo info.yaml.
+
+41
+00:03:02,900 --> 00:03:05,773
+Desea elegir un nombre
+único para el nivel
+
+42
+00:03:05,774 --> 00:03:09,111
+superior y luego debe
+ser coherente con él.
+
+43
+00:03:11,170 --> 00:03:14,450
+Y también tienes que tener
+título, autor y descripción.
+
+44
+00:03:14,451 --> 00:03:17,150
+De lo contrario, la verificación
+de la documentación fallará.
+
+45
+00:03:23,430 --> 00:03:26,030
+Es una buena idea
+etiquetar sus entradas.
+
+46
+00:03:26,530 --> 00:03:29,470
+No tenemos salidas digitales
+y no usamos bidireccional,
+
+47
+00:03:29,471 --> 00:03:33,130
+pero usamos este pin
+analógico y eliminaremos el otro.
+
+48
+00:03:33,680 --> 00:03:36,290
+Sólo los pines que enumeres
+aquí estarán realmente conectados.
+
+49
+00:03:38,750 --> 00:03:42,510
+Y luego edite el código auxiliar de Verilog, Solo
+tengo que coincidir con el nombre básicamente.
+
+50
+00:03:53,610 --> 00:03:55,340
+Y luego necesitamos algo
+de documentación aquí.
+
+51
+00:04:07,370 --> 00:04:12,293
+Bien, como mencioné,
+no voy a perder el tiempo
+
+52
+00:04:12,294 --> 00:04:16,041
+sobre todos los detalles de
+hacer un diseño analógico.
+
+53
+00:04:16,580 --> 00:04:17,660
+He vinculado algunos recursos.
+
+54
+00:04:18,500 --> 00:04:21,024
+Vamos a usar, voy a
+usar Magic para dibujar
+
+55
+00:04:21,025 --> 00:04:23,760
+esto y comenzaré usando
+este Tcl script.
+
+56
+00:04:41,300 --> 00:04:45,710
+Que básicamente lee la
+plantilla def que has descargado
+
+57
+00:04:45,711 --> 00:04:49,290
+y luego la usa para crear
+el shell de nivel superior.
+
+58
+00:04:51,210 --> 00:04:57,710
+Y luego dibuja las líneas de alimentación y
+de tierra y escribe el primer GDS y se va.
+
+59
+00:05:14,220 --> 00:05:17,072
+Entonces, para iniciar Magic, tengo que usar su archivo
+
+60
+00:05:17,073 --> 00:05:20,061
+RC correcto y asegurarme
+de que coincida con el PDK.
+
+61
+00:05:21,690 --> 00:05:23,699
+Si las cosas están funcionando, tendrás la paleta
+
+62
+00:05:23,700 --> 00:05:26,800
+a la derecha y dirá Sky 130 technology en la cima.
+
+63
+00:05:27,180 --> 00:05:29,077
+Si esos no están allí, entonces tienes un problema
+
+64
+00:05:29,078 --> 00:05:31,461
+con tu instalación que
+debes solucionar primero.
+
+65
+00:05:37,300 --> 00:05:42,040
+Y luego podemos ejecutar todos esos comandos
+obteniendo ese Tcl script.
+
+66
+00:05:43,850 --> 00:05:46,916
+Entonces, si no estás usando Magic, sólo necesitas asegurarte de
+
+67
+00:05:46,941 --> 00:05:50,600
+que lo que sucede con este script de
+Tcl suceda en tu herramienta.
+
+68
+00:05:50,970 --> 00:05:54,320
+Pero básicamente, se trata simplemente de
+crear estas dos correas de poder y nombrarlas.
+
+69
+00:05:56,920 --> 00:06:02,181
+El diseño y aquí arriba, tenemos nuestras
+entradas y abajo en la parte inferior.
+
+70
+00:06:03,020 --> 00:06:04,760
+Tenemos nuestros
+pines analógicos.
+
+71
+00:06:07,940 --> 00:06:10,500
+Y ese es el pin de tierra.
+
+72
+00:06:13,960 --> 00:06:14,960
+Y ese es el pin de alimentación.
+
+73
+00:06:16,740 --> 00:06:24,001
+Así que ahora he acelerado mucho esto, para que
+no te aburran mis terribles habilidades en Magic.
+
+74
+00:06:24,440 --> 00:06:28,680
+Y si desea aprender a usar Magic
+o Klayout, consulte algunos de los
+
+75
+00:06:28,681 --> 00:06:32,240
+recursos enumerados en la página de
+pines analógicos que mostré anteriormente.
+
+76
+00:06:40,850 --> 00:06:42,211
+Y eso es todo por el esquema.
+
+77
+00:06:43,530 --> 00:06:46,480
+Así que ahora necesito
+exportar el GDS de la izquierda.
+
+78
+00:06:47,460 --> 00:06:49,460
+Simplemente cópielo y péguelo
+en la ventana de Tcl.
+
+79
+00:06:56,750 --> 00:06:59,170
+No estoy seguro si funcionó
+con el GDS, así que lo repito.
+
+80
+00:07:11,900 --> 00:07:16,110
+Y luego revise los archivos nuevos que tenemos
+en el GDS, que tenemos en el izquierdo.
+
+81
+00:07:18,085 --> 00:07:20,290
+Echa un vistazo a la
+izquierda, son todos los pines.
+
+82
+00:07:27,920 --> 00:07:30,520
+Utilice el Klayout como
+visor GDS alternativo.
+
+83
+00:07:31,640 --> 00:07:32,640
+Control de cordura.
+
+84
+00:07:37,640 --> 00:07:38,670
+Y luego agrega todo.
+
+85
+00:07:53,430 --> 00:07:55,210
+Envíe eso a nuestro repositorio.
+
+86
+00:07:56,110 --> 00:07:59,250
+Y luego, en el repositorio, podemos verificar
+las acciones que se ejecutarán ahora.
+
+87
+00:08:03,030 --> 00:08:05,180
+Así que acelero esto,
+lleva unos minutos.
+
+88
+00:08:06,450 --> 00:08:11,140
+Y ejecutamos una verificación de GDS,
+básicamente verificamos que el DRC esté bien.
+
+89
+00:08:12,750 --> 00:08:15,953
+Antes de que aceptemos
+su envío, puede echarle un
+
+90
+00:08:15,954 --> 00:08:18,780
+vistazo haciendo clic aquí y
+desplazándose hacia abajo.
+
+91
+00:08:21,080 --> 00:08:22,380
+DRC, Klayout.
+
+92
+00:08:26,130 --> 00:08:27,931
+Y luego vamos a hacer
+una nueva presentación.
+
+93
+00:08:28,840 --> 00:08:32,684
+Así que iré a app.tinytapeout.com,
+ignoraré esa preparación
+
+94
+00:08:32,685 --> 00:08:35,940
+en la URL que es solo para
+que yo haga esta prueba.
+
+95
+00:08:37,260 --> 00:08:38,260
+Crea el proyecto.
+
+96
+00:08:39,260 --> 00:08:40,280
+Paga por ello.
+
+97
+00:08:42,610 --> 00:08:43,610
+Envíalo.
+
+98
+00:08:47,270 --> 00:08:52,160
+Y ahora estamos en el, reservamos nuestro
+espacio, pero necesitamos enviar una nueva
+
+99
+00:08:52,161 --> 00:08:56,260
+revisión para incluirlo, lo que lo hace mediante
+la creación de una solicitud de extracción.
+
+100
+00:08:58,860 --> 00:08:59,860
+Y ahí vamos, éxito.
+
+101
+00:09:01,500 --> 00:09:03,675
+Esta es una descripción
+general muy breve de cómo
+
+102
+00:09:03,676 --> 00:09:05,900
+comenzar con un diseño
+de señal analógica o mixta.
+
+103
+00:09:06,370 --> 00:09:10,160
+Si te quedas atascado en algún lugar, comuníquese
+con nosotros en el canal analógico de Discord.
+
+104
+00:09:10,420 --> 00:09:12,926
+Y tengo muchas ganas de
+ver más diseños analógicos
+
+105
+00:09:12,927 --> 00:09:15,020
+y de señales mixtas en
+cintas pequeñas de cada seis.
+
+106
+00:09:15,145 --> 00:09:17,260
+Buena suerte y
+cuéntanos cómo te va.
+

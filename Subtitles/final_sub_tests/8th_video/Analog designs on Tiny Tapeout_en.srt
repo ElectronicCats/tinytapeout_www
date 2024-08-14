@@ -1,0 +1,507 @@
+﻿1
+00:00:00,150 --> 00:00:04,380
+One of the exciting things about Tiny Tape
+Out 6 is we've added support for analog
+
+2
+00:00:04,381 --> 00:00:08,180
+and mixed signal design, as well as
+designs made by proprietary tools.
+
+3
+00:00:09,000 --> 00:00:13,560
+That's because every design now is power
+gated, so even if you submitted a complete
+
+4
+00:00:13,561 --> 00:00:16,160
+short circuit, it wouldn't take down the
+whole chip.
+
+5
+00:00:17,540 --> 00:00:21,220
+What I'm going to show you in this video
+is how you can get started with a mixed
+
+6
+00:00:21,221 --> 00:00:25,160
+signal design or an analog design,
+and I'm going to be using the Magic VLSI
+
+7
+00:00:25,161 --> 00:00:29,280
+tool that you could use KLayout or any
+proprietary tool you want.
+
+8
+00:00:30,180 --> 00:00:34,380
+And I'm going to be taking you through the
+steps to make a very simple design,
+
+9
+00:00:34,730 --> 00:00:38,260
+in this case, an R2R digital to analog
+converter.
+
+10
+00:00:38,935 --> 00:00:43,580
+I'm not going to spend any time on the
+schematic drawing, the simulation,
+
+11
+00:00:44,300 --> 00:00:46,720
+the parasitic extraction, the LVS.
+
+12
+00:00:46,900 --> 00:00:49,715
+I'm just going to show
+you the flow that you need
+
+13
+00:00:49,716 --> 00:00:52,481
+to do to actually get a
+design ready to submit.
+
+14
+00:00:53,000 --> 00:00:55,620
+So let's start off by taking a look at the
+website.
+
+15
+00:00:56,530 --> 00:01:00,020
+At the moment, everything is on this
+Techspecs analog pins page.
+
+16
+00:01:01,400 --> 00:01:05,180
+And there's a bit of information here
+about how many pins you can have,
+
+17
+00:01:05,460 --> 00:01:07,220
+the specifications and limitations.
+
+18
+00:01:08,460 --> 00:01:13,060
+Biggest ones is limited to 1.8 volts and
+you can't use metal 5.
+
+19
+00:01:14,480 --> 00:01:17,560
+We supply some templates that you can get
+started with.
+
+20
+00:01:18,810 --> 00:01:22,180
+All the normal digital pins are on the top
+and the analog pins are at the bottom.
+
+21
+00:01:23,380 --> 00:01:27,620
+You must have two power ports and they've
+got to be named correctly on metal 4.
+
+22
+00:01:28,460 --> 00:01:31,340
+They both need to have the same width,
+but there's some variance.
+
+23
+00:01:31,980 --> 00:01:35,706
+You're allowed in there and
+then the pricing because we're
+
+24
+00:01:35,707 --> 00:01:38,520
+only allowing analog on the
+top and the bottom of the chip.
+
+25
+00:01:38,660 --> 00:01:40,320
+And we've only got eight pins.
+
+26
+00:01:40,870 --> 00:01:42,660
+We're charging $40 per pin.
+
+27
+00:01:44,200 --> 00:01:49,500
+Okay, so let's move on for actually
+creating and submitting an analog design.
+
+28
+00:01:50,640 --> 00:01:52,860
+So we're going to go to the template
+repository.
+
+29
+00:01:54,175 --> 00:01:58,080
+Just like for digital designs and you use
+this template button.
+
+30
+00:02:00,030 --> 00:02:05,800
+And call it something sensible or
+ridiculous up to you.
+
+31
+00:02:08,570 --> 00:02:12,430
+And then we just download this,
+clone it onto your workstation.
+
+32
+00:02:13,050 --> 00:02:17,070
+Unlike the digital flow, pretty much all
+of this has to be done locally.
+
+33
+00:02:20,620 --> 00:02:27,240
+And I'm just going to start off by making
+a mag for magic, GDS and left directories.
+
+34
+00:02:31,490 --> 00:02:32,851
+Now you've got to pick a template.
+
+35
+00:02:33,900 --> 00:02:37,519
+The minimum size is one by
+two, but we also have bigger
+
+36
+00:02:37,520 --> 00:02:41,410
+ones if you want bigger
+ones, bigger ones cost more.
+
+37
+00:02:44,150 --> 00:02:46,070
+And we're just going to get this template.
+
+38
+00:02:46,071 --> 00:02:51,390
+I download it with wget, paste that in
+there.
+
+39
+00:02:53,450 --> 00:02:54,670
+So now I've got my def file.
+
+40
+00:02:57,490 --> 00:03:00,730
+And the next step is editing the info.yaml
+file.
+
+41
+00:03:02,900 --> 00:03:05,773
+You want to pick a unique
+name for the top level
+
+42
+00:03:05,774 --> 00:03:09,111
+and then you need
+to be consistent with it.
+
+43
+00:03:11,170 --> 00:03:14,450
+And you also got to have title,
+author and description.
+
+44
+00:03:14,451 --> 00:03:17,150
+Otherwise the documentation check will
+fail.
+
+45
+00:03:23,430 --> 00:03:26,030
+It's a good idea to label your inputs.
+
+46
+00:03:26,530 --> 00:03:29,470
+We don't have any digital outputs and
+we're not using bidirectional,
+
+47
+00:03:29,471 --> 00:03:33,130
+but we are using this one analog pin and
+we'll delete the other one.
+
+48
+00:03:33,680 --> 00:03:36,290
+Only the pins you list here will actually
+be connected.
+
+49
+00:03:38,750 --> 00:03:42,510
+And then edit the Verilog stub,
+just got to match the name basically.
+
+50
+00:03:53,610 --> 00:03:55,340
+And then we need some documentation here.
+
+51
+00:04:07,370 --> 00:04:12,293
+OK, so as I mentioned,
+I'm not going to spend time
+
+52
+00:04:12,294 --> 00:04:16,041
+on the all the details of
+doing an analog design.
+
+53
+00:04:16,580 --> 00:04:17,660
+I've linked some resources.
+
+54
+00:04:18,500 --> 00:04:21,024
+We're going to use, I'm going
+to use Magic to draw this out
+
+55
+00:04:21,025 --> 00:04:23,760
+and I'm going to get started
+by using this Tcl script.
+
+56
+00:04:41,300 --> 00:04:45,710
+Which basically reads
+the def template that you've
+
+57
+00:04:45,711 --> 00:04:49,290
+downloaded and then uses
+that to create the top level shell.
+
+58
+00:04:51,210 --> 00:04:57,710
+And then draws the power and ground lines
+and writes out the first GDS and left.
+
+59
+00:05:14,220 --> 00:05:17,072
+So to start up Magic,
+got to use its correct RC
+
+60
+00:05:17,073 --> 00:05:20,061
+file and make sure that
+matches with the PDK.
+
+61
+00:05:21,690 --> 00:05:23,699
+If things are working,
+you'll have the palette on the
+
+62
+00:05:23,700 --> 00:05:26,800
+right and it will say Sky
+130 technology in the top.
+
+63
+00:05:27,180 --> 00:05:29,077
+If those aren't there,
+then you've got a problem
+
+64
+00:05:29,078 --> 00:05:31,461
+with your install that
+needs to get sorted first.
+
+65
+00:05:37,300 --> 00:05:42,040
+And then we can run all those commands by
+sourcing that Tcl script.
+
+66
+00:05:43,850 --> 00:05:47,476
+So if you're not using Magic,
+you just need to make sure that
+
+67
+00:05:47,477 --> 00:05:50,600
+what happens with this Tcl
+script happens in your tool.
+
+68
+00:05:50,970 --> 00:05:54,320
+But basically, it's just creating these
+two power straps and naming.
+
+69
+00:05:56,920 --> 00:06:02,181
+The design and up here on the top, we've
+got our inputs and down on the bottom.
+
+70
+00:06:03,020 --> 00:06:04,760
+We've got our analog pins.
+
+71
+00:06:07,940 --> 00:06:10,500
+And that is the ground pin.
+
+72
+00:06:13,960 --> 00:06:14,960
+And that's the power pin.
+
+73
+00:06:16,740 --> 00:06:24,001
+So now I've sped this bit up a lot, so
+you're not bored by my terrible Magic skills.
+
+74
+00:06:24,440 --> 00:06:28,680
+And if you want to learn how to use Magic
+or Klayout, then check some of the
+
+75
+00:06:28,681 --> 00:06:32,240
+resources listed in the analog pins page I
+showed earlier.
+
+76
+00:06:40,850 --> 00:06:42,211
+And that's that for the schematic.
+
+77
+00:06:43,530 --> 00:06:46,480
+So I need to export the GDS in the left
+now.
+
+78
+00:06:47,460 --> 00:06:49,460
+Just copy and paste that into the tickle
+window.
+
+79
+00:06:56,750 --> 00:06:59,170
+Not sure if it did the GDS, so repeat
+that.
+
+80
+00:07:11,900 --> 00:07:16,110
+And then check out the new files we've got
+the GDS, we've got the left.
+
+81
+00:07:18,085 --> 00:07:20,290
+Take a look at the left, it's all the
+pins.
+
+82
+00:07:27,920 --> 00:07:30,520
+Use K layout as an alternative GDS viewer.
+
+83
+00:07:31,640 --> 00:07:32,640
+Sanity check.
+
+84
+00:07:37,640 --> 00:07:38,670
+And then add everything.
+
+85
+00:07:53,430 --> 00:07:55,050
+Push that to our repo.
+
+86
+00:07:56,110 --> 00:07:59,250
+And then in the repo, we can check the
+actions, which will be running now.
+
+87
+00:08:02,850 --> 00:08:05,000
+So I speed this up, it takes a few
+minutes.
+
+88
+00:08:06,450 --> 00:08:11,140
+And we run a GDS check, basically check
+that the DRC is fine.
+
+89
+00:08:12,750 --> 00:08:15,953
+Before we accept your
+submission, so you can just take
+
+90
+00:08:15,954 --> 00:08:18,780
+a look at that by clicking
+on here and scrolling down.
+
+91
+00:08:21,080 --> 00:08:22,380
+DRC, K layout.
+
+92
+00:08:26,130 --> 00:08:27,931
+And then we're going to make a new
+submission.
+
+93
+00:08:28,840 --> 00:08:32,684
+So I'm going to
+app.tinytapeout.com, ignore that
+
+94
+00:08:32,685 --> 00:08:35,940
+staging in the URL that's
+just for me to do this test.
+
+95
+00:08:37,260 --> 00:08:38,260
+Create the project.
+
+96
+00:08:39,260 --> 00:08:40,280
+Pay for it.
+
+97
+00:08:42,610 --> 00:08:43,610
+Submit it.
+
+98
+00:08:47,270 --> 00:08:52,160
+And now we're on the, we reserved our
+space, but we need to actually submit a
+
+99
+00:08:52,161 --> 00:08:56,260
+new revision to put it on, which does that
+by creating a pull request.
+
+100
+00:08:58,860 --> 00:08:59,860
+And there we go, success.
+
+101
+00:09:01,500 --> 00:09:03,675
+So that's a very brief
+overview of how to get
+
+102
+00:09:03,676 --> 00:09:05,900
+started with an analog
+or mixed signal design.
+
+103
+00:09:06,370 --> 00:09:10,160
+If you get stuck anywhere, then reach out
+to us on the analog channel in the Discord.
+
+104
+00:09:10,420 --> 00:09:12,926
+And I really look forward
+to seeing some more mixed
+
+105
+00:09:12,927 --> 00:09:15,020
+signal and analog
+designs on tiny tape out six.
+
+106
+00:09:15,145 --> 00:09:17,260
+So good luck and let us know how you get
+on.
+

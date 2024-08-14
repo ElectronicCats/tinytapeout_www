@@ -1,0 +1,681 @@
+﻿1
+00:00:00,400 --> 00:00:04,520
+Hoy tengo algo especial para compartir.
+Acabo de recibir este kit por correo que
+
+2
+00:00:04,520 --> 00:00:09,040
+incluye este chip que probablemente sea
+diferente de cualquier otro que haya conocido
+
+3
+00:00:09,040 --> 00:00:12,760
+antes, porque este chip es el primero de su
+tipo que se pone a disposición del público.
+
+4
+00:00:12,760 --> 00:00:18,720
+Se fabrica a medida utilizando más de 150 diseños
+distintos enviados por una comunidad de código abierto.
+
+5
+00:00:18,720 --> 00:00:22,040
+Los diseños de este chip no son sólo
+de profesionales experimentados, sino
+
+6
+00:00:22,040 --> 00:00:27,000
+también de entusiastas, aficionados, y
+principiantes totales de todas las edades.
+
+7
+00:00:27,000 --> 00:00:29,960
+Si eres una de las personas
+cuyo diseño está incluido
+
+8
+00:00:29,960 --> 00:00:32,479
+en este chip, ¡felicidades!
+Y gracias por contribuir.
+
+9
+00:00:32,479 --> 00:00:35,000
+Si tiene uno de estos kits o simplemente
+está aquí porque tiene curiosidad
+
+10
+00:00:35,000 --> 00:00:37,960
+por ver lo que ha hecho la comunidad,
+le daré un recorrido rápido por el
+
+11
+00:00:37,960 --> 00:00:42,520
+tablero y algunos de los proyectos en
+el chip, y le mostraré cómo empezar.
+
+12
+00:00:42,520 --> 00:00:47,960
+¡Así que sigamos adelante!
+
+13
+00:00:47,960 --> 00:00:52,520
+Hace un año me uní al curso "Zero to ASIC" organizado
+por Matt Venn, con la promesa de que por un
+
+14
+00:00:52,520 --> 00:00:57,920
+precio sorprendentemente bajo, alguien como yo, sin
+experiencia previa, podría aprender a diseñar un chip.
+
+15
+00:00:57,920 --> 00:01:03,960
+un "ASIC" o "Circuito integrado de aplicación
+específica" y, de hecho, fabricarlo.
+
+16
+00:01:03,960 --> 00:01:07,960
+Matt Venn también dirige el "Tiny Tapeout"
+programa que permite la fabricación, y aunque
+
+17
+00:01:07,960 --> 00:01:11,720
+me había perdido la posibilidad de unirme a esta
+original serie de producción "TT02", fue emocionante
+
+18
+00:01:11,720 --> 00:01:16,760
+ver a Matt y al equipo de Tiny Tapeout hacer
+la primera presentación de chips en vivo del
+
+19
+00:01:16,760 --> 00:01:20,680
+mundo, y me uní a la lista de espera para comprar
+una de las pocas placas de repuesto que aún
+
+20
+00:01:20,680 --> 00:01:24,720
+no han sido asignadas a los contribuyentes
+originales... ¡Y eso es lo que tenemos aquí ahora!
+
+21
+00:01:24,720 --> 00:01:28,920
+Echando un vistazo rápido a la placa, vemos el
+ASIC principal: la joya de la corona de silicio
+
+22
+00:01:28,920 --> 00:01:33,040
+hecho a medida que está montada en un soporte
+que actúa como una placa de conexión y que está
+
+23
+00:01:33,040 --> 00:01:38,240
+conectada a la placa de demostración que proporciona
+entrada, salida y algunos otros controles básicos.
+
+24
+00:01:38,240 --> 00:01:41,081
+La fabricación de PCB fue
+posible gracias al patrocinio de
+
+25
+00:01:41,106 --> 00:01:45,880
+varias empresas y Efabless
+también facilitó la fabricación del ASIC.
+
+26
+00:01:45,880 --> 00:01:49,640
+El diseño del tablero es de Pat Deegan
+de Psychogenic Technologies y debo
+
+27
+00:01:49,640 --> 00:01:53,200
+decir que este kit se ve y se siente
+bastante bien. ¡Así que gracias Pat!
+
+28
+00:01:53,200 --> 00:01:57,600
+¡Bien, entremos en ello ya! Es hora
+de enchufar la placa y ver qué pasa.
+
+29
+00:01:57,600 --> 00:02:02,090
+Utilice un cable USB-C solo para suministro
+de energía. Algunas versiones futuras también lo
+
+30
+00:02:02,115 --> 00:02:07,190
+utilizarán para el control por ordenador.
+Inmediatamente vemos la vida. De fábrica, estos
+
+31
+00:02:07,215 --> 00:02:11,338
+interruptores DIP seleccionan el diseño activo
+con el que veremos más adelante. Mi tablero
+
+32
+00:02:11,363 --> 00:02:17,000
+tiene seleccionado el diseño número 131, que es un
+simple "Hola, ¡Mundo!" que exploraremos en un momento.
+
+33
+00:02:17,000 --> 00:02:21,985
+Vemos los LED de "Power good" y un
+LED GPIO parpadeante. Una CPU interna lo
+
+34
+00:02:22,010 --> 00:02:27,000
+impulsa, pero los diseños en sí son circuitos
+duros de silicio que funcionan libremente.
+
+35
+00:02:27,000 --> 00:02:31,480
+Cada una de las 8 salidas digitales del chip
+controla un segmento de esta pantalla LED, que
+
+36
+00:02:31,480 --> 00:02:36,960
+este diseño utiliza para mostrar "HELLO",
+aunque un poco rápido desde el primer momento.
+
+37
+00:02:36,960 --> 00:02:42,000
+Tenga en cuenta que las salidas también están
+disponibles en los pines etiquetados "out0" a "out7".
+
+38
+00:02:42,000 --> 00:02:47,120
+Aquí arriba hay un puente que conecta un oscilador
+integrado de 20 MHz que suministra el reloj
+
+39
+00:02:47,120 --> 00:02:53,800
+principal del sistema del ASIC, y si lo desconectamos
+vemos que el diseño se congela al igual que el LED GPIO.
+
+40
+00:02:53,800 --> 00:02:58,560
+indicando una parada en la CPU del chip así como
+en la llamada lógica "scan-chain" que vincula todos
+
+41
+00:02:58,560 --> 00:03:04,680
+los diseños. Reemplazar el puente en la misma
+posición permite que todo continúe nuevamente.
+
+42
+00:03:04,680 --> 00:03:09,000
+El chip tiene 8 entradas digitales que se pueden activar
+o desactivar utilizando los interruptores DIP que se
+
+43
+00:03:09,000 --> 00:03:14,759
+encuentran aquí. El cambio a la izquierda está desactivado;
+la derecha está encendida. Al igual que con las
+
+44
+00:03:14,784 --> 00:03:21,840
+salidas, estas entradas también tienen pines en el lateral etiquetados como "in0" para
+ "In7".  Solo tenga en cuenta
+
+45
+00:03:21,840 --> 00:03:27,240
+que si tiene la intención de conducir algo externamente, sus
+respectivos interruptores DIP deben estar en la posición de apagado.
+
+46
+00:03:27,240 --> 00:03:31,167
+Aquí arriba hay un botón de reinicio y un botón de reloj,
+ cada uno con un circuito antirrebote para
+
+47
+00:03:31,192 --> 00:03:36,293
+garantizar una conmutación limpia. En realidad, el
+botón del reloj está conectado directamente a "in0" y el
+
+48
+00:03:36,318 --> 00:03:43,841
+botón de reinicio a "in1". En TT02 y 03 estas señales
+son sólo por convención y no todos los diseños las
+
+49
+00:03:43,866 --> 00:03:50,600
+utilizan para los mismos propósitos. TT04 y superiores tienen
+líneas de reloj y reinicio dedicadas y ofrecen más E/S.
+
+50
+00:03:50,600 --> 00:03:55,330
+Aquí, con el botón de reinicio presionado y
+activando la señal "in1", este diseño de "Hello" en
+
+51
+00:03:55,355 --> 00:04:01,040
+realidad usa la señal para su propia opción de
+divisor de reloj, por lo que la ralentiza un poco.
+
+52
+00:04:01,040 --> 00:04:06,240
+El botón de reloj se puede usar para enviar pulsos de
+reloj individuales a través de "in0", pero con este
+
+53
+00:04:06,240 --> 00:04:12,400
+puente "LENTO" conectado, el ASIC en realidad está
+generando ese reloj "in0" internamente, en sí mismo.
+
+54
+00:04:12,400 --> 00:04:17,519
+Si quitamos el puente LENTO, el LED GPIO sigue
+parpadeando pero el diseño se detiene, y el botón del
+
+55
+00:04:17,519 --> 00:04:22,520
+reloj ahora nos permitiría cambiar el reloj del diseño
+en un solo paso si quisiéramos controlarlo directamente.
+
+56
+00:04:22,520 --> 00:04:26,440
+Ahora expliquemos cómo podemos cambiar la señal
+de reloj lento generada dividiéndola. Esta
+
+57
+00:04:26,440 --> 00:04:32,280
+es una característica de prueba importante que
+forma parte del propio ASIC, no de este diseño.
+
+58
+00:04:32,280 --> 00:04:35,280
+Al reemplazar el puente LENTO o al encender
+la placa, el flanco ascendente en esta
+
+59
+00:04:35,280 --> 00:04:39,160
+"habilitación de reloj lento" La señal hace
+que el número binario presentado por los
+
+60
+00:04:39,160 --> 00:04:44,160
+interruptores de entrada sea muestreado y bloqueado
+en ese momento, por lo tanto utilizado como
+
+61
+00:04:44,160 --> 00:04:48,920
+valor de entrada para el divisor de reloj lento antes de
+que las entradas se introduzcan directamente en el diseño.
+
+62
+00:04:48,945 --> 00:04:52,313
+En otras palabras, si encendiera todos
+los interruptores y luego reemplazara el
+
+63
+00:04:52,338 --> 00:04:57,720
+puente LENTO, el valor de entrada para el
+divisor de reloj lento sería el máximo de 255,
+
+64
+00:04:57,720 --> 00:05:02,080
+por lo tanto, dividir el reloj por 512,
+para hacerlo justo por debajo de 10 Hz, de
+
+65
+00:05:02,080 --> 00:05:06,320
+acuerdo con esta fórmula que se encuentra en
+las notas técnicas de la placa de demostración.
+
+66
+00:05:06,320 --> 00:05:11,004
+En este caso, nuestra entrada original del
+divisor de reloj lento era 128, para dividir el
+
+67
+00:05:11,029 --> 00:05:18,160
+reloj por 258, y ahora la cambié a 254 para
+dividir el reloj entre 510, mientras colocamos
+
+68
+00:05:18,160 --> 00:05:24,061
+nuevamente el puente del reloj lento. Al
+volver a cambiar todas las entradas al estado de
+
+69
+00:05:24,086 --> 00:05:29,680
+funcionamiento normal para este diseño, vemos ahora
+que es aproximadamente la mitad de la velocidad.
+
+70
+00:05:29,680 --> 00:05:34,120
+Voy a contar cuántas iteraciones completa
+el diseño en 60 segundos. El diseño pasa por
+
+71
+00:05:34,120 --> 00:05:38,840
+un total de 16 estados distintos y podemos
+usar un recuento total de iteraciones en un
+
+72
+00:05:38,840 --> 00:05:43,120
+período de tiempo determinado para calcular
+la velocidad de reloj lenta aproximada. En
+
+73
+00:05:43,120 --> 00:05:48,320
+este caso se trata de 36 iteraciones, por lo
+que si dividimos ese número por 60 segundos
+
+74
+00:05:48,320 --> 00:05:55,000
+y lo multiplicamos por los 16 estados, nos acercamos
+bastante al reloj lento calculado de 9,8 Hz.
+
+75
+00:05:55,000 --> 00:05:59,200
+Hay 161 diseños distintos en este
+chip, así que echemos un vistazo
+
+76
+00:05:59,200 --> 00:06:02,840
+a un par más que son bastante
+fáciles de verificar en esta placa.
+
+77
+00:06:02,840 --> 00:06:07,120
+Cambiar los interruptores DIP de selección de proyecto
+nos permite seleccionar el diseño activo en tiempo
+
+78
+00:06:07,120 --> 00:06:13,040
+real. La hoja de datos de cada diseño le muestra cómo
+configurar los interruptores DIP de selección de proyecto.
+
+79
+00:06:13,040 --> 00:06:15,851
+Aquí estoy seleccionando el
+diseño n.° 0, que es un diseño de
+
+80
+00:06:15,876 --> 00:06:18,750
+inversor directo. Cada señal
+de entrada, si es baja, se
+
+81
+00:06:18,775 --> 00:06:21,537
+convierte en una señal
+de salida alta y viceversa.
+
+82
+00:06:21,562 --> 00:06:25,811
+Para mis entradas, en este
+caso "in7" es alto, "in0" está siendo
+
+83
+00:06:25,836 --> 00:06:29,073
+controlado por el reloj lento, y
+todas las demás entradas son bajas.
+
+84
+00:06:29,098 --> 00:06:34,698
+Como resultado, vemos el segmento LED de "in0" parpadeando debido al reloj lento invertido, el punto no está
+iluminado porque es el segmento LED de "in7" y el resto se iluminan a la inversa de otras entradas bajas.
+
+85
+00:06:40,073 --> 00:06:44,473
+Las entradas flotarían cuando estuvieran apagadas, pero el
+ ASIC ha habilitado resistencias desplegables internamente.
+ Por mala suerte o tal vez
+
+86
+00:06:52,360 --> 00:06:57,960
+por ser un poco rudo,
+ Mis interruptores DIP de entrada no siempre registran completamente el estado ON, así que soluciono este problema
+ Conecté
+
+87
+00:06:57,960 --> 00:07:02,480
+algunos interruptores DIP externos a través de los pines del encabezado
+de entrada, los pasé por una red de resistencias de 8 vías de 1k a 3,3 V,
+
+88
+00:07:03,480 --> 00:07:08,440
+y apagó todos los DIP de entrada en la placa de
+demostración. Estos interruptores DIP externos
+
+89
+00:07:08,440 --> 00:07:15,360
+parecen funcionar... y una vez hecho esto, pasamos
+al diseño n.° 68, que se llama "LED de respiración".
+
+90
+00:07:15,360 --> 00:07:19,720
+Con este ajusté mi cámara para hacer el efecto más
+visible y tuve que ejecutar el reloj lento a la
+
+91
+00:07:19,720 --> 00:07:26,600
+velocidad máxima de 2500 Hz asegurándome de que todos
+los DIP de entrada estuvieran apagados antes del
+
+92
+00:07:26,600 --> 00:07:32,480
+encendido. Este diseño demuestra PWM, o "modulación
+de ancho de pulso", que puede verse como un efecto
+
+93
+00:07:32,480 --> 00:07:38,720
+pulsante gradual en el segmento LED superior. Todos los
+demás segmentos de LED muestran el estado interno del PWM.
+
+94
+00:07:38,720 --> 00:07:42,760
+También conecté mi osciloscopio a "out0"
+y podemos ver el ciclo de trabajo que
+
+95
+00:07:42,760 --> 00:07:48,960
+aumenta y disminuye lentamente del Forma
+de onda PWM que crea el efecto pulsante.
+
+96
+00:07:48,960 --> 00:07:54,520
+El siguiente es el diseño n.° 28, "Cargando
+animación". Este diseño es uno de los muchos en el chip
+
+97
+00:07:54,520 --> 00:08:00,640
+que se dibujó como esquema usando Wokwi, por lo que
+puede simularlo fácilmente usted mismo en línea.
+
+98
+00:08:00,640 --> 00:08:05,400
+Esta vez he puesto en marcha mi reloj lento
+a toda velocidad; la apariencia fija del GPIO
+
+99
+00:08:05,400 --> 00:08:11,360
+El LED es una pista de eso. Este diseño utiliza
+un reinicio negativo en "in1", por lo que lo
+
+100
+00:08:11,360 --> 00:08:17,520
+cambiamos a alto para permitir que el diseño se ejecute,
+y un segmento de LED recorre lentamente la pantalla.
+
+101
+00:08:17,520 --> 00:08:22,080
+Si activamos "in2", parece que ahora no hace
+nada, pero en realidad ha desactivado el
+
+102
+00:08:22,080 --> 00:08:27,520
+divisor de reloj del diseño, lo que significa
+que está funcionando demasiado rápido para ser
+
+103
+00:08:27,520 --> 00:08:31,720
+visto. Al activar un par de interruptores de
+entrada superiores y alternar el puente de
+
+104
+00:08:31,720 --> 00:08:39,320
+"activación de reloj lento", podemos ver el
+efecto a velocidades más sensibles... lento a
+
+105
+00:08:39,320 --> 00:08:50,480
+aproximadamente 12,5 Hz; luego un poco más rápido
+a 18,7 Hz; y un poco más rápido que eso a 35,7 Hz.
+
+106
+00:08:50,480 --> 00:08:57,400
+¿Qué tal un poco de sonido ahora? Diseño #37,
+"Siren" está destinada a funcionar a 12,5 kHz, pero por
+
+107
+00:08:57,400 --> 00:09:04,000
+ahora la ejecutaré cinco veces más lento a 2,5 kHz.
+Su salida de audio es "out7" y está diseñada para
+
+108
+00:09:04,000 --> 00:09:09,200
+controlar un altavoz piezoeléctrico, pero la he
+pasado por un divisor de voltaje de resistencia simple
+
+109
+00:09:09,200 --> 00:09:14,560
+para que produzca niveles de salida de línea para
+controlar la entrada auxiliar de un altavoz amplificado.
+
+110
+00:09:14,560 --> 00:09:24,360
+Desde el encendido, reproduce varios tonos y proporciona
+una bonita visualización en los LED de siete segmentos. I
+
+111
+00:09:24,360 --> 00:09:28,480
+Necesitaría proporcionar un reloj externo para ir
+más rápido que esto, pero en lugar de eso aceleré
+
+112
+00:09:28,480 --> 00:09:36,560
+el metraje cinco veces para demostrar cómo
+se pretendía que se desarrollara el diseño.
+
+113
+00:09:36,560 --> 00:09:41,280
+Si bien he brindado una breve descripción general
+de algunos de los diseños más simples del ASIC TT02,
+
+114
+00:09:41,280 --> 00:09:47,840
+hay mucho más por ver. Ejemplos de diseños más
+sofisticados incluyen: Diseño #36 que presenta 1000
+
+115
+00:09:47,840 --> 00:09:55,920
+dígitos de pi;  diseño #2 que impulsa a un personaje
+ Pantalla LCD;  diseño #25 que transmite diferentes
+
+116
+00:09:55,920 --> 00:10:03,560
+mensajes vía señalización UART; diseño #75 que es
+un oscilador en anillo interno de alta velocidad;
+
+117
+00:10:03,560 --> 00:10:11,520
+muchos diseños de CPU pequeños, algunos con acceso
+a memoria SPI; algunas implementaciones a pequeña
+
+118
+00:10:11,520 --> 00:10:17,240
+escala de FPGA;  y muchos otros efectos visuales y de audio,
+ rompecabezas, controladores y dispositivos matemáticos.
+
+119
+00:10:17,240 --> 00:10:20,320
+Entonces, ¿qué sigue? Bueno, si
+hay más que le gustaría saber sobre un
+
+120
+00:10:20,320 --> 00:10:24,640
+diseño particular u otras características
+del ASIC o placa, hágamelo saber.
+
+121
+00:10:24,640 --> 00:10:29,960
+Si tiene un diseño en el chip TT02,
+publique un comentario para hacérmelo saber
+
+122
+00:10:29,960 --> 00:10:33,760
+y, opcionalmente, discutirlo, o considere
+hacer su propio video. Y asegúrate de saltar
+
+123
+00:10:33,760 --> 00:10:37,560
+el Tiny Tapeout Discord
+para discutir sus hallazgos.
+
+124
+00:10:37,560 --> 00:10:40,040
+Si desea participar en una
+producción futura, particularmente
+
+125
+00:10:40,040 --> 00:10:43,240
+a medida que mejoran la
+oferta de tecnología y las
+
+126
+00:10:43,240 --> 00:10:47,360
+herramientas, visite tinytapeout.com
+o vea la descripción de este video.
+
+127
+00:10:47,360 --> 00:10:52,720
+Dale me gusta a este video si
+lo encuentras útil o si encuentras
+
+128
+00:10:52,720 --> 00:10:55,720
+emocionante esta nueva frontera, y
+si deseas ver más diseño de chips,
+
+129
+00:10:55,720 --> 00:11:00,000
+electrónica o mis proyectos en general,
+considera también suscribirte a mi canal.
+
+130
+00:11:00,000 --> 00:11:04,520
+De cara al futuro, estoy más interesado en el TT03,
+que debería llegar pronto con un reloj duplicado y
+
+131
+00:11:04,520 --> 00:11:10,960
+más diseños, incluido uno pequeño mío, y luego
+en el TT04 y el 05, que se están fabricando en el
+
+132
+00:11:10,960 --> 00:11:16,920
+momento de esta grabación. Estas nuevas generaciones,
+incluido el próximo TT06, fueron objeto de
+
+133
+00:11:16,920 --> 00:11:23,800
+burlas recientemente con un prototipo "TT03p5".
+demuestre y ofrezca opciones para más área de diseño,
+
+134
+00:11:23,800 --> 00:11:31,960
+mucha más IO, ancho de banda del orden de 30 MHz y soporte
+de diseño de señal analógica y mixta a partir de TT06.
+
+135
+00:11:31,960 --> 00:11:37,200
+Desde que descubrimos Tiny Tapeout y Zero
+hasta Curso ASIC, ¡soy adicto! tengo diseños en todos
+
+136
+00:11:37,200 --> 00:11:58,960
+de los transbordadores Tiny Tapeout que comienzan con TT03.
+¡Creo que tengo un pequeño problema! ¡Pero me encanta!
+
