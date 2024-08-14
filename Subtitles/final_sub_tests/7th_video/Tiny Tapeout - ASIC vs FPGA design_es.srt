@@ -113,7 +113,7 @@ hacer en
  FPGA también, porque incluso
 
 25
-00:01:05,494 --> 00:01:10,234
+00:01:05,494 --> 00:01:12,725
 en FPGA, aunque
 los registros puedan
 
@@ -144,43 +144,43 @@ técnicamente no
 puedes comenzar a
 
 32
-00:01:26,040 --> 00:01:28,470
+00:01:26,040 --> 00:01:28,190
 cronometrar tu
 lógica sin fallar.
 
 33
-00:01:28,470 --> 00:01:29,970
+00:01:28,215 --> 00:01:29,510
 sin violación de tiempo.
 
 34
-00:01:29,970 --> 00:01:32,731
+00:01:29,535 --> 00:01:30,590
 Lo que significa que
 siempre es una buena
 
 35
-00:01:32,756 --> 00:01:35,040
+00:01:30,615 --> 00:01:32,696
 idea mantener todos los flip-flops
 
 36
-00:01:35,040 --> 00:01:36,390
+00:01:32,721 --> 00:01:34,376
 críticos en reinicio
 hasta que el
 
 37
-00:01:36,390 --> 00:01:39,810
+00:01:34,401 --> 00:01:35,776
 PLL está bloqueado,
 lo que requiere
 
 38
-00:01:39,810 --> 00:01:42,360
+00:01:35,801 --> 00:01:36,843
 que su diseño tenga un reinicio
 
 39
-00:01:42,360 --> 00:01:46,020
+00:01:36,874 --> 00:01:39,442
 explícito de todos modos.
 
 40
-00:01:46,020 --> 00:01:48,840
+00:01:39,467 --> 00:01:48,881
 Algo más que no me sorprende, pero es
 muy diferente entre el diseño FPGA y ASIC.
 
@@ -195,72 +195,72 @@ decir, normalmente
 
 43
 00:01:54,280 --> 00:01:55,720
-tienes tus Luts y un
+tienes tus LUTs y un
 registro justo después.
 
 44
-00:01:55,720 --> 00:01:59,680
-Es como la arquitectura
+00:01:55,720 --> 00:01:59,529
+Es como la arquitectura típica,
 
 45
-00:01:59,680 --> 00:02:01,150
-típica, lo que significa que los
+00:01:59,554 --> 00:02:01,150
+lo que significa que los
 
 46
-00:02:01,150 --> 00:02:03,580
+00:02:01,150 --> 00:02:02,746
 registros prácticamente se
 obtienen de forma gratuita.
 
 47
-00:02:03,580 --> 00:02:05,920
+00:02:02,771 --> 00:02:03,659
 Por ejemplo, puedes
 
 48
-00:02:05,920 --> 00:02:07,270
+00:02:03,684 --> 00:02:05,646
 canalizar en gran
 medida tu diseño y
 
 49
-00:02:07,270 --> 00:02:10,720
+00:02:05,671 --> 00:02:07,890
 no te cuesta tanto
 porque el registro
 
 50
-00:02:10,720 --> 00:02:13,150
+00:02:07,915 --> 00:02:10,345
 está ahí de todos
 modos. Básicamente,
 
 51
-00:02:13,150 --> 00:02:14,470
+00:02:10,370 --> 00:02:13,612
 ese no es el caso. Si observa la
 
 52
-00:02:14,470 --> 00:02:17,050
+00:02:13,637 --> 00:02:14,930
 celda lógica que implementa un
 
 53
-00:02:17,050 --> 00:02:18,430
+00:02:14,955 --> 00:02:17,690
 registro versus el,
 las celdas lógicas
 
 54
-00:02:18,460 --> 00:02:21,790
+00:02:17,715 --> 00:02:19,783
 que implementan
 como un final o como
 
 55
-00:02:21,790 --> 00:02:23,830
+00:02:19,808 --> 00:02:22,376
 una función lógica.
 Sí, los registros
 
 56
-00:02:23,830 --> 00:02:24,910
+00:02:22,401 --> 00:02:24,885
 son muchas veces más grandes,
-lo que significa que si usas mucho
+lo que significa que si usas mucha
 
 57
 00:02:24,910 --> 00:02:26,170
-tubería, su diseño va a
+segmentación, su diseño va a
 
 58
 00:02:26,170 --> 00:02:29,110
@@ -279,7 +279,7 @@ suya con mucha más lógica
 
 61
 00:02:33,670 --> 00:02:37,870
-entre tus chanclas que en
+entre tus flip-flops que en
 
 62
 00:02:37,870 --> 00:02:39,640
@@ -315,7 +315,7 @@ porque trabajo mucho
 
 69
 00:02:52,060 --> 00:02:53,710
-con ice40 y cosas así, que son
+con iCE40 y cosas así, que son
 
 70
 00:02:53,710 --> 00:02:56,620
@@ -324,7 +324,7 @@ FPGA realmente lentos.
 71
 00:02:57,970 --> 00:03:00,490
 Así que tiendo a
-canalizar mucho. Y
+segmentar mucho. Y
 
 72
 00:03:00,490 --> 00:03:03,010
@@ -353,7 +353,7 @@ que estás haciendo. Entonces,
 77
 00:03:13,760 --> 00:03:16,040
 [Matt] Quizás no sea bueno para
-Cinta pequeña.  ya veremos
+Tiny Tapeout.  ya veremos
 
 78
 00:03:16,040 --> 00:03:18,020
@@ -367,7 +367,7 @@ interesantes para Tiny
 
 80
 00:03:20,390 --> 00:03:22,250
-Grabación 1.
+Tapeout 1.
 
 81
 00:03:22,610 --> 00:03:24,890
