@@ -14,50 +14,50 @@ Para mostrarles esta acción,
 usaré la demostración de Verilog.
 
 4
-00:00:10,980 --> 00:00:14,940
+00:00:10,973 --> 00:00:12,903
 La forma en que funcionan
 las acciones de GitHub es que
 
 5
-00:00:15,340 --> 00:00:16,340
+00:00:12,928 --> 00:00:16,346
 dentro de este directorio especial .github, tenemos flujos de trabajo.
 
 6
-00:00:17,420 --> 00:00:18,420
+00:00:17,373 --> 00:00:18,420
 Están escritos en YAML.
 
 7
-00:00:18,940 --> 00:00:22,260
+00:00:18,940 --> 00:00:22,603
 Tenemos estos tres archivos diferentes
 aquí, y el más importante es el GDS.
 
 8
-00:00:23,340 --> 00:00:25,856
+00:00:23,340 --> 00:00:25,836
 Éste crea un PDF, para que
 pueda ver cómo se verán su
 
 9
-00:00:25,881 --> 00:00:29,843
+00:00:25,876 --> 00:00:29,843
 página y la hoja de datos, y este
 ejecuta una prueba automática.
 
 10
-00:00:30,430 --> 00:00:31,980
+00:00:30,430 --> 00:00:32,250
 Echemos un vistazo
-a la acción de GDS.
+a la acción del GDS.
 
 11
-00:00:32,740 --> 00:00:36,380
+00:00:32,736 --> 00:00:36,483
 Comienza con el nombre de la acción,
 y luego especifica cómo se ejecutará.
 
 12
-00:00:37,190 --> 00:00:40,128
-O podemos iniciarlo cuando
-ingresamos al repositorio, o el envío del
+00:00:37,159 --> 00:00:39,903
+Podemos iniciarlo cuando
+empujamos hacia el repositorio, o el envío del
 
 13
-00:00:40,129 --> 00:00:42,923
+00:00:39,928 --> 00:00:42,923
 flujo de trabajo significa que también
 podemos iniciarlo manualmente.
 
@@ -73,7 +73,7 @@ Ubuntu como sistema
 
 16
 00:00:49,535 --> 00:00:53,216
-operativo, y luego tenemos dos tareas, GDS y visor.
+operativo, y luego tenemos dos tareas, GDS y visualizador.
 
 17
 00:00:53,760 --> 00:00:56,785
@@ -85,7 +85,7 @@ archivo de acción compuesto adicional
 que reside en el repositorio de Tiny Tapeout
 
 19
-00:00:59,770 --> 00:01:02,000
+00:00:59,770 --> 00:01:02,216
 Echemos un vistazo a la
 acción GDS compuesta.
 
@@ -105,7 +105,7 @@ se debe usar y dónde se debe instalar,
 del PDK y dónde se debe instalar.
 
 23
-00:01:13,220 --> 00:01:15,680
+00:01:13,220 --> 00:01:15,869
 Hablaré brevemente sobre
 OpenLane al final de este video.
 
@@ -125,13 +125,13 @@ la lista de red de Wokwi o
 utilizará los archivos HDL.
 
 27
-00:01:28,580 --> 00:01:31,186
+00:01:28,580 --> 00:01:30,449
 Luego, OpenLane se
-clona en una confirmación
+clona desde un commit
 
 28
-00:01:31,286 --> 00:01:34,090
-específica y el comando
+00:01:30,474 --> 00:01:34,090
+en específico y el comando
 "make" lo instala junto con el PDK.
 
 29
@@ -146,18 +146,18 @@ repositorio de herramientas de soporte TT.
 
 31
 00:01:42,510 --> 00:01:44,856
-Esto inicia la ventana acoplable
+Esto inicia el Docker de 
 OpenLane y le proporciona los
 
 32
-00:01:44,857 --> 00:01:47,500
+00:01:44,857 --> 00:01:47,703
 comandos y configuraciones de entorno
 correctos para iniciar la compilación.
 
 33
 00:01:48,730 --> 00:01:52,320
-A continuación te mostramos nuevas advertencias,
-el resumen de enrutamiento y uso de celda aquí.
+A continuación te muestra nuevas advertencias y
+el resumen del enrutamiento y del uso de celda aquí.
 
 34
 00:01:55,560 --> 00:01:59,743
@@ -175,7 +175,7 @@ Puede obtener más
 información sobre OpenLane aquí.
 
 37
-00:02:07,250 --> 00:02:10,150
+00:02:07,250 --> 00:02:10,350
 OpenLane es un flujo RTL
 a GDS de código abierto.
 
