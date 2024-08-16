@@ -10,7 +10,11 @@ LastModifierDisplayName: matt venn
 
 {{< countdown >}}
 
-Tiny Tapeout is an educational project that makes it easier and cheaper than ever to get your designs manufactured on a real chip! See what other people are making by [taking a look at what was submitted for the last run](/runs/tt06).
+Tiny Tapeout is an educational project that makes it easier and cheaper than ever to get your designs manufactured on a real chip!
+
+Read the [paper here](https://www.techrxiv.org/users/799365/articles/1165896-tiny-tapeout-a-shared-silicon-tapeout-platform-accessible-to-everyone).
+
+See what other people are making by [taking a look at what was submitted on our previous shuttles](/runs/).
 
 # Get started
 
@@ -40,7 +44,7 @@ Tiny Tapeout is an educational project that makes it easier and cheaper than eve
 
 # Sign up
 
-Sign up to the mailing list for the latest news, and to make sure you don't miss your chance to submit a design on Tiny Tapeout 7.
+Sign up to the mailing list for the latest news, and to make sure you don't miss your chance to submit a design on Tiny Tapeout 8.
 
 {{< mailchimp >}}
 
@@ -58,7 +62,8 @@ Sign up to the mailing list for the latest news, and to make sure you don't miss
   {{< customer-card "Hochschule Rheinmain" "hrm.png" "https://www.hs-rm.de/de/" >}}
   {{< customer-card "Carnegie Mellon University" "cmu.png" "https://www.cmu.edu" >}}
   {{< customer-card "University of Würzburg" "julius_maximilians_universitat_wurzburg_logo.jpeg" "https://www.informatik.uni-wuerzburg.de/ce/" >}} 
-  {{< customer-card "Danmarks Tekniske Universitet" "DTU_Logo_Hvid.jpg" "https://www.dtu.dk/" >}} 
+  {{< customer-card "Danmarks Tekniske Universitet" "DTU_Logo_Hvid.jpg" "https://www.dtu.dk/" >}}
+  {{< customer-card "Wright State University" "wsu.png" "https://www.wright.edu/" >}} 
 </div>
 
 # Testimonials
