@@ -46,7 +46,7 @@ Power pins need to be vertical stripes on met4 layer and must adhere to the foll
 
 1. Start within the bottom 10 µm of the module and extend at least to the top 10 µm of the module.
 2. Minimum width of 1.2 um.
-3. Projects utilizing the 3.3V rail MUST use the `tt_analog_*_3v3.def` templates.
+3. Projects utilizing the 3.3V rail MUST use the `tt_analog_*_3v3.def` templates and set `uses_3v3: true` in `info.yaml`.
 4. Multiple power pins of each type can be used with varying dimensions as long as the above constraints are met.
 5. The actual metal area can be larger or have a different shape, but the area defined as a pin must comply with these constraints.
 
@@ -54,9 +54,13 @@ Power pins need to be vertical stripes on met4 layer and must adhere to the foll
 
 Projects with analog pins must be two tiles high. This means that the minimum price for the area of the project is $100 (each tile is $50).
 
-In addition, there is a per-pin cost. The price for analog pins is $40 per pin for the first four pins on each Tiny Tapeout shuttle, and $100 per pin for additional pins.
+In addition, there is a cost for each analog pin attributable to a given customer (rather than project) on a given shuttle. The price for analog pins is $40 per pin for the first 4 pins you need on the Tiny Tapeout shuttle, and $100 per pin for additional pins.
 
-Example: a design that takes 1x2 tiles and uses 2 analog pins would cost $180 ($100 for the tiles, and $80 for the analog pins). Another design that takes 2x2 tiles and uses 3 analog pins would cost $380 ($200 for the tiles, and $180 for the analog pins), assuming both designs are on the same shuttle.
+Example:
+
+* You submit a design requiring 1x2 tiles and 2 analog pins. This costs you $180 ($100 for the tiles, and $80 for the analog pins).
+* You then submit another design on the same shuttle, itself requiring 2x2 tiles and 3 analog pins. This would cost you $380 ($200 for the tiles, and $180 for the analog pins).
+* i.e. as a customer you are using a total of **5** analog pins on the shuttle.
 
 This price is only for including the design in the shuttle, and does not include the cost of the ASIC, PCB, or shipping.
 
@@ -114,11 +118,11 @@ Edit [docs/info.md](docs/info.md) and add a description of your project.
 
 Use your preferred analog flow to design, simulate, layout, extract, LVS and post layout simulate.
 
-A quick way to get started is to use this [tcl script](https://gist.github.com/urish/ba71f2fa68505a1b665000bce08d3874) to draw and label the power ports.
+A quick way to get started is to use this [tcl script](https://github.com/TinyTapeout/tt-support-tools/blob/tt08/def/analog/magic_init_project.tcl) to draw and label the power ports.
 
 * Download the script
-* Edit it to change the cellname and GDS and LEF export paths
-* Start Magic and in the tcl command window, write `source tt-analog-draw.tcl`
+* Edit it to change the module name and configure the pin template and power stripes
+* Start Magic and in the tcl command window, write `source magic_init_project.tcl`
 
 ## Resources
 
