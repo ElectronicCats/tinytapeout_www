@@ -35,8 +35,8 @@ to get your designs onto
 
 8
 00:00:19,840 --> 00:00:22,467
-a real chip. Open
-source tools, excellent
+a real chip. Open-source
+tools, excellent
 
 9
 00:00:22,491 --> 00:00:26,240
@@ -160,7 +160,7 @@ we send it to Efabless,
 33
 00:01:38,320 --> 00:01:41,268
 and they'll manufacture
-it on the open source
+it on the open-source
 
 34
 00:01:41,292 --> 00:01:44,240
@@ -288,10 +288,10 @@ involved, and I'm really
 looking forward to seeing
 
 59
-00:02:51,680 --> 00:02:55,280
+00:02:51,680 --> 00:02:54,246
 what you make on your first ASIC.
 
 60
-00:02:55,280 --> 00:02:57,860
+00:02:54,271 --> 00:02:57,860
 (bright music)
 
