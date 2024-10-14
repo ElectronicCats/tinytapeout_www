@@ -1,30 +1,30 @@
 ﻿1
-00:00:00,000 --> 00:00:02,253
+00:00:00,000 --> 00:00:03,161
 En este vídeo aprenderás
 a utilizar Wokwi para
 
 2
-00:00:02,278 --> 00:00:05,960
+00:00:03,186 --> 00:00:05,960
 dibujar y simular
 diseños digitales simples.
 
 3
-00:00:07,766 --> 00:00:11,280
+00:00:07,766 --> 00:00:11,693
 Después de abrir la plantilla,
 puede minimizar esta área por aquí.
 
 4
-00:00:11,280 --> 00:00:14,080
+00:00:12,200 --> 00:00:14,313
 Haga clic izquierdo y
 arrastre para moverse.
 
 5
-00:00:14,080 --> 00:00:18,960
+00:00:14,873 --> 00:00:19,310
 Rueda de desplazamiento para acercar y
 alejar. También me gusta activar la cuadrícula.
 
 6
-00:00:18,960 --> 00:00:25,863
+00:00:19,914 --> 00:00:25,863
 Disponemos de dos modos en Wokwi: dibujo y
 simulación. Empezaremos mirando el dibujo.
 
@@ -35,7 +35,7 @@ lógicas, puede usar el botón "+", luego
 
 8
 00:00:29,412 --> 00:00:32,876
-comience a escribir lógica y verá
+comience a escribir "logic" y verá
 todas las compuertas disponibles.
 
 9
@@ -54,122 +54,137 @@ También puedes cambiar los colores. Para un cableado ordenado,
 puede hacer clic en los puntos de referencia mientras dibuja.
 
 12
-00:00:49,603 --> 00:00:56,565
-Para copiar un componente, selecciónelo y presione D. Para copiar
-un grupo de componentes, incluidos sus cables, selecciónelos
+00:00:49,603 --> 00:00:56,052
+Para copiar un componente, selecciónelo y presione "d". Para copiar
+un grupo de componentes, incluidos sus cables,
 
 13
-00:00:56,590 --> 00:01:04,843
-con "Shift", haga clic izquierdo y arrastre. Luego presione D. Utilice la
-tecla "Eliminar" para eliminar componentes o grupos de componentes.
+00:00:56,077 --> 00:01:00,572
+selecciónelos con "Shift", haga clic izquierdo y
+arrastre. Luego presione "d".
 
 14
+00:01:00,925 --> 00:01:04,843
+Utilice la tecla "Delete/Eliminar" para eliminar
+componentes o grupos de componentes.
+
+15
 00:01:05,216 --> 00:01:08,390
 "Ctrl+Z" y "Ctrl+Y"
 para deshacer y rehacer.
 
-15
+16
 00:01:13,982 --> 00:01:17,249
 Para obtener más consejos sobre Wokwi,
-consulte las preguntas frecuentes aquí.
-
-16
-00:01:20,536 --> 00:01:26,220
-Es posible crear un circuito defectuoso. Por ejemplo
-conectando dos salidas entre sí o haciendo un
+consulte las "Preguntas frecuentes" aquí.
 
 17
-00:01:26,245 --> 00:01:32,262
-cortocircuito. Si eso sucede, obtendrás una ventana
-ERC aquí y tendrás que resolverlo antes de que tu
+00:01:20,536 --> 00:01:25,579
+Es posible crear un circuito defectuoso.
+Por ejemplo conectando dos salidas entre sí
 
 18
-00:01:32,300 --> 00:01:37,631
-diseño sea realizado. Ahora, simularemos el diseño
-haciendo clic en el botón verde de reproducción.
+00:01:25,644 --> 00:01:28,914
+o haciendo un cortocircuito.
+Si eso sucede, obtendrás una
 
 19
+00:01:28,939 --> 00:01:32,262
+ventana ERC aquí arriba y tendrás
+que resolverlo antes de que tu
+
+20
+00:01:32,300 --> 00:01:37,631
+diseño sea realizado. Ahora, simularemos el diseño
+haciendo clic en el botón verde de "reproducción".
+
+21
 00:01:38,040 --> 00:01:42,641
 Puede hacer clic en interruptores individuales, pero si
 selecciona el interruptor completo, también puede usar
 
-20
+22
 00:01:42,666 --> 00:01:44,866
 el teclado de su computadora para
 alternar los interruptores.
 
-21
+23
 00:01:46,525 --> 00:01:49,713
 Puede ver cómo cambia la salida a
 medida que cambio la entrada.
 
-22
+24
 00:01:50,720 --> 00:01:54,445
 Para diseños de relojes puede utilizar
 nuestro generador de relojes automático.
 
-23
+25
 00:01:54,470 --> 00:01:57,916
 Con el interruptor de esta manera
 el reloj funcionará libremente.
 
-24
+26
 00:01:58,116 --> 00:02:02,250
 De esta manera podemos hacer clic en
 el botón para crear un solo paso de reloj.
 
-25
+27
 00:02:02,716 --> 00:02:05,690
 Para más información sobre el reloj
-consulte las PREGUNTAS MÁS FRECUENTES
-
-26
-00:02:05,943 --> 00:02:08,738
-Un pequeño consejo de depuración
-que me gusta es agregar un LED
-
-27
-00:02:08,763 --> 00:02:14,160
-a partes importantes del circuito. Eso puede
-ayudarle a comprender lo que sucede dentro de un circuito.
+consulte las "Preguntas frecuentes"
 
 28
-00:02:14,160 --> 00:02:20,560
+00:02:05,943 --> 00:02:10,463
+Un pequeño consejo de depuración que me gusta es
+agregar un LED a partes importantes del circuito.
+
+29
+00:02:10,903 --> 00:02:14,283
+Eso puede ayudarle a comprender
+lo que sucede dentro de un circuito.
+
+30
+00:02:15,156 --> 00:02:20,230
 Una característica interesante para las pruebas es la
 creación de una tabla de verdad. Si crea un nuevo archivo
 
-29
-00:02:20,560 --> 00:02:26,560
+31
+00:02:20,255 --> 00:02:26,560
 a la izquierda llamado Truthtable.md, puede crear una
 tabla de verdad que luego se usará para probar su diseño.
 
-30
-00:02:26,560 --> 00:02:31,723
-Para obtener documentación sobre cómo funciona, lea la
-documentación aquí. Sólo se utilizan compuertas lógicas que
-
-31
-00:02:31,748 --> 00:02:37,530
-están conectadas entre las placas de entrada y salida.
-Puede dejar cualquier LED de depuración adicional o
-
 32
-00:02:37,555 --> 00:02:43,250
-elementos de circuito adicionales fuera de las placas de
-entrada y salida. Serán ignorados por las herramientas ASIC.
+00:02:26,560 --> 00:02:30,017
+Para obtener documentación sobre
+cómo funciona, lea la documentación aquí.
 
 33
+00:02:30,450 --> 00:02:34,410
+Sólo se utilizan compuertas lógicas que están conectadas entre las
+placas de entrada y salida.
+
+34
+00:02:34,679 --> 00:02:38,630
+Puede dejar cualquier LED de depuración
+adicional o elementos de circuito adicionales
+
+35
+00:02:38,655 --> 00:02:43,250
+fuera de las placas de entrada y salida.
+Serán ignorados por las herramientas ASIC.
+
+36
 00:02:43,476 --> 00:02:45,790
 Asegúrese de guardar
 una copia de su diseño.
 
-34
+37
 00:02:48,240 --> 00:02:54,723
 Obtendrá un nuevo número en la URL aquí y ese es
 el número que debe enviar para que se fabrique su diseño.
 
-35
-00:02:56,132 --> 00:03:00,033
+38
+00:02:56,132 --> 00:03:00,553
 Para aprender más sobre diseño digital
 puedes seguir nuestras lecciones aquí.
 
