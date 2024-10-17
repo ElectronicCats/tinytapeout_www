@@ -100,7 +100,7 @@ sistema basado en
 
 21
 00:01:02,080 --> 00:01:04,534
-acciones de GitHub para crear los
+GitHub Action para crear los
 archivos que necesita para el ASIC.
 
 22
@@ -160,7 +160,7 @@ diseño esté listo, se lo enviamos
 
 33
 00:01:37,621 --> 00:01:39,718
-a "Efabless" y
+a Efabless y
 ellos lo fabricarán mediante el
 
 34
@@ -175,8 +175,8 @@ envíos individuales
 
 36
 00:01:45,948 --> 00:01:49,280
-obtendrán un descuento por reserva
-anticipada gracias al patrocinio de Efabless.
+obtendrán un descuento por compra anticipada
+gracias al patrocinio de Efabless.
 
 37
 00:01:49,280 --> 00:01:51,508
@@ -205,8 +205,8 @@ su computadora, seleccione qué
 
 42
 00:02:03,221 --> 00:02:06,196
-diseño desea que esté activo con nuestro
- Interfaz MicroPython.
+diseño desea que esté activo
+con nuestra Interfaz de MicroPython.
 
 43
 00:02:06,292 --> 00:02:08,036
@@ -293,5 +293,4 @@ tengo muchas ganas de ver lo que haces con tu primer ASIC.
 
 60
 00:02:54,271 --> 00:02:57,860
-(música brillante)
 

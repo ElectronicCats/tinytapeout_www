@@ -1,236 +1,231 @@
 ﻿1
-00:00:00,150 --> 00:00:04,080
-Este breve vídeo explica cómo enviar una
- Verilog u otro proyecto HDL,
+00:00:00,143 --> 00:00:05,193
+Este breve vídeo explica cómo enviar
+una Verilog u otro proyecto HDL a Tiny Tapeout.
 
 2
-00:00:04,200 --> 00:00:05,200
-a Tiny Tapeout.
+00:00:06,250 --> 00:00:10,226
+El sitio web tiene algunos recursos
+recopilados aquí en la página "Trabajando con HDLs".
 
 3
-00:00:06,250 --> 00:00:09,860
-El sitio web tiene algunos recursos
-recopilados aquí en la página Trabajando con HDLs.
+00:00:11,470 --> 00:00:13,783
+Echemos un vistazo al repositorio
+"verilog-demo".
 
 4
-00:00:11,470 --> 00:00:13,391
-Echemos un vistazo al repositorio
-de demostración de Verilog.
-
-5
-00:00:14,380 --> 00:00:15,380
+00:00:14,251 --> 00:00:15,380
 El enlace está debajo.
 
+5
+00:00:16,138 --> 00:00:18,650
+El repositorio se forkea
+de la plantilla de envío/submission template.
+
 6
-00:00:16,213 --> 00:00:18,650
-El repositorio se bifurca
-de la plantilla de envío.
+00:00:19,260 --> 00:00:23,568
+Si echamos un vistazo al info.yaml, lo importante es que el ID de Wokwi
 
 7
-00:00:19,260 --> 00:00:23,280
-Si echamos un vistazo al info.yaml, lo importante es que el ID de Wokwi esté
-
-8
-00:00:23,281 --> 00:00:27,156
-configurado en 0, lo que le indica al
+00:00:23,593 --> 00:00:27,330
+esté configurado en 0, lo que le indica al
 sistema que estamos haciendo un diseño HDL.
 
-9
+8
 00:00:28,015 --> 00:00:29,983
 Luego enumera todos los
 archivos fuente por separado.
 
-10
+9
 00:00:30,680 --> 00:00:33,150
 Debe enumerar todos los
 archivos requeridos o nuestro
 
-11
-00:00:33,151 --> 00:00:35,521
+10
+00:00:33,151 --> 00:00:35,890
 proceso de compilación fallará
 cuando intentemos incluir su proyecto.
 
-12
+11
 00:00:36,800 --> 00:00:39,089
 También debemos dar el
 nombre del módulo superior.
 
-13
+12
 00:00:39,560 --> 00:00:44,581
 El nombre de su módulo superior debe ser único, y
-comience con el guión bajo TT y el guión bajo UM.
+comenzar con "tt_um_".
 
-14
-00:00:45,370 --> 00:00:48,660
+13
+00:00:45,370 --> 00:00:48,963
 Le sugiero que incluya su nombre de usuario
 de GitHub para asegurarse de que sea único.
 
-15
-00:00:49,820 --> 00:00:52,683
+14
+00:00:49,766 --> 00:00:52,629
 Puedes ver que tenemos las
 tres luces verdes pasando por aquí.
 
-16
-00:00:53,210 --> 00:00:55,102
-Se requiere que el GDS y
-los documentos realicen una
+15
+00:00:53,210 --> 00:00:55,936
+El GDS y los documentos son necesarios para hacer un envío,
 
-17
-00:00:55,103 --> 00:00:58,201
-presentación, y se recomienda
+16
+00:00:56,130 --> 00:00:58,201
+y se recomienda
 encarecidamente la prueba.
 
-18
+17
 00:00:59,050 --> 00:01:00,811
-Si vamos a la fuente, Luego podemos ver que tenemos
+Si vamos a la fuente, podemos ver que tenemos
 
-19
+18
 00:01:00,812 --> 00:01:03,261
 los archivos Verilog del
 contador y del decodificador.
 
-20
+19
 00:01:04,010 --> 00:01:06,323
 Dentro del contador
 tenemos el módulo superior.
 
-21
+20
 00:01:06,920 --> 00:01:10,023
 El módulo superior debe tener exactamente
 estos puertos de entrada y salida.
 
-22
-00:01:10,540 --> 00:01:13,220
+21
+00:01:10,540 --> 00:01:13,490
 Esta es la interfaz entre
 su código y Tiny Tapeout.
 
-23
-00:01:14,090 --> 00:01:16,380
+22
+00:01:14,056 --> 00:01:16,703
 No puedes cambiar sus nombres
 ni agregar ni eliminar nada.
 
-24
-00:01:17,770 --> 00:01:20,396
+23
+00:01:17,770 --> 00:01:20,583
 Ahora hablemos un poco sobre
 cómo puedes probar tu diseño.
 
+24
+00:01:21,320 --> 00:01:23,950
+Soy fanático de "cocotb",
+así que tengo este archivo "makefile".
+
 25
-00:01:21,320 --> 00:01:23,720
-Soy fanático de COCO DB,
-así que tengo este archivo make.
+00:01:24,540 --> 00:01:27,983
+Configuré mi fuente Verilog aquí e incluyo
+un banco de pruebas de nivel superior.
 
 26
-00:01:24,540 --> 00:01:27,983
-Configuré mi fuente Verilog aquí e
-incluyo un banco de pruebas de alto nivel.
-
-27
 00:01:28,990 --> 00:01:34,101
 El banco de pruebas simplemente crea una instancia
 del diseño y conecta los puertos de entrada y salida.
 
-28
+27
 00:01:34,540 --> 00:01:37,369
 Debería poder reutilizarlo
 con muy pocos cambios.
 
-29
-00:01:38,480 --> 00:01:40,780
+28
+00:01:38,480 --> 00:01:41,111
 Todas las pruebas realmente
-ocurren en este Archivo de Python.
+ocurren en este archivo de Python.
+
+29
+00:01:41,680 --> 00:01:46,861
+Doy inicio al reloj, lo reinicio y luego
+cuento hasta 10 esperando 1000 ciclos.
 
 30
-00:01:41,680 --> 00:01:46,861
-Enciendo el reloj, lo reinicio y luego
-Cuento hasta 10, esperando 1000 relojes.
-
-31
 00:01:47,260 --> 00:01:50,910
 Ese es el tiempo que se tarda en contar hasta el
 siguiente número en la pantalla de 7 segmentos.
 
-32
-00:01:51,855 --> 00:01:54,446
-Luego afirmo que los segmentos
+31
+00:01:51,855 --> 00:01:54,846
+Luego confirmo que los segmentos
 que estoy obteniendo coinciden
 
-33
-00:01:54,447 --> 00:01:57,583
+32
+00:01:54,871 --> 00:01:57,583
 con los segmentos esperados
 que se mostrarán en la pantalla.
 
-34
-00:01:58,660 --> 00:02:00,320
+33
+00:01:58,679 --> 00:02:00,919
 Puedo mostrar eso aquí
 en la línea de comando.
 
-35
-00:02:05,390 --> 00:02:09,480
-Me creó un archivo VCD que puedo
-cargar e inspeccionar con GTK wave.
+34
+00:02:05,390 --> 00:02:09,930
+Me creó un archivo ".vcd" que puedo
+cargar e inspeccionar con GTKWave.
 
-36
+35
 00:02:10,710 --> 00:02:13,382
 Puedo ver que está
 el reloj, el reinicio y
 
-37
-00:02:13,383 --> 00:02:15,740
+36
+00:02:13,383 --> 00:02:16,290
 luego los segmentos
 contando en el orden esperado.
 
+37
+00:02:17,070 --> 00:02:19,681
+Tenemos una Github Action
+de prueba que puedes usar y
+
 38
-00:02:15,741 --> 00:02:19,681
-Tenemos una acción de prueba
-de GitHub que puedes usar y
+00:02:19,682 --> 00:02:23,363
+esto simplemente instala OSS
+CAD Suite y ejecuta la prueba.
 
 39
-00:02:19,682 --> 00:02:22,941
-esto simplemente instala OSS
-CAD. Suite y ejecuta la prueba.
+00:02:23,975 --> 00:02:26,396
+Puede copiarlo desde el repositorio
+"verilog-demo".
 
 40
-00:02:23,975 --> 00:02:26,020
-Puede copiarlo desde el repositorio
-de demostración de Verilog.
+00:02:27,124 --> 00:02:30,783
+Es opcional hacer una prueba,
+pero lo recomiendo teniendo en cuenta
 
 41
-00:02:27,131 --> 00:02:30,836
-Es opcional hacer una prueba,
-pero lo recomiendo teniendo en
+00:02:30,808 --> 00:02:32,827
+que tendremos
+para recibir nuestros diseños
 
 42
-00:02:30,861 --> 00:02:32,827
-cuenta los largos pesos que
-tendremos para recibir nuestros
+00:02:32,828 --> 00:02:35,641
+y el hecho de que no
+podremos cambiar cosas después.
 
 43
-00:02:32,828 --> 00:02:35,641
-diseños y el hecho de que no
-podemos cambiar cosas después.
-
-44
-00:02:36,220 --> 00:02:40,020
+00:02:36,220 --> 00:02:39,643
 También es una buena idea realizar una
 verificación a nivel de compuertas, que es donde
 
-45
-00:02:40,021 --> 00:02:42,820
+44
+00:02:39,668 --> 00:02:43,210
 tomamos la lista de redes post-síntesis y la
 verificamos con el mismo banco de pruebas.
 
-46
+45
 00:02:43,760 --> 00:02:45,680
 Pregunta en Discord si
 quieres ayuda para agregarlo.
 
-47
-00:02:46,960 --> 00:02:48,780
+46
+00:02:46,960 --> 00:02:49,013
 Buena suerte y
 cuéntame cómo te va.
 
-48
+47
 00:02:49,430 --> 00:02:52,983
-Nos vemos en el canal Verilog y
-HDL del servidor de chat de Discord.
+Nos vemos en el canal "verilog-and-other-hdls"
+del servidor de chat de Discord.
 
