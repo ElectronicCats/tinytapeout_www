@@ -15,13 +15,13 @@ alquilar el software de diseño.
 
 4
 00:00:08,000 --> 00:00:11,200
-Ah, y tendrás que firmar un acuerdo
+Ah, y tendrá que firmar un acuerdo
 de confidencialidad para comenzar.
 
 5
 00:00:11,200 --> 00:00:13,760
 Y ese acuerdo significa que no
-puedes compartir tu diseño con nadie.
+puede compartir su diseño con nadie.
 
 6
 00:00:14,443 --> 00:00:17,538
@@ -80,7 +80,7 @@ de instalación y licencia.
 
 17
 00:00:47,191 --> 00:00:52,187
-Si eres un principiante total, puedes probar Wokwi,
+Si usted es un principiante total, puede probar Wokwi,
 nuestra herramienta de simulación y diseño digital.
 
 18
@@ -106,7 +106,7 @@ archivos que necesita para el ASIC.
 22
 00:01:04,756 --> 00:01:06,960
 Una vez que los archivos
-estén listos, puedes explorar
+estén listos, puede explorar
 
 23
 00:01:06,960 --> 00:01:09,536
@@ -120,8 +120,8 @@ micrones, unas mil celdas lógicas.
 
 25
 00:01:15,896 --> 00:01:18,658
-Y si necesitas más espacio,
-puedes comprar cuadros adicionales.
+Y si necesita más espacio,
+puede comprar cuadros adicionales.
 
 26
 00:01:18,683 --> 00:01:21,360
@@ -210,7 +210,7 @@ con nuestra Interfaz de MicroPython.
 
 43
 00:02:06,292 --> 00:02:08,036
-Y eso también te permite
+Y eso también le permite
 ajustar la velocidad del
 
 44
@@ -225,8 +225,8 @@ favoritas de este proyecto
 
 46
 00:02:13,840 --> 00:02:15,716
-es que no solo obtendrás
-tu diseño, sino el
+es que no solo obtendrá
+su diseño, sino el
 
 47
 00:02:15,741 --> 00:02:17,723
@@ -234,7 +234,7 @@ diseño de todos los demás también.
 
 48
 00:02:17,893 --> 00:02:21,670
-Podrás consultar la hoja de datos del
+Podrá consultar la hoja de datos del
 chip y probar el diseño de otra persona.
 
 49
@@ -269,8 +269,8 @@ dependiendo de qué tan complejo sea su diseño.
 
 55
 00:02:41,283 --> 00:02:43,423
-Si te quedas atascado,
-únete a nuestro chat
+Si se queda atascado,
+únase a nuestro chat
 
 56
 00:02:43,447 --> 00:02:45,836
@@ -285,12 +285,10 @@ mantenerse actualizado con
 58
 00:02:47,508 --> 00:02:50,356
 nuestro progreso. Así
-que diviértete, participa y
+que diviértase, participe y
 
 59
 00:02:50,381 --> 00:02:53,346
-tengo muchas ganas de ver lo que haces con tu primer ASIC.
-
-60
-00:02:54,271 --> 00:02:57,860
+tengo muchas ganas de ver lo
+que hace con su primer ASIC.
 

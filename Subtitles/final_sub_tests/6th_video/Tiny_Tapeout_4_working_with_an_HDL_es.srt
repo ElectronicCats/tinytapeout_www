@@ -63,7 +63,7 @@ de GitHub para asegurarse de que sea único.
 
 14
 00:00:49,766 --> 00:00:52,629
-Puedes ver que tenemos las
+Puede ver que tenemos las
 tres luces verdes pasando por aquí.
 
 15
@@ -101,13 +101,13 @@ su código y Tiny Tapeout.
 
 22
 00:01:14,056 --> 00:01:16,703
-No puedes cambiar sus nombres
+No puede cambiar los nombres
 ni agregar ni eliminar nada.
 
 23
 00:01:17,770 --> 00:01:20,583
 Ahora hablemos un poco sobre
-cómo puedes probar tu diseño.
+cómo puede probar su diseño.
 
 24
 00:01:21,320 --> 00:01:23,950
@@ -116,7 +116,7 @@ así que tengo este archivo "makefile".
 
 25
 00:01:24,540 --> 00:01:27,983
-Configuré mi fuente Verilog aquí e incluyo
+Configuré mi fuente Verilog aquí e incluí
 un banco de pruebas de nivel superior.
 
 26
@@ -192,12 +192,12 @@ Puede copiarlo desde el repositorio
 40
 00:02:27,124 --> 00:02:30,783
 Es opcional hacer una prueba,
-pero lo recomiendo teniendo en cuenta
+pero lo recomiendía teniendo en cuenta
 
 41
 00:02:30,808 --> 00:02:32,827
-que tendremos
-para recibir nuestros diseños
+el largo tiempo de esperaque
+tendremos para recibir nuestros diseños
 
 42
 00:02:32,828 --> 00:02:35,641
@@ -215,14 +215,14 @@ tomamos la lista de redes post-síntesis y la
 verificamos con el mismo banco de pruebas.
 
 45
-00:02:43,760 --> 00:02:45,680
-Pregunta en Discord si
-quieres ayuda para agregarlo.
+00:02:43,760 --> 00:02:45,813
+Pregunte en Discord si
+necesita ayuda para agregarlo.
 
 46
 00:02:46,960 --> 00:02:49,013
-Buena suerte y
-cuéntame cómo te va.
+Buena suerte y quedo a la
+espera de saber sus resultados.
 
 47
 00:02:49,430 --> 00:02:52,983

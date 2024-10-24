@@ -1,6 +1,6 @@
 ﻿1
 00:00:00,000 --> 00:00:03,161
-En este vídeo aprenderás
+En este vídeo aprenderá
 a utilizar Wokwi para
 
 2
@@ -55,7 +55,7 @@ clic en ellos y usando el cursor.
 
 12
 00:00:43,356 --> 00:00:49,343
-También puedes cambiar los colores. Para un cableado ordenado,
+También puede cambiar los colores. Para un cableado ordenado,
 puede hacer clic en los puntos de referencia mientras dibuja.
 
 13
@@ -91,12 +91,12 @@ Por ejemplo conectando dos salidas entre sí
 19
 00:01:25,644 --> 00:01:28,914
 o haciendo un cortocircuito.
-Si eso sucede, obtendrás una
+Si eso sucede, obtendrá una
 
 20
 00:01:28,939 --> 00:01:32,262
-ventana ERC aquí arriba y tendrás
-que resolverlo antes de que tu
+ventana ERC aquí arriba y tendrá
+que resolverlo antes de que su
 
 21
 00:01:32,300 --> 00:01:37,631
@@ -191,5 +191,5 @@ el número que debe enviar para que se fabrique su diseño.
 39
 00:02:56,132 --> 00:03:00,553
 Para aprender más sobre diseño digital
-puedes seguir nuestras lecciones aquí.
+puede seguir nuestras lecciones aquí.
 
