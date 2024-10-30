@@ -1,7 +1,7 @@
 ﻿1
 00:00:00,143 --> 00:00:05,193
-Este breve vídeo explica cómo enviar
-una Verilog u otro proyecto HDL a Tiny Tapeout.
+Este breve vídeo explica cómo enviar un proyecto
+Verilog u otro proyecto HDL a Tiny Tapeout.
 
 2
 00:00:06,250 --> 00:00:10,226
@@ -9,7 +9,7 @@ El sitio web tiene algunos recursos
 recopilados aquí en la página "Trabajando con HDLs".
 
 3
-00:00:11,470 --> 00:00:13,783
+00:00:11,463 --> 00:00:13,776
 Echemos un vistazo al repositorio
 "verilog-demo".
 
@@ -20,11 +20,12 @@ El enlace está debajo.
 5
 00:00:16,138 --> 00:00:18,650
 El repositorio se forkea
-de la plantilla de envío/submission template.
+de la plantilla de envío (submission template).
 
 6
 00:00:19,260 --> 00:00:23,568
-Si echamos un vistazo al info.yaml, lo importante es que el ID de Wokwi
+Si echamos un vistazo al archivo "info.yaml",
+lo importante es que el ID de Wokwi
 
 7
 00:00:23,593 --> 00:00:27,330
@@ -63,11 +64,11 @@ de GitHub para asegurarse de que sea único.
 
 14
 00:00:49,766 --> 00:00:52,629
-Puede ver que tenemos las
-tres luces verdes pasando por aquí.
+Puede ver que tenemos por aquí
+los recuadros verdes aprobados.
 
 15
-00:00:53,210 --> 00:00:55,936
+00:00:53,203 --> 00:00:55,929
 El GDS y los documentos son necesarios para hacer un envío,
 
 16
@@ -176,11 +177,11 @@ contando en el orden esperado.
 
 37
 00:02:17,070 --> 00:02:19,681
-Tenemos una Github Action
-de prueba que puedes usar y
+Tenemos una prueba de
+Github Action que puede usar y
 
 38
-00:02:19,682 --> 00:02:23,363
+00:02:19,708 --> 00:02:23,389
 esto simplemente instala OSS
 CAD Suite y ejecuta la prueba.
 
@@ -191,12 +192,12 @@ Puede copiarlo desde el repositorio
 
 40
 00:02:27,124 --> 00:02:30,783
-Es opcional hacer una prueba,
-pero lo recomiendía teniendo en cuenta
+Es opcional hacer una prueba, pero
+lo recomendaría teniendo en cuenta
 
 41
 00:02:30,808 --> 00:02:32,827
-el largo tiempo de esperaque
+el largo tiempo de espera que
 tendremos para recibir nuestros diseños
 
 42
@@ -221,8 +222,7 @@ necesita ayuda para agregarlo.
 
 46
 00:02:46,960 --> 00:02:49,013
-Buena suerte y quedo a la
-espera de saber sus resultados.
+Buena suerte y déjeme saber cómo resultó
 
 47
 00:02:49,430 --> 00:02:52,983
