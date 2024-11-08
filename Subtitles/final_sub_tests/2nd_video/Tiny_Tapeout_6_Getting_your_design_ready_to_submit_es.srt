@@ -1,7 +1,7 @@
 ﻿1
-00:00:00,000 --> 00:00:04,420
-En este video, aprenderemos cómo
-usar la plantilla Tiny Tapeout GitHub para
+00:00:00,001 --> 00:00:04,421
+En este video aprenderemos cómo usar
+la plantilla de GitHub de Tiny Tapeout para
 
 2
 00:00:04,446 --> 00:00:08,000
@@ -15,13 +15,13 @@ de GitHub, deberá crear una.
 
 4
 00:00:11,950 --> 00:00:14,916
-Luego navegue hasta uno
-de los repositorios de plantillas.
+Luego, navegue hasta uno
+de los repositorios de las plantillas.
 
 5
 00:00:15,126 --> 00:00:19,210
-Disponemos de uno para diseños de
-Wokwi y otro para Verilog u otros HDL.
+Disponemos de uno para diseños de Wokwi
+y otro para diseños de Verilog u otros HDL.
 
 6
 00:00:19,683 --> 00:00:21,530
@@ -29,7 +29,7 @@ Usaré la plantilla Wokwi por ahora.
 
 7
 00:00:23,377 --> 00:00:28,183
-Haga clic en el botón "Usar esta plantilla".
+Haga clic en el botón "Use this template".
 Esto crea su propia copia del repositorio.
 
 8
@@ -58,14 +58,14 @@ Tenemos las instrucciones aquí
 pero le mostraré cómo hacerlo ahora.
 
 13
-00:00:43,809 --> 00:00:47,418
-Vaya a la página de configuración
-de su repositorio, "Pages", luego
+00:00:43,809 --> 00:00:47,103
+Vaya a la página de su
+repositorio "Settings > Pages",
 
 14
-00:00:47,450 --> 00:00:50,510
-configure "GitHub Actions" en
-"Built and deployment > Source".
+00:00:47,130 --> 00:00:50,510
+luego configure "GitHub Actions"
+en "Built and deployment > Source".
 
 15
 00:00:51,430 --> 00:00:56,163
@@ -104,12 +104,12 @@ Copiaré la última parte del url del proyecto y reemplazaré el 0 con eso.
 22
 00:01:20,770 --> 00:01:23,283
 La mayoría de los diseños
-simples caben en un solo mosaico.
+simples caben en un solo cuadro.
 
 23
 00:01:23,783 --> 00:01:27,683
 Si necesita más espacio, puede cambiar la
-configuración del mosaico para obtener más espacio.
+configuración de cuadros para obtener más espacio.
 
 24
 00:01:28,383 --> 00:01:30,000
@@ -127,13 +127,13 @@ completar el título, autor, etc.
 
 27
 00:01:37,299 --> 00:01:40,332
-Si usas Discord, ingresa
-tu nombre de Discord aquí y
+Si usa Discord, ingrese su
+nombre de usuario de Discord aquí y
 
 28
 00:01:40,357 --> 00:01:43,193
-cuando envíes un diseño te
-agregaremos al rol de Tapeout.
+cuando envíe un diseño le
+agregaremos al canal de Tapeout.
 
 29
 00:01:43,506 --> 00:01:46,880
@@ -152,8 +152,8 @@ Luego presione el botón
 
 32
 00:01:54,955 --> 00:01:59,570
-Hay un archivo más que debes editar. El
-info.md ​​dentro del directorio de documentos.
+Hay un archivo más que debe editar. El
+"info.md" ​​dentro del directorio de docs.
 
 33
 00:02:00,000 --> 00:02:02,103
@@ -192,7 +192,7 @@ detalles, presione el botón "commit".
 40
 00:02:25,730 --> 00:02:27,730
 Esto inicia la ejecución
-de las acciones de GitHub.
+de las GitHub Actions.
 
 41
 00:02:28,270 --> 00:02:31,543
@@ -215,7 +215,7 @@ otro se usará para pruebas automáticas
 
 45
 00:02:39,850 --> 00:02:42,497
-de diseños de wokwi si
+de diseños de Wokwi si
 ha usado la opción de tabla de verdad.
 
 46
@@ -328,8 +328,8 @@ de su diseño y lo publica en las redes sociales
 
 68
 00:04:00,000 --> 00:04:04,000
-con una descripción de lo que hace
-junto con un hashtag de Tiny Tapeout.
+con una descripción de lo que
+hace junto con un #tinytapeout.
 
 69
 00:04:04,583 --> 00:04:07,683
@@ -388,7 +388,7 @@ de registro de síntesis en
 80
 00:04:42,848 --> 00:04:48,683
 runs > wokwi > logs > synthesis>synthesis.errors
-por errores de diseño.
+para errores de diseño.
 
 81
 00:04:49,096 --> 00:04:51,877
@@ -458,7 +458,7 @@ enviar una revisión.
 94
 00:05:30,150 --> 00:05:33,823
 Una vez que esto haya sucedido, esa versión
-de su diseño se enviará al shuttle.
+de su diseño se enviará a producción.
 
 95
 00:05:34,196 --> 00:05:37,836
@@ -466,7 +466,7 @@ Si desea realizar algún cambio, debe
 volver aquí y enviar una nueva revisión.
 
 96
-00:05:38,116 --> 00:05:42,046
+00:05:38,129 --> 00:05:42,059
 Eso es todo. Disfrute programando y
 espero ver lo que hace con su ASIC.
 
